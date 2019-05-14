@@ -1,0 +1,882 @@
+<title>数据统计型 - 页面示例</title>
+
+<link rel="stylesheet" href="/vendor/morris.js/morris.css">
+<link rel="stylesheet" href="/vendor/chartist/dist/chartist.min.css">
+<link rel="stylesheet" href="/vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css">
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+.product-filters {
+    float: right !important;
+}
+.product-filters > li > a {
+    width: 80px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #76838f;
+    text-align: center;
+    border-radius: 20px;
+}
+.product-filters > li > a:hover {
+    color: #76838f;
+}
+#productOverviewWidget .btn-sale {
+    color: #37474f;
+    text-transform: uppercase;
+}
+#productOverviewWidget .dropdown-menu {
+    text-transform: capitalize;
+}
+#productOverviewWidget .ct-grids .ct-vertical {
+    stroke-dasharray: 6;
+}
+#productOverviewWidget .ct-grids .ct-horizontal {
+    stroke: none;
+}
+#productOverviewWidget .ct-grids .ct-point-label {
+    stroke: #fff;
+    stroke-width: 60px;
+}
+#productOverviewWidget .ct-labels .ct-horizontal {
+    display: block;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #76838f;
+}
+#productOverviewWidget .ct-area {
+    fill-opacity: .8;
+}
+#productOverviewWidget .ct-series .ct-point, #productOverviewWidget .ct-series .ct-point-content {
+    opacity: 0;
+    -webkit-transition: all .3s;
+         -o-transition: all .3s;
+            transition: all .3s;
+}
+#productOverviewWidget .ct-series:hover .ct-point, #productOverviewWidget .ct-series:hover .ct-point-content {
+    opacity: 1;
+}
+#productOverviewWidget .ct-series.ct-series-a .ct-area {
+    fill: #a58add;
+}
+#productOverviewWidget .ct-series.ct-series-a .ct-line {
+    stroke: #a58add;
+    stroke-width: 1px;
+}
+#productOverviewWidget .ct-series.ct-series-a .ct-point {
+    cursor: pointer;
+
+    stroke: #926dde;
+    stroke-width: 12px;
+}
+#productOverviewWidget .ct-series.ct-series-a .ct-point-content {
+    pointer-events: none;
+
+    stroke: #fff;
+    stroke-width: 6px;
+    stroke-linecap: round;
+}
+#productOverviewWidget .ct-series.ct-series-b .ct-area {
+    fill: #77d6e1;
+}
+#productOverviewWidget .ct-series.ct-series-b .ct-line {
+    stroke: #77d6e1;
+    stroke-width: 1px;
+}
+#productOverviewWidget .ct-series.ct-series-b .ct-point {
+    cursor: pointer;
+
+    stroke: #57c7d4;
+    stroke-width: 12px;
+}
+#productOverviewWidget .ct-series.ct-series-b .ct-point-content {
+    pointer-events: none;
+
+    stroke: #fff;
+    stroke-width: 6px;
+    stroke-linecap: round;
+}
+#productOptionsData {
+    padding: 80px 30px 30px;
+}
+#productOptionsData .counter-number-group {
+    font-size: 36px;
+}
+#productOptionsData .ct-chart {
+    width: 200px;
+    height: 60px;
+    margin: 10px auto;
+}
+#productOptionsData .ct-chart .ct-series-a .ct-bar {
+    stroke-width: 4px;
+}
+#productOptionsData .ct-chart .ct-series-b .ct-bar {
+    stroke-width: 4px;
+}
+#productOptionsData .ct-chart[data-counter-type="productVist"] .ct-series-a .ct-bar {
+    stroke: #a58add;
+}
+#productOptionsData .ct-chart[data-counter-type="productVist"] .ct-series-b .ct-bar {
+    stroke: #77d6e1;
+}
+#productOptionsData .ct-chart[data-counter-type="productVistors"] .ct-series-a .ct-bar {
+    stroke: #f978a6;
+}
+#productOptionsData .ct-chart[data-counter-type="productVistors"] .ct-series-b .ct-bar {
+    stroke: #8897ec;
+}
+#productOptionsData .ct-chart[data-counter-type="productPageViews"] .ct-series-a .ct-bar {
+    stroke: #5cc99a;
+}
+#productOptionsData .ct-chart[data-counter-type="productPageViews"] .ct-series-b .ct-bar {
+    stroke: #f7e083;
+}
+#productOptionsData .ct-chart[data-counter-type="productBounceRate"] .ct-series-a .ct-bar {
+    stroke: #89bceb;
+}
+#productOptionsData .ct-chart[data-counter-type="productBounceRate"] .ct-series-b .ct-bar {
+    stroke: #f2a654;
+}
+#browsersFlowWidget {
+    height: 100%;
+    margin-bottom: 0 !important;
+}
+#browsersFlowWidget .widget-header {
+    padding: 25px 30px 11px;
+}
+#browsersFlowWidget .widget-content {
+    padding: 0 15px;
+}
+#browsersFlowWidget .widget-content:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+#countriesVistsWidget {
+    margin-bottom: 0 !important;
+}
+#countriesVistsWidget .widget-header {
+    padding: 25px 30px 11px;
+}
+#countriesVistsWidget .widget-content {
+    padding-bottom: 15px;
+}
+#countriesVistsWidget .table-responsive {
+    border: 0 none;
+}
+.table-analytics > thead > tr > th {
+    padding: 20px 10px;
+    color: #37474f;
+    vertical-align: middle;
+}
+.table-analytics > tbody > tr > td {
+    vertical-align: middle;
+}
+#browsersFlowWidget tr:nth-of-type(even) {
+    background-color: #fafafa;
+}
+#browsersFlowWidget td {
+    padding: 20px 10px;
+}
+#weekStackedBarChart {
+    position: relative;
+    max-width: 350px;
+    height: 180px;
+    margin: auto 0;
+}
+#weekStackedBarChart .ct-chart-bar .ct-labels .ct-horizontal {
+    display: block;
+    padding-top: 12px;
+    font-size: 14px;
+    color: #76838f;
+    text-align: center;
+}
+#weekStackedBarChart .ct-chart-bar .ct-labels .ct-vertical {
+    display: none;
+}
+#weekStackedBarChart .ct-chart-bar .ct-grids .ct-grid {
+    stroke: none;
+}
+#weekStackedBarChart .ct-chart-bar .ct-series-a .ct-bar {
+    stroke: #62a8ea;
+}
+#weekStackedBarChart .ct-chart-bar .ct-series-b .ct-bar {
+    stroke: #f3f7f9;
+}
+#browersVistsDonut {
+    position: relative;
+    height: 250px;
+    margin: 0 auto;
+}
+#browersVistsDonut svg path[fill="none"] {
+    opacity: 0 !important;
+}
+#countriesVistsWidget td {
+    padding: 20px 10px;
+}
+#countriesVistsWidget td:last-child {
+    font-size: 0;
+}
+#countriesVistsWidget .language {
+    min-width: 150px;
+}
+#countriesVistsWidget .vists {
+    min-width: 65px;
+}
+#countriesVistsWidget .vists-percent {
+    min-width: 210px;
+}
+#countriesVistsWidget .progress {
+    display: inline-block;
+    width: 80%;
+    vertical-align: middle;
+}
+#countriesVistsWidget .country-name {
+    margin-left: 20px;
+}
+#countriesVistsWidget .progress-percent {
+    display: inline-block;
+    width: 20%;
+    font-size: 14px;
+    color: #76838f;
+    text-align: right;
+    vertical-align: middle;
+}
+@media screen and (max-width: 1400px) {
+    #browsersFlowWidget {
+        margin-bottom: 30px !important;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .col-lg-7 {
+        width: 100%;
+    }
+    .col-lg-5 {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1199px) {
+    #productOptionsData {
+        padding-bottom: 20px;
+    }
+    #productOptionsData .counter {
+        margin-bottom: 40px;
+    }
+}
+@media screen and (min-width: 568px) and (max-width: 768px) {
+    #productOptionsData .col-xs-12 {
+        width: 50%;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 567px) {
+    #productOptionsData .ct-chart {
+        width: 250px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .product-filters {
+        float: none !important;
+        padding: 10px 15px;
+    }
+    .product-filters > li > a {
+        width: 50px;
+        height: 30px;
+        padding: 5px 8px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #76838f;
+        text-align: center;
+        border-radius: 15px;
+    }
+}
+@media screen and (max-width: 479px) {
+    #productOptionsData .ct-chart {
+        width: 200px;
+    }
+}
+@media screen and (max-width: 360px) {
+    #productOptionsData .ct-chart {
+        width: 160px;
+    }
+    #productOverviewWidget .product-filters > li > a {
+        width: 44px;
+        padding: 5px 6px;
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+}
+</style>
+
+<div class="page animation-fade page-analytics">
+    <div class="page-header">
+        <h1 class="page-title">网站概况</h1>
+    </div>
+
+    <div class="page-content container-fluid">
+        <div class="row" data-plugin="matchHeight" data-by-row="true">
+            <div class="col-12">
+
+                <div id="productOverviewWidget" class="card card-shadow">
+
+                    <div class="card-header card-header-transparent p-20">
+                        <div class="btn-group dropdown chart-menu">
+                            <button type="button" class="btn btn-outline btn-default dropdown-toggle btn-flat btn-sale"
+                                    data-toggle="dropdown">
+                                产品销售
+                            </button>
+                            <div class="dropdown-menu animate" role="menu">
+                                <a class="dropdown-item" href="javascript:;" role="menuitem">销售</a>
+                                <a class="dropdown-item" href="javascript:;" role="menuitem">总销售额</a>
+                                <a class="dropdown-item" href="javascript:;" role="menuitem">利润</a>
+                            </div>
+                        </div>
+                        <ul class="nav nav-pills nav-pills-rounded product-filters" id="chartViewNav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#scoreLineToDay" data-toggle="tab">本日</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#scoreLineToWeek" data-toggle="tab">本周</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#scoreLineToMonth" data-toggle="tab">本月</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-block p-20">
+                        <div class="tab-content">
+                            <div class="ct-chart tab-pane active" id="scoreLineToDay"></div>
+                            <div class="ct-chart tab-pane" id="scoreLineToWeek"></div>
+                            <div class="ct-chart tab-pane" id="scoreLineToMonth"></div>
+                        </div>
+                        <div id="productOptionsData" class="text-center">
+                            <div class="row no-space">
+
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="counter">
+                                        <div class="counter-label">UV</div>
+                                        <div class="counter-number-group text-truncate">
+                                            <span class="counter-number-related red-600">+</span>
+                                            <span class="counter-number">681</span>
+                                        </div>
+                                        <div class="ct-chart" data-counter-type="productVist"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="counter">
+                                        <div class="counter-label">IP</div>
+                                        <div class="counter-number-group text-truncate">
+                                            <span class="counter-number-related green-600">-</span>
+                                            <span class="counter-number">522</span>
+                                        </div>
+                                        <div class="ct-chart" data-counter-type="productVistors"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="counter">
+                                        <div class="counter-label">PV</div>
+                                        <div class="counter-number-group text-truncate">
+                                            <span class="counter-number-related green-600">-</span>
+                                            <span class="counter-number">1,622</span>
+                                        </div>
+                                        <div class="ct-chart" data-counter-type="productPageViews"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="counter">
+                                        <div class="counter-label">跳出率</div>
+                                        <div class="counter-number-group text-truncate">
+                                            <span class="counter-number-related red-600">+</span>
+                                            <span class="counter-number">843</span>
+                                        </div>
+                                        <div class="ct-chart" data-counter-type="productBounceRate"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-xl-7 col-12">
+
+                <div id="browsersFlowWidget" class="card card-shadow">
+                    <div class="card-header card-header-transparent">
+                        <p class="font-size-14 blue-grey-700 mb-0">浏览器</p>
+                    </div>
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <table class="table table-analytics mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>浏览器</th>
+                                        <th>访问量</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="/static/images/browser/360.png" width="36" title="360浏览器"
+                                                    alt="360浏览器">
+                                        </td>
+                                        <td>
+                                            360浏览器
+                                        </td>
+                                        <td>
+                                            11,976
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="/static/images/browser/sogou.png" width="36" title="搜狗浏览器"
+                                                    alt="搜狗浏览器">
+                                        </td>
+                                        <td>
+                                            搜狗浏览器
+                                        </td>
+                                        <td>
+                                            1,706
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="/static/images/browser/ie.png" width="36" title="IE浏览器"
+                                                    alt="IE浏览器">
+                                        </td>
+                                        <td>
+                                            IE浏览器
+                                        </td>
+                                        <td>
+                                            1,677
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="/static/images/browser/baidu.png" width="36" title="百度浏览器"
+                                                    alt="百度浏览器">
+                                        </td>
+                                        <td>
+                                            百度浏览器
+                                        </td>
+                                        <td>
+                                            1,268
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="/static/images/browser/qq.png" width="36" title="QQ浏览器"
+                                                    alt="QQ浏览器">
+                                        </td>
+                                        <td>
+                                            QQ浏览器
+                                        </td>
+                                        <td>
+                                            915
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="col-md-6">
+
+                                <div id="browersVistsDonut"></div>
+
+
+                                <div id="weekStackedBarChart"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xl-5 col-12">
+
+                <div id="countriesVistsWidget" class="card card-shadow">
+                    <div class="card-header card-header-transparent">
+                        <p class="font-size-14 blue-grey-700 mb-0">访问国家</p>
+                    </div>
+                    <div class="card-block px-30">
+                        <div class="table-responsive">
+                            <table class="table table-analytics mb-0 text-nowrap">
+                                <thead>
+                                <tr>
+                                    <th class="language">语言</th>
+                                    <th class="vists">国家</th>
+                                    <th class="vists-percent">比重</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="/static/images/country/china-icon.png" width="18" title="中国"
+                                                alt="中国">
+                                        <span class="country-name">中国</span>
+                                    </td>
+                                    <td>4,354,834,129</td>
+                                    <td>
+                                        <div class="progress progress-xs mb-0">
+                                            <div class="progress-bar progress-bar-info bg-blue-600" style="width: 90%"
+                                                    aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar">
+                                            </div>
+                                        </div>
+                                        <span class="progress-percent">98%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="/static/images/country/usa-icon.png" width="18" title="美国" alt="美国">
+                                        <span class="country-name">美国</span>
+                                    </td>
+                                    <td>12,924</td>
+                                    <td>
+                                        <div class="progress progress-xs mb-0">
+                                            <div class="progress-bar bg-primary" style="width: 9%" aria-valuemax="100"
+                                                    aria-valuemin="0" aria-valuenow="9" role="progressbar"></div>
+                                        </div>
+                                        <span class="progress-percent">9%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="/static/images/country/uk-icon.png" width="18" title="英国" alt="英国">
+                                        <span class="country-name">英国</span>
+                                    </td>
+                                    <td>11,246</td>
+                                    <td>
+                                        <div class="progress progress-xs mb-0">
+                                            <div class="progress-bar bg-primary" style="width: 0.6%" aria-valuemax="100"
+                                                    aria-valuemin="0" aria-valuenow="0.6" role="progressbar"></div>
+                                        </div>
+                                        <span class="progress-percent">0.6%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="/static/images/country/canada-icon.png" width="18" title="加拿大"
+                                                alt="加拿大">
+                                        <span class="country-name">加拿大</span>
+                                    </td>
+                                    <td>10,468</td>
+                                    <td>
+                                        <div class="progress progress-xs mb-0">
+                                            <div class="progress-bar bg-primary" style="width: 0.2%" aria-valuemax="100"
+                                                    aria-valuemin="0" aria-valuenow="0.2" role="progressbar"></div>
+                                        </div>
+                                        <span class="progress-percent">0.2%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="/static/images/country/germany-icon.png" width="18" title="德国"
+                                                alt="德国">
+                                        <span class="country-name">德国</span>
+                                    </td>
+                                    <td>8,246</td>
+                                    <td>
+                                        <div class="progress progress-xs mb-0">
+                                            <div class="progress-bar bg-primary" style="width: 0.1%" aria-valuemax="100"
+                                                    aria-valuemin="0" aria-valuenow="0.1" role="progressbar"></div>
+                                        </div>
+                                        <span class="progress-percent">0.1%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="/static/images/country/australia-icon.png" width="18" title="澳大利亚"
+                                                alt="澳大利亚">
+                                        <span class="country-name">澳大利亚</span>
+                                    </td>
+                                    <td>3,675</td>
+                                    <td>
+                                        <div class="progress progress-xs mb-0">
+                                            <div class="progress-bar bg-primary" style="width: 0.1%" aria-valuemax="100"
+                                                    aria-valuemin="0" aria-valuenow="0.1" role="progressbar"></div>
+                                        </div>
+                                        <span class="progress-percent">0.1%</span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/vendor/chartist/dist/chartist.min.js"></script>
+<script src="/vendor/raphael/raphael.min.js" data-name="raphael"></script>
+<script src="/vendor/morris.js/morris.min.js" data-name="morris" data-deps="raphael"></script>
+<script src="/vendor/matchHeight/dist/jquery.matchHeight-min.js"></script>
+<script src="/vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    // 折线图提示
+    // ------------------------------
+    (function () {
+
+        var options = {
+            showArea: true,
+            low: 0,
+            high: 8000,
+            height: 240,
+            fullWidth: true,
+            axisX: {
+                offset: 40
+            },
+            axisY: {
+                offset: 30,
+                labelInterpolationFnc: function (value) {
+                    if (value === 0) {
+                        return null;
+                    }
+                    return value / 1000 + 'k';
+                },
+                scaleMinSpace: 40
+            },
+            plugins: [
+                Chartist.plugins.tooltip()
+            ]
+        };
+
+        //本日
+        var dayLabelList = ['1:00-3:00', '3:00-6:00', '6:00-9:00', '9:00-12:00', '12:00-15:00', '15:00-18:00', '18:00-21:00', '21:00-1:00'];
+        var daySeries1List = {
+            name: 'series-1',
+            data: [0, 7300, 6200, 6833, 7568, 4620, 4856, 2998]
+        };
+        var daySeries2List = {
+            name: 'series-2',
+            data: [0, 3100, 7200, 5264, 5866, 2200, 3850, 1032]
+        };
+
+        //本周
+        var weekLabelList = ['周一', '周二', '周三', '周四', '周五', '周六', '周日', ''];
+        var weekSeries1List = {
+            name: 'series-1',
+            data: [0, 2400, 6200, 7833, 5568, 3620, 4856, 2998]
+        };
+        var weekSeries2List = {
+            name: 'series-2',
+            data: [0, 4100, 6800, 5264, 5866, 3200, 2850, 1032]
+        };
+
+        //本月
+        var monthLabelList = ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7"];
+        var monthSeries1List = {
+            name: 'series-1',
+            data: [0, 6400, 5200, 7833, 5568, 3620, 5856, 0]
+        };
+        var monthSeries2List = {
+            name: 'series-2',
+            data: [0, 3100, 4800, 5264, 6866, 3200, 2850, 1032]
+        };
+
+        var newScoreLineChart = function (chartId, labelList, series1List, series2List, options) {
+
+            var lineChart = new Chartist.Line(chartId, {
+                labels: labelList,
+                series: [series1List, series2List]
+            }, options);
+
+            //开始创建
+            lineChart.on('draw', function (data) {
+                var elem, parent;
+                if (data.type === 'point') {
+                    elem = data.element;
+                    parent = new Chartist.Svg(elem._node.parentNode);
+
+                    parent.elem('line', {
+                        x1: data.x,
+                        y1: data.y,
+                        x2: data.x + 0.01,
+                        y2: data.y,
+                        "class": 'ct-point-content'
+                    });
+                }
+            });
+        };
+
+        var createKindChart = function (clickli) {
+            var selectLi = clickli || $("#productOverviewWidget .product-filters").children(".active"),
+                chartId = selectLi.children("a").attr("href");
+
+            switch (chartId) {
+                case "#scoreLineToDay":
+                    newScoreLineChart(chartId, dayLabelList,
+                        daySeries1List, daySeries2List, options);
+                    break;
+                case "#scoreLineToWeek":
+                    newScoreLineChart(chartId, weekLabelList,
+                        weekSeries1List, weekSeries2List, options);
+                    break;
+                case "#scoreLineToMonth":
+                    newScoreLineChart(chartId, monthLabelList,
+                        monthSeries1List, monthSeries2List, options);
+                    break;
+            }
+        };
+
+        createKindChart();
+
+        $(".product-filters li").on("click", function () {
+            createKindChart($(this));
+        });
+
+    })();
+
+    //// 浏览器排行
+    // ------------------------------
+    (function () {
+        var overlappingBarsDataOne = {
+            labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+            series: [
+                [3, 4, 6, 10, 8, 6, 3, 4],
+                [2, 3, 5, 8, 6, 5, 4, 3]
+            ]
+        };
+        var overlappingBarsDataTwo = {
+            labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+            series: [
+                [2, 4, 5, 10, 6, 8, 3, 5],
+                [3, 5, 6, 5, 4, 6, 3, 3]
+            ]
+        };
+        var overlappingBarsDataThree = {
+            labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+            series: [
+                [5, 2, 6, 7, 10, 8, 6, 5],
+                [4, 3, 5, 6, 8, 6, 4, 3]
+            ]
+        };
+        /*var overlappingBarsDataFour = {
+         labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+         series: [
+         [2, 1, 5, 6, 7, 10, 8, 5],
+         [4, 3, 4, 5, 5, 8, 6, 3]
+         ]
+         };*/
+
+        var barsData = [overlappingBarsDataOne, overlappingBarsDataTwo, overlappingBarsDataThree, overlappingBarsDataThree];
+
+        var overlappingBarsOptions = {
+            low: 0,
+            high: 10,
+            seriesBarDistance: 6,
+            fullWidth: true,
+            axisX: {
+                showLabel: false,
+                showGrid: false,
+                offset: 0
+            },
+            axisY: {
+                showLabel: false,
+                showGrid: false,
+                offset: 0
+            },
+            chartPadding: {
+                //   top: 20,
+                //   right: 115,
+                //   bottom: 55,
+                left: 30
+            }
+        };
+
+        var responsiveOptions = [
+            ['screen and (max-width: 640px)', {
+                seriesBarDistance: 6,
+                axisX: {
+                    labelInterpolationFnc: function (value) {
+                        return value[0];
+                    }
+                }
+            }]
+        ];
+
+        var createBar = function (chartId, data, options, responsiveOptions) {
+            new Chartist.Bar(chartId, data, options, responsiveOptions);
+        };
+
+        $("#productOptionsData .ct-chart").each(function (index) {
+            createBar(this, barsData[index], overlappingBarsOptions, responsiveOptions);
+        });
+
+    })();
+
+    //// 周条形图
+    // ------------------------------
+    (function () {
+        new Chartist.Bar('#weekStackedBarChart', {
+                labels: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+                series: [
+                    [4, 4.5, 5, 6, 7, 7.5, 7],
+                    [6, 5.5, 5, 4, 3, 2.5, 3]
+                ]
+            }, {
+                stackBars: true
+            }
+        ).on('draw', function (data) {
+            if (data.type === 'bar') {
+                data.element.attr({
+                    style: 'stroke-width: 20px'
+                });
+            }
+        });
+    })();
+
+
+    // 环形图
+    // ---------------------
+    (function () {
+
+        var map = Morris.Donut({
+            resize: true,
+            element: 'browersVistsDonut',
+            data: [{
+                label: 'Chrome',
+                value: 425
+            }, {
+                label: 'Firfox',
+                value: 1670
+            }, {
+                label: 'Safari',
+                value: 1100
+            }],
+            colors: ['#f96868', '#62a9eb', '#f3a754']
+        });
+
+        window.morris = [];
+        window.morris.push(map);
+
+    })();
+
+})(document, window, jQuery);
+</script>

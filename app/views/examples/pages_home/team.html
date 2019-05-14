@@ -1,0 +1,1230 @@
+<title>团队协作型 - 页面示例</title>
+
+<link rel="stylesheet" href="/vendor/chartist/dist/chartist.min.css">
+<link rel="stylesheet" href="/vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="/lib/jquery-selective/jquery-selective.css">
+<link rel="stylesheet" href="/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
+
+<style>
+.bootbox .modal-dialog {
+    width: 360px
+}
+
+.card-completed-options .pie-progress {
+    max-width: 120px;
+    min-width: 120px;
+    margin: 10px 0
+}
+
+.card-lg .card-title {
+    margin: 0;
+    font-weight: 300;
+    color: #37474f
+}
+
+.row div[class^=col-]:last-child .card-title {
+    display: inline;
+    line-height: 32px
+}
+
+.row div[class^=col-]:nth-last-child(2) .card-title {
+    margin-top: 12px;
+    margin-bottom: 21px
+}
+
+#teamCompletedWidget .counter-label {
+    font-size: 26px;
+    color: #37474f
+}
+
+#teamCompletedWidget .counter-number-group span:first-child {
+    color: #ff4c52;
+    font-size: 48px
+}
+
+#teamCompletedWidget .counter-number-group span:last-child {
+    margin-left: 30px;
+    font-size: 30px;
+    color: #37474f
+}
+
+#teamCompletedWidget .list-inline {
+    float: right;
+    margin-top: 74px;
+    margin-bottom: 20px
+}
+
+#teamCompletedWidget .list-inline li {
+    padding: 0
+}
+
+#teamCompletedWidget .list-inline li:first-child,#teamCompletedWidget .list-inline li:last-child {
+    position: relative
+}
+
+#teamCompletedWidget .list-inline li:first-child::before,#teamCompletedWidget .list-inline li:last-child::before {
+    display: inline-block;
+    position: absolute;
+    bottom: 5px;
+    left: -22px;
+    content: '';
+    width: 10px;
+    height: 10px
+}
+
+#teamCompletedWidget .list-inline li:first-child {
+    margin-right: 60px;
+    color: #a3afb7
+}
+
+#teamCompletedWidget .list-inline li:first-child::before {
+    background-color: #0bb2d4
+}
+
+#teamCompletedWidget .list-inline li:last-child {
+    color: #526069
+}
+
+#teamCompletedWidget .list-inline li:last-child::before {
+    background-color: #a57afa
+}
+
+#teamCompletedWidget .card-block {
+    min-width: 480px
+}
+
+#teamCompletedWidget .ct-grids .ct-vertical {
+    stroke-dasharray: 6
+}
+
+#teamCompletedWidget .ct-grids .ct-horizontal {
+    stroke: none
+}
+
+#teamCompletedWidget .ct-grids .ct-point-label {
+    stroke: #fff;
+    stroke-width: 60px
+}
+
+#teamCompletedWidget .ct-labels .ct-horizontal {
+    display: block;
+    padding-top: 10px;
+    margin-left: -28px;
+    font-size: 14px;
+    color: #76838f
+}
+
+#teamCompletedWidget .ct-labels .ct-vertical {
+    margin-top: 5px
+}
+
+#teamCompletedWidget .ct-area {
+    fill-opacity: .8
+}
+
+#teamCompletedWidget .ct-series .ct-point,#teamCompletedWidget .ct-series .ct-point-content {
+    opacity: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s
+}
+
+#teamCompletedWidget .ct-series:hover .ct-point,#teamCompletedWidget .ct-series:hover .ct-point-content {
+    opacity: 1
+}
+
+#teamCompletedWidget .ct-series.ct-series-a .ct-area {
+    fill: #a57afa
+}
+
+#teamCompletedWidget .ct-series.ct-series-a .ct-line {
+    stroke: #a57afa;
+    stroke-width: 1px
+}
+
+#teamCompletedWidget .ct-series.ct-series-a .ct-point {
+    stroke: #9463f7;
+    stroke-width: 12px;
+    cursor: pointer
+}
+
+#teamCompletedWidget .ct-series.ct-series-a .ct-point-content {
+    stroke: #fff;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    pointer-events: none
+}
+
+#teamCompletedWidget .ct-series.ct-series-b .ct-area {
+    fill: #28c0de
+}
+
+#teamCompletedWidget .ct-series.ct-series-b .ct-line {
+    stroke: #28c0de;
+    stroke-width: 1px
+}
+
+#teamCompletedWidget .ct-series.ct-series-b .ct-point {
+    stroke: #0bb2d4;
+    stroke-width: 12px;
+    cursor: pointer
+}
+
+#teamCompletedWidget .ct-series.ct-series-b .ct-point-content {
+    stroke: #fff;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    pointer-events: none
+}
+
+#personalCompletedWidget {
+    height: -webkit-calc(100% - 30px);
+    height: calc(100% - 30px)
+}
+
+#personalCompletedWidget .card-header {
+    display: inline-block;
+    position: relative;
+    height: 270px;
+    width: 100%;
+    text-align: center
+}
+
+#personalCompletedWidget .card-header img {
+    height: 100%
+}
+
+#personalCompletedWidget .card-header .avatar {
+    width: 120px
+}
+
+#personalCompletedWidget .overlay-background {
+    background: rgba(109,69,188,.8)
+}
+
+#personalCompletedWidget .card-block {
+    padding: 48px 30px 0
+}
+
+#personalCompletedWidget .counter-number {
+    margin-top: 10px;
+    font-size: 40px
+}
+
+#personalCompletedWidget .table-responsive {
+    border: none;
+    margin-bottom: 0
+}
+
+#personalCompletedWidget caption {
+    padding-top: 0;
+    padding-bottom: 10px;
+    color: #37474f;
+    font-weight: 400
+}
+
+#recentActivityWidget .timeline-content .title,#toDoListWidget .wb-plus {
+    color: #76838f
+}
+
+#personalCompletedWidget .table {
+    min-width: 350px;
+    margin-bottom: 0
+}
+
+#personalCompletedWidget .table td {
+    padding: 20px 0 19px;
+    width: 40%
+}
+
+#personalCompletedWidget .table td:last-child {
+    width: 20%;
+    text-align: right
+}
+
+#personalCompletedWidget .progress {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle
+}
+
+#toDoListWidget .card-header::after,#toDoListWidget .item-members::after,#toDoListWidget .list-group-item::after {
+    display: block;
+    clear: both;
+    content: ""
+}
+
+#toDoListWidget {
+    height: -webkit-calc(100% - 30px);
+    height: calc(100% - 30px)
+}
+
+#toDoListWidget img {
+    width: 30px
+}
+
+#toDoListWidget .card-header {
+    line-height: 1
+}
+
+#toDoListWidget .card-header-actions {
+    margin-top: 12px;
+    margin-right: 14px
+}
+
+#toDoListWidget .list-group {
+    margin: 0 30px
+}
+
+#toDoListWidget .list-group-item {
+    padding: 20px 0;
+    margin-bottom: 0;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    cursor: pointer
+}
+
+#toDoListWidget .list-group-item .checkbox-custom {
+    margin: 0
+}
+
+#toDoListWidget .list-group-item .checkbox-custom label {
+    padding-left: 20px;
+    padding-bottom: 2px
+}
+
+#toDoListWidget .list-group-item .checkbox-custom input:checked+label {
+    text-decoration: line-through
+}
+
+#toDoListWidget .item-due-date {
+    float: left
+}
+
+#toDoListWidget .item-due-date span {
+    line-height: 34px;
+    margin-left: 44px
+}
+
+#toDoListWidget .item-members {
+    float: right;
+    padding: 0;
+    margin-top: 4px;
+    text-align: right;
+    white-space: normal;
+    list-style-type: none
+}
+
+#toDoListWidget .item-members li {
+    float: left;
+    position: relative;
+    margin-left: 10px
+}
+
+#toDoListWidget .item-members li:not(:hover) .avatar+button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0
+}
+
+#toDoListWidget .item-members li:hover .avatar {
+    display: none
+}
+
+#recentActivityWidget .card-header::after,#recentActivityWidget .timeline-content-wrap::after {
+    display: block;
+    clear: both;
+    content: ""
+}
+
+#toDoListWidget .item-members li:hover button {
+    opacity: 1
+}
+
+#toDoListWidget .item-members li button {
+    width: 30px;
+    height: 30px;
+    padding: 7px
+}
+
+#recentActivityWidget {
+    height: -webkit-calc(100% - 30px);
+    height: calc(100% - 30px)
+}
+
+#recentActivityWidget .card-header .badge {
+    padding: 3px 21px;
+    line-height: 26px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #76838f;
+    cursor: pointer
+}
+
+#recentActivityWidget .timeline {
+    margin-left: 50px;
+    margin-right: 30px;
+    margin-bottom: 0
+}
+
+#recentActivityWidget .timeline::before {
+    left: 0;
+    top: 20px;
+    width: 1px;
+    height: 85%;
+    margin-left: 0;
+    background-color: #e5e5e5
+}
+
+#recentActivityWidget .timeline>li {
+    width: 100%;
+    padding-left: 49px;
+    padding-right: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    cursor: pointer
+}
+
+#recentActivityWidget .timeline>li:last-child .timeline-content-wrap {
+    border-bottom: none
+}
+
+#recentActivityWidget .timeline-content-wrap {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+#recentActivityWidget .timeline-icon .timeline-reverse .timeline-dot {
+    top: 12px
+}
+
+#recentActivityWidget .timeline-content .title .authors,#recentActivityWidget .timeline-content .title .room-number {
+    margin-right: 5px;
+    font-weight: 400;
+    color: #37474f
+}
+
+#recentActivityWidget .timeline-content .metas {
+    padding: 3px 0;
+    color: #a3afb7
+}
+
+#recentActivityWidget .timeline-content .members,#recentActivityWidget .timeline-content .operates,#recentActivityWidget .timeline-content .photos {
+    padding-left: 0;
+    margin-top: 7px;
+    list-style-type: none
+}
+
+#recentActivityWidget .timeline-content .members>li {
+    display: inline-block;
+    margin-right: 10px
+}
+
+#recentActivityWidget .timeline-content .members .avatar-sm {
+    width: 27px
+}
+
+#recentActivityWidget .timeline-content .photos::after {
+    display: block;
+    clear: both;
+    content: ""
+}
+
+#recentActivityWidget .timeline-content .photos>li {
+    float: left;
+    width: 31%;
+    margin-right: 3%
+}
+
+#recentActivityWidget .timeline-content .photos>li:last-child {
+    margin-right: 0
+}
+
+#recentActivityWidget .timeline-content .operates>li {
+    display: inline-block;
+    margin-right: 15px
+}
+
+#recentActivityWidget .timeline-content .operates .btn {
+    width: 103px;
+    height: 30px;
+    line-height: 16px;
+    color: #76838f
+}
+
+#recentActivityWidget .timeline-content .operates .btn:focus,#recentActivityWidget .timeline-content .operates .btn:hover {
+    color: #fff
+}
+
+@media screen and (min-width:992px) and (max-width:1599px) {
+    .card-completed-options .pie-progress {
+        min-width: 100px
+    }
+}
+
+@media (max-width:991.98px) {
+    #teamCompletedWidget .list-inline {
+        float: left;
+        margin-top: 20px;
+        margin-left: 40px
+    }
+}
+
+@media (min-width:480px) and (max-width:991.98px) {
+    .card-completed-options {
+        height: -webkit-calc(100% - 30px);
+        height: calc(100% - 30px)
+    }
+
+    .card-completed-options .col-xs-6 {
+        width: 100%
+    }
+
+    .card-completed-options .counter::after {
+        display: block;
+        clear: both;
+        content: ""
+    }
+
+    .card-completed-options .counter-label {
+        display: inline-block
+    }
+
+    .card-completed-options .counter-number {
+        float: left;
+        margin-right: 20px;
+        font-size: 14px!important;
+        font-weight: 400
+    }
+
+    .card-completed-options .pie-progress {
+        min-width: 50px;
+        margin: 20px auto 10px
+    }
+}
+
+@media (max-width:479.98px) {
+    .card-completed-options .pie-progress {
+        min-width: 100px
+    }
+
+    #recentActivityWidget .timeline-content .operates>li {
+        display: block;
+        margin-right: 0;
+        margin-top: 10px;
+        padding-bottom: 1px
+    }
+
+    #recentActivityWidget .timeline-content .operates .btn {
+        height: 25px;
+        line-height: 11px;
+        width: 85px
+    }
+}
+
+@media screen and (max-width:400px) {
+    #personalCompletedWidget .total-completed {
+        font-size: 10px;
+        line-height: 22px
+    }
+
+    #personalCompletedWidget .card-block {
+        padding: 30px 15px 0
+    }
+}
+</style>
+
+<div class="page animation-fade page-team">
+    <div class="page-content p-30 container-fluid">
+        <div class="row" data-plugin="matchHeight" data-by-row="true">
+
+            <div class="col-xxl-3">
+                <div class="row h-full" data-plugin="matchHeight">
+                    <div class="col-xxl-12 col-lg-4 col-sm-4">
+                        <div class="card card-shadow card-completed-options">
+                            <div class="card-block p-30">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="counter text-left blue-grey-700">
+                                            <div class="counter-label mt-10">任务一完成
+                                            </div>
+                                            <div class="counter-number font-size-40 mt-10">
+                                                1,234
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="pie-progress pie-progress-sm" data-valuemax="100" data-barcolor="#57c7d4"
+                                                data-size="100" data-barsize="10" data-goal="86" aria-valuenow="86" role="progressbar">
+                                            <span class="pie-progress-number blue-grey-700 font-size-20">86%</span>
+                                        </div>
+                                        <div id="taskOne" style="height: 120px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-12 col-lg-4 col-sm-4">
+                        <div class="card card-shadow card-completed-options">
+                            <div class="card-block p-30">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="counter text-left blue-grey-700">
+                                            <div class="counter-label mt-10">任务二完成
+                                            </div>
+                                            <div class="counter-number font-size-40 mt-10">
+                                                698
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="pie-progress pie-progress-sm" data-valuemax="100" data-barcolor="#62a8ea"
+                                                data-size="100" data-barsize="10" data-goal="62" aria-valuenow="62" role="progressbar">
+                                            <span class="pie-progress-number blue-grey-700 font-size-20">62%</span>
+                                        </div>
+                                        <div id="taskTwo" style="height: 120px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-12 col-lg-4 col-sm-4">
+                        <div class="card card-shadow card-completed-options">
+                            <div class="card-block p-30">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="counter text-left blue-grey-700">
+                                            <div class="counter-label mt-10">任务三完成
+                                            </div>
+                                            <div class="counter-number font-size-40 mt-10">
+                                                1,358
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="pie-progress pie-progress-sm" data-valuemax="100" data-barcolor="#926dde"
+                                                data-size="100" data-barsize="10" data-goal="56" aria-valuenow="56" role="progressbar">
+                                            <span class="pie-progress-number blue-grey-700 font-size-20">56%</span>
+                                        </div>
+                                        <div id="taskThree" style="height: 120px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xxl-9">
+                <div id="teamCompletedWidget" class="card card-shadow example-responsive">
+                    <div class="widget-content p-20 pb-25">
+                        <div class="row pb-40" data-plugin="matchHeight">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="counter text-left pl-10">
+                                    <div class="counter-label">团队任务完成情况</div>
+                                    <div class="counter-number-group text-truncate">
+                                        <span>1,439</span>
+                                        <span>86%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <ul class="list-inline mr-50">
+                                    <li class="list-inline-item">
+                                        任务一
+                                    </li>
+                                    <li class="list-inline-item">
+                                        任务二
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ct-chart"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xxl-4 col-xl-6 col-lg-6">
+                <div id="personalCompletedWidget" class="card card-shadow pb-20">
+                    <div class="card-header card-header-transparent cover overlay">
+                        <img class="cover-image" src="/static/images/placeholder.png">
+                        <div class="overlay-panel overlay-background vertical-align">
+                            <div class="vertical-align-middle">
+                                <a class="avatar" href="javascript:;">
+                                    <img alt="" src="/static/images/portraits/4.jpg">
+                                </a>
+                                <div class="font-size-20 mt-10">吕佳</div>
+                                <div class="font-size-14">lv.jia@163.com</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="row text-center mb-20">
+                            <div class="col-6">
+                                <div class="counter">
+                                    <div class="counter-label total-completed">总完成</div>
+                                    <div class="counter-number red-600">8</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="counter">
+                                    <div class="counter-label">总用时</div>
+                                    <div class="counter-number blue-600">17</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <caption>日报</caption>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        任务一
+                                    </td>
+                                    <td>
+                                        <div class="progress progress-xs mb-0">
+                                            <div class="progress-bar progress-info" role="progressbar"
+                                                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        90%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        任务二
+                                    </td>
+                                    <td>
+                                        <div class="progress progress-xs mb-0">
+                                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="86"
+                                                    aria-valuemin="0" aria-valuemax="100" style="width: 86%"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        86%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        任务三
+                                    </td>
+                                    <td>
+                                        <div class="progress progress-xs mb-0">
+                                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="68"
+                                                    aria-valuemin="0" aria-valuemax="100" style="width: 68%"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        68%
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xxl-4 col-xl-6 col-lg-6">
+                <div id="toDoListWidget" class="card card-shadow">
+                    <div class="card-header card-header-transparent pl-30">
+                        <a id="addNewItemBtn" href="javascript:;" class="card-header-actions add-item-toggle float-right">
+                            <i class="icon wb-plus" aria-hidden="true"></i>
+                        </a>
+                        <h5 class="card-title mb-10">待办事项</h5>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="checkbox-custom checkbox-success checkbox-lg">
+                                <input type="checkbox" name="checkbox" checked="checked">
+                                <label class="item-title">会议室开总结大会</label>
+                            </div>
+                            <div class="item-due-date">
+                                <span>9.12</span>
+                            </div>
+                            <ul class="item-members">
+                                <li>
+                                    <img class="avatar avatar-sm" src="/static/images/portraits/3.jpg">
+                                    <button class="btn btn-sm btn-icon btn-default btn-outline btn-round">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox-custom checkbox-success checkbox-lg">
+                                <input type="checkbox" name="checkbox" checked="checked">
+                                <label class="item-title">确定 X 项目的原型图</label>
+                            </div>
+                            <div class="item-due-date">
+                                <span>9.12</span>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox-custom checkbox-success checkbox-lg">
+                                <input type="checkbox" name="checkbox">
+                                <label class="item-title">修复不支持IE6的问题</label>
+                            </div>
+                            <div class="item-due-date">
+                                <span>未确定日期</span>
+                            </div>
+                            <ul class="item-members">
+                                <li>
+                                    <img class="avatar avatar-sm" src="/static/images/portraits/1.jpg">
+                                    <button class="btn btn-sm btn-icon btn-default btn-outline btn-round">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <img class="avatar avatar-sm" src="/static/images/portraits/5.jpg">
+                                    <button class="btn btn-sm btn-icon btn-default btn-outline btn-round">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox-custom checkbox-success checkbox-lg">
+                                <input type="checkbox" name="checkbox">
+                                <label class="item-title">修复Bug</label>
+                            </div>
+                            <div class="item-due-date">
+                                <span>9.15</span>
+                            </div>
+                            <ul class="item-members">
+                                <li>
+                                    <button class="btn btn-sm btn-icon btn-default btn-outline btn-round">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox-custom checkbox-success checkbox-lg">
+                                <input type="checkbox" name="checkbox">
+                                <label class="item-title">汇报 X 项目的进展</label>
+                            </div>
+                            <div class="item-due-date">
+                                <span>9.15</span>
+                            </div>
+                            <ul class="item-members">
+                                <li>
+                                    <img class="avatar avatar-sm" src="/static/images/portraits/4.jpg">
+                                    <button class="btn btn-sm btn-icon btn-default btn-outline btn-round">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <img class="avatar avatar-sm" src="/static/images/portraits/6.jpg">
+                                    <button class="btn btn-sm btn-icon btn-default btn-outline btn-round">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </li>
+                                <li>
+                                    <img class="avatar avatar-sm" src="/static/images/portraits/7.jpg">
+                                    <button class="btn btn-sm btn-icon btn-default btn-outline btn-round">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xxl-4">
+                <div id="recentActivityWidget" class="card card-shadow pb-20">
+                    <div class="card-header card-header-transparent">
+                        <div class="card-header-actions">
+                            <span class="badge badge-default label-round float-right">查看所有</span>
+                        </div>
+                        <h5 class="card-title">
+                            近期动态 </h5>
+                    </div>
+                    <ul class="timeline timeline-icon">
+                        <li class="timeline-reverse">
+                            <div class="timeline-content-wrap">
+                                <div class="timeline-dot bg-green-600">
+                                    <i class="icon wb-chat" aria-hidden="true"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="title">
+                                        <span class="authors">南学斌</span> 指派了新任务
+                                    </div>
+                                    <div class="metas">
+                                        14 分钟前
+                                    </div>
+                                    <ul class="members">
+                                        <li>
+                                            <img class="avatar avatar-sm" src="/static/images/portraits/7.jpg">
+                                        </li>
+                                        <li>
+                                            <img class="avatar avatar-sm" src="/static/images/portraits/6.jpg">
+                                        </li>
+                                        <li>
+                                            <img class="avatar avatar-sm" src="/static/images/portraits/8.jpg">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-reverse">
+                            <div class="timeline-content-wrap">
+                                <div class="timeline-dot bg-blue-600">
+                                    <i class="icon wb-image" aria-hidden="true"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="title">
+                                        <span class="authors">吕佳</span> 上传了 3 张图片
+                                    </div>
+                                    <div class="metas">
+                                        2 小时前
+                                    </div>
+                                    <ul class="photos">
+                                        <li class="cover">
+                                            <img class="cover-image" src="/static/images/photos/animal-4.jpg">
+                                        </li>
+                                        <li class="cover">
+                                            <img class="cover-image" src="/static/images/photos/animal-2.jpg">
+                                        </li>
+                                        <li class="cover">
+                                            <img class="cover-image" src="/static/images/photos/animal-3.jpg">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-reverse">
+                            <div class="timeline-content-wrap">
+                                <div class="timeline-dot bg-cyan-600">
+                                    <i class="icon wb-file" aria-hidden="true"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="title">
+                                        <span class="authors">赵烁利</span> 上传了工作日报
+                                    </div>
+                                    <div class="metas">
+                                        4 小时前
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-reverse">
+                            <div class="timeline-content-wrap">
+                                <div class="timeline-dot bg-orange-600">
+                                    <i class="icon wb-map" aria-hidden="true"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="title">
+                                        <span class="authors">付于倩</span> 提交了武汉出差申请
+                                    </div>
+                                    <div class="metas">
+                                        3 小时前
+                                    </div>
+                                    <ul class="operates">
+                                        <li>
+                                            <button class="btn btn-outline btn-success btn-round">同意</button>
+                                        </li>
+                                        <li>
+                                            <button class="btn btn-outline btn-danger btn-round">拒绝</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="addtodoItemForm" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="addtodoItemForm"
+        aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content form-horizontal" role="form" action="#" method="post">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="moadl-title">创建新任务</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="title">标题：</label>
+                    <div class="col-sm-10">
+                        <input id="title" class="form-control" type="text" name="title">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="dueDate">完成日期</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input id="dueDate" class="form-control" type="text" data-plugin="datepicker" data-language="zh-CN"
+                                    data-container="#addtodoItemForm">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="icon wb-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="people">人员</label>
+                    <div class="col-sm-10">
+                        <select id="people" multiple="multiple" data-plugin="jquery-selective"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-actions">
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                        添加
+                    </button>
+                    <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;"> 取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="edittodoItemForm" aria-hidden="true" aria-labelledby="edittodoItemForm" role="dialog"
+        tabindex="-1" data-show="false">
+    <div class="modal-dialog">
+        <form class="modal-content form-horizontal" action="#" method="post" role="form">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+                <h4 class="modal-title">编辑任务列表</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="editTitle">标题</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="editTitle" name="editTitle">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="editDueDate">完成日期</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="editDueDate" name="editDueDate" data-container="#edittodoItemForm"
+                                    data-plugin="datepicker" data-language="zh-CN">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="icon wb-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="editPeople">人员</label>
+                    <div class="col-sm-10">
+                        <select id="editPeople" multiple="multiple" data-plugin="jquery-selective"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-actions">
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">保存</button>
+                    <button class="btn btn-danger" data-dismiss="modal" type="button">删除</button>
+                    <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="/vendor/chartist/dist/chartist.min.js" data-name="chartist"></script>
+<script src="/vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js" data-deps="chartist"></script>
+<script src="/vendor/matchHeight/dist/jquery.matchHeight-min.js"></script>
+<script src="/vendor/jquery-selective/dist/jquery-selective.min.js"></script>
+<script src="/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" data-name="datepicker"></script>
+<script src="/vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js" data-deps="datepicker"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    window.Content = {
+        chartExample: function () { // 折线图提示
+            var options = {
+                showArea: true,
+                low: 0,
+                high: 1000,
+                height: 453,
+                fullWidth: true,
+                axisX: {
+                    offset: 30
+                },
+                axisY: {
+                    offset: 30,
+                    labelInterpolationFnc: function (value) {
+                        if (value === 0) {
+                            return null;
+                        }
+                        return value;
+                    },
+                    scaleMinSpace: 50
+                },
+                chartPadding: {
+                    bottom: 12,
+                    left: 10
+                },
+                plugins: [
+                    Chartist.plugins.tooltip()
+                ]
+            };
+
+            var labelList = ['4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月', '1月', '2月', '3月'];
+            var series1List = {
+                name: 'series-1',
+                data: [0, 180, 600, 980, 850, 600, 300, 350, 600, 200, 630, 350]
+            };
+            var series2List = {
+                name: 'series-2',
+                data: [0, 100, 520, 810, 620, 500, 630, 400, 380, 405, 210, 220]
+
+            };
+
+            var newScoreLineChart = function (chartId, labelList, series1List, series2List, options) {
+
+                var lineChart = new Chartist.Line(chartId, {
+                    labels: labelList,
+                    series: [series1List, series2List]
+                }, options);
+
+                lineChart.on('draw', function (data) {
+                    var elem, parent;
+                    if (data.type === 'point') {
+                        elem = data.element;
+                        parent = new Chartist.Svg(elem._node.parentNode);
+
+                        parent.elem('line', {
+                            x1: data.x,
+                            y1: data.y,
+                            x2: data.x + 0.01,
+                            y2: data.y,
+                            "class": 'ct-point-content'
+                        });
+                    }
+                });
+            };
+
+            newScoreLineChart("#teamCompletedWidget .ct-chart", labelList,
+                series1List, series2List, options);
+        },
+        waitingThing: function () { // 待办事项
+            var handleSelective = function (handleSelectiveItem) {
+                var member = [{
+                    id: 'uid_1',
+                    name: '周伊娅',
+                    avatar: '/static/images/portraits/1.jpg'
+                }, {
+                    id: 'uid_2',
+                    name: '程思思',
+                    avatar: '/static/images/portraits/2.jpg'
+                }, {
+                    id: 'uid_3',
+                    name: '张倩',
+                    avatar: '/static/images/portraits/3.jpg'
+                }, {
+                    id: 'uid_4',
+                    name: '蒋海燕',
+                    avatar: '/static/images/portraits/4.jpg'
+                }];
+
+
+                $('[data-plugin="jquery-selective"]').selective({
+                    namespace: 'addMember',
+                    local: member,
+                    selected: handleSelectiveItem,
+                    buildFromHtml: false,
+                    tpl: {
+                        optionValue: function (data) {
+                            return data.id;
+                        },
+                        frame: function () {
+                            return '<div class="' + this.namespace + '">' +
+                                this.options.tpl.items.call(this) +
+                                '<div class="' + this.namespace + '-trigger">' +
+                                this.options.tpl.triggerButton.call(this) +
+                                '<div class="' + this.namespace + '-trigger-dropdown">' +
+                                this.options.tpl.list.call(this) +
+                                '</div>' +
+                                '</div>' +
+                                '</div>';
+                        },
+                        triggerButton: function () {
+                            return '<div class="' + this.namespace + '-trigger-button"><i class="wb-plus"></i></div>';
+                        },
+                        listItem: function (data) {
+                            return '<li class="' + this.namespace + '-list-item"><img class="avatar" src="' + data.avatar + '">' + data.name + '</li>';
+                        },
+                        item: function (data) {
+                            return '<li class="' + this.namespace + '-item"><img class="avatar" src="' + data.avatar + '" title="' + data.name + '">' +
+                                this.options.tpl.itemRemove.call(this) +
+                                '</li>';
+                        },
+                        itemRemove: function () {
+                            return '<span class="' + this.namespace + '-remove"><i class="wb-minus-circle"></i></span>';
+                        },
+                        option: function (data) {
+                            return '<option value="' + this.options.tpl.optionValue.call(this, data) + '">' + data.name + '</option>';
+                        }
+                    }
+                });
+            };
+
+            $('#addNewItemBtn').on('click', function () {
+                var handleSelectiveItem = [{
+                    id: 'uid_1',
+                    name: '程思思',
+                    avatar: '/static/images/portraits/1.jpg'
+                }, {
+                    id: 'uid_2',
+                    name: '蒋海燕',
+                    avatar: '/static/images/portraits/2.jpg'
+                }];
+
+                handleSelective(handleSelectiveItem);
+
+                $('#addtodoItemForm').modal('show');
+            });
+
+            $("#toDoListWidget .list-group-item input").on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            $('#toDoListWidget .list-group-item').on('click', function () {
+                var oldTitle = $(this).find(".item-title").text();
+                var dueDate = $(this).find(".item-due-date > span").text();
+                if (dueDate === "No due date") {
+                    dueDate = null;
+                } else {
+                    dueDate = "8/25/2015";
+                }
+
+                $("#editTitle").val(oldTitle);
+                $("#editDueDate").val(dueDate);
+                var handleSelectiveItem = [];
+                handleSelective(handleSelectiveItem);
+
+                $('#edittodoItemForm').modal('show');
+            });
+        },
+        run: function(){
+            this.chartExample();
+            this.waitingThing();
+        }
+    };
+})(document, window, jQuery);
+</script>

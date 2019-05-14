@@ -1,0 +1,525 @@
+<title>日期时间 - 表单示例</title>
+
+<link rel="stylesheet" href="/vendor/glyphicons/styles/glyphicons.css">
+<link rel="stylesheet" href="/vendor/clockpicker/dist/bootstrap-clockpicker.min.css">
+<link rel="stylesheet" href="/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/lib/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" href="/vendor/jt.timepicker/jquery.timepicker.min.css">
+
+<style>
+.bootstrap-select {
+    width: 100%!important
+}
+
+.datepair-wrap {
+    position: relative
+}
+
+.input-daterange-wrap {
+    float: left
+}
+
+.input-daterange-to {
+    float: left;
+    width: 40px;
+    height: 2.287rem;
+    line-height: 2.287rem;
+    text-align: center
+}
+
+@media (max-width:1360px) {
+    .input-daterange-to,.input-daterange-wrap {
+        display: block;
+        float: none
+    }
+}
+</style>
+
+<div class="page animation-fade page-forms">
+    <div class="page-header">
+        <h1 class="page-title">日期时间</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:;">首页</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">表单</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">高级表单元素</a>
+            </li>
+            <li class="breadcrumb-item active">日期时间</li>
+        </ol>
+    </div>
+    <div class="page-content container-fluid">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Clockpicker（时间选择器）
+                    <small>
+                        <a class="example-plugin-link" href="http://weareoutman.github.io/clockpicker/" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-md-6">
+                        <div class="example-wrap m-sm-0">
+                            <h4 class="example-title">默认</h4>
+                            <p>通过添加
+                                <code>data-plugin="clockpicker"</code> 来创建</p>
+                            <div class="example">
+                                <div class="input-group clockpicker-wrap" data-plugin="clockpicker">
+                                    <input type="text" class="form-control" value="09:30">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="wb-time" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">自动关闭</h4>
+                            <p>添加
+                                <code>data-autoclose="true"</code> 可实现自动关闭</p>
+                            <div class="example">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="wb-time" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="timepicker form-control" data-plugin="clockpicker"
+                                        data-autoclose="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Jquery Timepicker（时间选择器）
+                    <small>
+                        <a class="example-plugin-link" href="http://jonthornton.github.com/jquery-timepicker/" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap m-lg-0">
+                            <h4 class="example-title">基本</h4>
+                            <p>通过添加
+                                <code>data-plugin="timepicker"</code> 来创建</p>
+                            <div class="example">
+                                <div class="input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="wb-time" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" data-plugin="timepicker">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap m-sm-0">
+                            <h4 class="example-title">持续时间</h4>
+                            <p>添加
+                                <code>data-min-time</code>，
+                                <code>data-max-time</code>，
+                                <code>data-show-duration="true"</code> 来实现 </p>
+                            <div class="example">
+                                <div class="input-group">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="wb-time" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" data-plugin="timepicker" data-min-time="上午2:00"
+                                        data-max-time="下午11:30" data-show-duration="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">重置选择时间</h4>
+                            <p>您可以重置选择时间</p>
+                            <div class="example">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="inputTextCurrent" data-plugin="timepicker">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-primary" id="exampleTimeButton">重置时间</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Date Picker（日期选择器）
+                    <small>
+                        <a class="example-plugin-link" href="https://github.com/eternicode/bootstrap-datepicker" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">默认</h4>
+                            <p>通过添加
+                                <code>data-plugin="datepicker"</code> 来创建，通过
+                                <code>data-language="zh-CN"</code> 来设置显示中文，可使用
+                                <code>data-multidate="true"</code> 来设置允许多选</p>
+                            <div class="example">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="icon wb-calendar" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" data-plugin="datepicker" data-language="zh-CN">
+                                </div>
+                            </div>
+                            <div class="example">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="icon wb-calendar" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" data-plugin="datepicker" data-language="zh-CN"
+                                        data-multidate="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">日期范围</h4>
+                            <p>通过
+                                <code>name="start"</code> 和
+                                <code>name="end"</code> 可以设置日期范围</p>
+                            <div class="example">
+                                <div class="input-daterange" data-plugin="datepicker" data-language="zh-CN">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="icon wb-calendar" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" name="start" placeholder="开始时间">
+                                        <input type="text" class="form-control" name="end" placeholder="结束时间">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">内嵌</h4>
+                            <p>可以将其内嵌到页面中</p>
+                            <div class="example">
+                                <div id="inlineDatepicker" data-autoclose="false" data-date="2016/12/13"></div>
+                                <input type="hidden" id="inputHiddenInline">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Datepair.Js（日期选择）
+                    <small>
+                        <a class="example-plugin-link" href="http://jonthornton.github.com/Datepair.js" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <p>引用
+                    <code>datepair.js</code> 可同时显示日期选器和时间选择器</p>
+                <div class="example-wrap">
+                    <div class="example datepair-wrap" data-plugin="datepair">
+                        <div class="input-daterange-wrap">
+                            <div class="input-daterange">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="icon wb-calendar" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control datepair-date datepair-start" data-plugin="datepicker" data-language="zh-CN"
+                                        placeholder="开始日期">
+                                    <input type="text" class="form-control datepair-time datepair-start" data-plugin="timepicker"
+                                        placeholder="开始时间" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-daterange-to">至</div>
+                        <div class="input-daterange-wrap">
+                            <div class="input-daterange">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="icon wb-calendar" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control datepair-date datepair-end" name="end"
+                                        data-plugin="datepicker" data-language="zh-CN" placeholder="结束时间">
+                                    <input type="text" class="form-control datepair-time datepair-end" data-plugin="timepicker"
+                                        placeholder="结束日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Date Range Picker（日期范围选择）
+                    <small>
+                        <a class="example-plugin-link" href="https://github.com/dangrossman/bootstrap-daterangepicker"
+                            target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid" id="rangePickerConfig">
+                <p>可以通过
+                    <code>data-plugin="daterangepicker"</code> 直接调用日期范围选择插件，以下示例演示了插件的各种配置项</p>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <label for="parentEl">父元素 (parentEl)</label>
+                            <input type="text" class="form-control" id="parentEl" value="" placeholder="body">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="startDate">开始日期 (startDate)</label>
+                            <input type="text" class="form-control" id="startDate" value="2017-01-01">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="endDate">结束日期 (endDate)</label>
+                            <input type="text" class="form-control" id="endDate" value="2017-01-30">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="minDate">最小日期 (minDate)</label>
+                            <input type="text" class="form-control" id="minDate" value="" placeholder="YYYY-MM-DD">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="maxDate">最大日期 (maxDate)</label>
+                            <input type="text" class="form-control" id="maxDate" value="" placeholder="YYYY-MM-DD">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="opens">打开方式</label>
+                            <select id="opens" class="form-control">
+                                <option value="right" selected="">right</option>
+                                <option value="left">left</option>
+                                <option value="center">center</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="drops">下拉方式</label>
+                            <select id="drops" class="form-control">
+                                <option value="down" selected="">down</option>
+                                <option value="up">up</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="showDropdowns">
+                            <label for="showDropdowns">下拉显示 (showDropdowns)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="showWeekNumbers">
+                            <label for="showWeekNumbers">显示周数 (showWeekNumbers)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="showISOWeekNumbers">
+                            <label for="showISOWeekNumbers">显示ISO格式的周数 (showISOWeekNumbers)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="singleDatePicker">
+                            <label for="singleDatePicker">单日期选择器 (singleDatePicker)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="timePicker">
+                            <label for="timePicker">时间选择 (timePicker)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="timePicker24Hour">
+                            <label for="timePicker24Hour">24小时制的时间选择 (timePicker24Hour)</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timePickerIncrement">时间选择分钟数的步长 (timePickerIncrement)</label>
+                            <input type="text" class="form-control" id="timePickerIncrement" value="1">
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="timePickerSeconds">
+                            <label for="timePickerSeconds">时间选择显示秒数 (timePickerSeconds)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="dateLimit">
+                            <label for="dateLimit">日期限制 (dateLimit)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="locale">
+                            <label for="locale">本地化 (locale)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="autoApply">
+                            <label for="autoApply">自动消失 (autoApply)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="linkedCalendars" checked="checked">
+                            <label for="linkedCalendars">链接日历 (linkedCalendars)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="autoUpdateInput" checked="checked">
+                            <label for="autoUpdateInput">自动更新文本框 (autoUpdateInput)</label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="form-group">
+                            <label for="buttonClasses">按钮classes (buttonClasses)</label>
+                            <input type="text" class="form-control" id="buttonClasses" value="btn btn-sm">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="applyClass">确定按钮class (applyClass)</label>
+                            <input type="text" class="form-control" id="applyClass" value="btn-success">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cancelClass">取消按钮class (cancelClass)</label>
+                            <input type="text" class="form-control" id="cancelClass" value="btn-default">
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="ranges">
+                            <label for="ranges">范围 (ranges)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="alwaysShowCalendars">
+                            <label for="alwaysShowCalendars">始终显示 (alwaysShowCalendars)</label>
+                        </div>
+
+                        <div class="checkbox-custom checkbox-primary">
+                            <input type="checkbox" id="showCustomRangeLabel" checked="checked">
+                            <label for="showCustomRangeLabel">显示自定义范围标签 (showCustomRangeLabel)</label>
+                        </div>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4>示例</h4>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="icon wb-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="drpConfigDemo" placeholder="请选择日期范围" data-plugin="daterangepicker">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4>配置项</h4>
+                        <textarea class="form-control" rows="8" id="drpConfigText" readonly="readonly"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+<script src="/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" data-name="datepicker"></script>
+<script src="/vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js" data-deps="datepicker"></script>
+<script src="/vendor/jt.timepicker/jquery.timepicker.min.js"></script>
+<script src="/vendor/moment/min/moment.min.js" data-name="moment"></script>
+<script src="/lib/daterangepicker/daterangepicker.js" data-deps="moment"></script>
+<script src="/vendor/datepair.js/dist/jquery.datepair.min.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    window.Content = {
+        timeButton: function () { // 重置时间
+            $('#exampleTimeButton').on('click', function () {
+                $('#inputTextCurrent').timepicker('setTime', new Date());
+            });
+        },
+        inlineDatepicker: function () { // 内嵌日期选择器
+            var $inlineDatepicker = $('#inlineDatepicker');
+            $inlineDatepicker.datepicker($.po('datepicker',{
+                language: 'zh-CN'
+            }));
+            $inlineDatepicker.on("changeDate", function () {
+                $("#inputHiddenInline").val(
+                    $("#inlineDatepicker").datepicker('getFormattedDate')
+                );
+            });
+        },
+        run: function () {
+            this.inlineDatepicker();
+            this.timeButton();
+        }
+    };
+
+})(document, window, jQuery);
+</script>

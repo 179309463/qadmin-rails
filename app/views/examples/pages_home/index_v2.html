@@ -1,0 +1,426 @@
+<title>首页示例 02 - 页面示例</title>
+
+<link rel="stylesheet" href="/vendor/chartist/dist/chartist.min.css">
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+.page-index-v2 .page-header {
+    background-image: url("/static/images/dashboard-header.jpg");
+    -webkit-background-size: cover;
+            background-size: cover;
+}
+.page-index-v2 .widget, .page-index-v2 .panel {
+    height: -webkit-calc(100% - 30px);
+    height:         calc(100% - 30px);
+}
+.page-index-v2 .widget-content {
+    height: 100%;
+}
+#widgetLinearea .ct-chart .ct-label.ct-vertical, #widgetLinearea .ct-chart .ct-label.ct-horizontal {
+    font-size: 14px;
+}
+#widgetLinearea .ct-chart .ct-area {
+    fill-opacity: 1;
+}
+#widgetLinearea .ct-chart .ct-series.ct-series-a .ct-area {
+    fill: #d5e4f1;
+}
+#widgetLinearea .ct-chart .ct-series.ct-series-b .ct-area {
+    fill: #cdf4f1;
+}
+#widgetLinearea ul .icon {
+    vertical-align: text-bottom;
+}
+</style>
+
+<div class="page animation-fade page-index-v2">
+    <div class="page-header h-300 mb-30">
+        <div class="text-center blue-grey-800 mt-50 m-xs-0">
+            <div class="font-size-50 mb-30 blue-grey-800">李梦瑶</div>
+            <ul class="list-inline font-size-14">
+                <li class="list-inline-item">
+                    <i class="icon wb-map mr-5" aria-hidden="true"></i> 北京朝阳区
+                </li>
+                <li class="list-inline-item ml-20">
+                    <i class="icon wb-heart mr-5" aria-hidden="true"></i> 26,428
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-content container-fluid">
+        <div class="row" data-plugin="matchHeight" data-by-row="true">
+            <div class="col-xxl-3 col-xl-4 col-lg-12">
+
+                <div class="card card-shadow">
+                    <div class="widget-content text-center bg-white p-40">
+                        <div class="avatar avatar-100 mb-20">
+                            <img src="/static/images/portraits/1.jpg" alt="">
+                        </div>
+                        <p class="font-size-20 blue-grey-700">李梦瑶</p>
+                        <p class="blue-grey-400 mb-20">朝阳大妈</p>
+                        <p class="mb-35">北京大妈通过从小姑娘到大妈的几十年信息积累和网络构建... </p>
+                        <ul class="list-inline font-size-18 mb-35">
+                            <li class="list-inline-item">
+                                <a class="blue-grey-400" href="javascript:;">
+                                    <i class="icon fa fa-weibo" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item ml-10">
+                                <a class="blue-grey-400" href="javascript:;">
+                                    <i class="icon fa fa-wechat" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item  ml-10">
+                                <a class="blue-grey-400" href="javascript:;">
+                                    <i class="icon fa fa-qq" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-primary px-40">关注</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xxl-6 col-xl-8 col-lg-12">
+
+                <div class="card card-shadow example-responsive" id="widgetLinearea">
+                    <div class="widget-content p-30" style="min-width:480px;">
+                        <div class="row pb-20" style="height:calc(100% - 322px);">
+                            <div class="col-md-8 col-6">
+                                <div class="blue-grey-700">访问设备统计</div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="counter counter-md">
+                                            <div class="counter-number-group text-nowrap">
+                                                <span class="counter-number">76</span>
+                                                <span class="counter-number-related">%</span>
+                                            </div>
+                                            <div class="counter-label blue-grey-400">PC 浏览器</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="counter counter-md">
+                                            <div class="counter-number-group text-nowrap">
+                                                <span class="counter-number">24</span>
+                                                <span class="counter-number-related">%</span>
+                                            </div>
+                                            <div class="counter-label blue-grey-400">手机浏览器</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ct-chart mb-30" style="height:270px;"></div>
+                        <ul class="list-inline text-center mb-0">
+                            <li class="list-inline-item">
+                                <i class="icon wb-large-point blue-200 mr-10" aria-hidden="true"></i> PC 浏览器
+                            </li>
+                            <li class="list-inline-item ml-35">
+                                <i class="icon wb-large-point teal-200 mr-10" aria-hidden="true"></i> 手机浏览器
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xxl-3">
+                <div class="row h-full">
+                    <div class="col-xxl-12 col-lg-6 h-p50 h-only-lg-p100 h-only-xl-p100">
+                        <div class="card card-shadow card-inverse bg-blue-600 white">
+                            <div class="card-block p-30">
+                                <div class="counter counter-lg counter-inverse text-left">
+                                    <div class="counter-label mb-20">
+                                        <div>总销售额</div>
+                                        <div>2017-2018年度</div>
+                                    </div>
+                                    <div class="counter-number-group mb-15">
+                                        <span class="counter-number-related">&yen;</span>
+                                        <span class="counter-number">14,000</span>
+                                    </div>
+                                    <div class="counter-label">
+                                        <div class="progress progress-xs mb-10 bg-blue-800">
+                                            <div class="progress-bar progress-bar-info bg-white" style="width: 42%"
+                                                    aria-valuemax="100" aria-valuemin="0" aria-valuenow="42" role="progressbar">
+                                                <span class="sr-only">42%</span>
+                                            </div>
+                                        </div>
+                                        <div class="counter counter-sm text-left">
+                                            <div class="counter-number-group">
+                                                <span class="counter-number-related font-size-14">增长</span>
+                                                <span class="counter-number font-size-14">42%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-12 col-lg-6 h-p50 h-only-lg-p100 h-only-xl-p100">
+                        <div class="card card-shadow card-inverse bg-red-600 white">
+                            <div class="card-block p-30">
+                                <div class="counter counter-lg counter-inverse text-left">
+                                    <div class="counter-label mb-20">
+                                        <div>今日销售额</div>
+                                        <div>2017年8月23日</div>
+                                    </div>
+                                    <div class="counter-number-group mb-10">
+                                        <span class="counter-number-related">&yen;</span>
+                                        <span class="counter-number">41,160</span>
+                                    </div>
+                                    <div class="counter-label">
+                                        <div class="progress progress-xs mb-10 bg-red-800">
+                                            <div class="progress-bar progress-bar-info bg-white" style="width: 70%"
+                                                    aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar">
+                                                <span class="sr-only">70%</span>
+                                            </div>
+                                        </div>
+                                        <div class="counter counter-sm text-left">
+                                            <div class="counter-number-group">
+                                                <span class="counter-number-related font-size-14">下降</span>
+                                                <span class="counter-number font-size-14">70%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-plugin="matchHeight" data-by-row="true">
+            <div class="col-lg-6">
+
+                <div class="panel" id="followers">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <i class="icon wb-check" aria-hidden="true"></i> 关注 </h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group list-group-dividered list-group-full">
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <div class="pr-10">
+                                        <a class="avatar avatar-online" href="javascript:;">
+                                            <img src="/static/images/portraits/9.jpg" alt="">
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="float-right">
+                                            <button type="button" class="btn btn-outline btn-default btn-sm">关注</button>
+                                        </div>
+                                        <div>
+                                            <a class="name" href="javascript:;">郭雨萌</a>
+                                        </div>
+                                        <small>@heavybutterfly920</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <div class="pr-10">
+                                        <a class="avatar avatar-away" href="javascript:;">
+                                            <img src="/static/images/portraits/10.jpg" alt="">
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="float-right">
+                                            <button type="button" class="btn btn-success btn-default btn-sm">
+                                                <i class="icon wb-check" aria-hidden="true"></i>已关注
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <a class="name" href="javascript:;">于恋洋</a>
+                                        </div>
+                                        <small>@kingronnie24</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <div class="pr-10">
+                                        <a class="avatar avatar-busy" href="javascript:;">
+                                            <img src="/static/images/portraits/11.jpg" alt="">
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="float-right">
+                                            <button type="button" class="btn btn-outline btn-default btn-sm">关注</button>
+                                        </div>
+                                        <div>
+                                            <a class="name" href="javascript:;">石亚琼</a>
+                                        </div>
+                                        <small>@perttygirl66</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <div class="pr-10">
+                                        <a class="avatar avatar-off" href="javascript:;">
+                                            <img src="/static/images/portraits/12.jpg" alt="">
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="float-right">
+                                            <button type="button" class="btn btn-outline btn-default btn-sm">关注</button>
+                                        </div>
+                                        <div>
+                                            <a class="name" href="javascript:;">思遥</a>
+                                        </div>
+                                        <small>@danieltiger08</small>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">BUG 跟踪</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group list-group-dividered list-group-full">
+                            <li class="list-group-item">
+                                <small class="badge badge-round label-info float-right">已修复</small>
+                                <p>
+                                    <a class="hightlight" href="javascript:;">服务器不可用</a>
+                                    <span>[13060]</span>
+                                </p>
+                                <small>
+                                    <a class="hightlight" href="javascript:;">
+                                        <span class="avatar avatar-xs">
+                                            <img src="/static/images/portraits/1.jpg" alt="">
+                                        </span>
+                                        <span>曲凯</span>
+                                    </a>
+                                    提交于
+                                    <time datetime="2016-07-01T08:55">2 小时前</time>
+                                </small>
+                            </li>
+                            <li class="list-group-item">
+                                <small class="badge badge-round label-warning float-right">待解决</small>
+                                <p>
+                                    <a class="hightlight" href="javascript:;">手机 APP 有问题</a>
+                                    <span>[13061]</span>
+                                </p>
+                                <small>
+                                    <a class="hightlight" href="javascript:;">
+                                        <span class="avatar avatar-xs">
+                                            <img src="/static/images/portraits/2.jpg" alt="">
+                                        </span>
+                                        <span>宋长乐</span>
+                                    </a>
+                                    提交于
+                                    <time datetime="2016-07-01T07:55">1 小时前</time>
+                                </small>
+                            </li>
+                            <li class="list-group-item">
+                                <small class="badge badge-round label-primary float-right">解决中</small>
+                                <p>
+                                    <a class="hightlight" href="javascript:;">IE6 下显示有问题</a>
+                                    <span>[13062]</span>
+                                </p>
+                                <small>
+                                    <a class="hightlight" href="javascript:;">
+                                        <span class="avatar avatar-xs">
+                                            <img src="/static/images/portraits/3.jpg" alt="">
+                                        </span>
+                                        <span>于恋洋</span>
+                                    </a>
+                                    提交于
+                                    <time datetime="2016-06-28T21:05">3 天前</time>
+                                </small>
+                            </li>
+                            <li class="list-group-item">
+                                <small class="badge badge-round label-danger float-right">已关闭</small>
+                                <p>
+                                    <a class="hightlight" href="javascript:;">响应式菜单有问题</a>
+                                    <span>[13063]</span>
+                                </p>
+                                <small>
+                                    <a class="hightlight" href="javascript:;">
+                                        <span class="avatar avatar-xs">
+                                            <img src="/static/images/portraits/4.jpg" alt="">
+                                        </span>
+                                        <span>石亚琼</span>
+                                    </a>
+                                    提交于
+                                    <time datetime="2016-06-27T13:05">4 天前</time>
+                                </small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/vendor/chartist/dist/chartist.min.js" data-name="chartist"></script>
+<script src="/vendor/matchHeight/dist/jquery.matchHeight-min.js" data-name="matchHeight"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function () {
+    'use strict';
+
+    //统计图表
+    new Chartist.Line('#widgetLinearea .ct-chart', {
+        labels: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+        series: [
+            [0, 2.5, 2, 2.8, 2.6, 3.8, 0],
+            [0, 1.4, 0.5, 2, 1.2, 0.9, 0]
+        ]
+    }, {
+        low: 0,
+        showArea: true,
+        showPoint: false,
+        showLine: false,
+        fullWidth: true,
+        chartPadding: {
+            top: 0,
+            right: 10,
+            bottom: 0,
+            left: 0
+        },
+        axisX: {
+            showGrid: false,
+            labelOffset: {
+                x: -14,
+                y: 0
+            }
+        },
+        axisY: {
+            labelOffset: {
+                x: -10,
+                y: 0
+            },
+            labelInterpolationFnc: function (num) {
+                return num % 1 === 0 ? num : false;
+            }
+        }
+    });
+})();
+</script>

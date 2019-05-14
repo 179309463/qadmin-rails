@@ -1,0 +1,39 @@
+{
+    "status": 1,
+    "msg": "",
+    "title": "JSON请求的相册",
+    "id": 8,
+    "start": 0,
+    "data": [
+        {
+            "alt": "layer",
+            "pid": 109,
+            "src": "//cdn.layui.com/upload/2017_3/168_1488985841996_23077.png",
+            "thumb": ""
+        },
+        {
+            "alt": "说好的，一起Fly",
+            "pid": 110,
+            "src": "//res.layui.com/images/fly/fly.jpg",
+            "thumb": ""
+        },
+        {
+            "alt": "佟丽娅女神",
+            "pid": 111,
+            "src": "../images/tong.jpg",
+            "thumb": ""
+        },
+        {
+            "alt": "凤姐是个好人",
+            "pid": 112,
+            "src": "//file.ynet.com/2/1603/09/10995825.jpg",
+            "thumb": ""
+        },
+        {
+            "alt": "星空如此深邃",
+            "pid": 113,
+            "src": "//res.layui.com/images/sentsin/night.gif",
+            "thumb": ""
+        }
+    ]
+}

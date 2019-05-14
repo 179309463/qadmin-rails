@@ -1,0 +1,277 @@
+<title>日志设置</title>
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ .page-logs .logs-settings {
+	margin: 20px 0;
+}
+.page-logs .logs-settings .input-group-addon {
+	padding: 0;
+}
+.page-logs .logs-settings .input-group-addon a .icon {
+	color: #a3afb7;
+}
+</style>
+
+<link rel="stylesheet" href="/vendor/alertifyjs/dist/css/alertify.css">
+<link rel="stylesheet" href="/vendor/glyphicons/styles/glyphicons.css">
+<link rel="stylesheet" href="/vendor/datatables-bootstrap/3/dataTables.bootstrap.css">
+<link rel="stylesheet" href="/lib/datatables-responsive/css/responsive.dataTables.css">
+<link rel="stylesheet" href="/lib/formvalidation.io/dist/css//formValidation.min.css">
+
+<div class="page page-full animation-fade bg-white page-logs">
+    <div class="page-header">
+        <h1 class="page-title">系统日志</h1>
+        <div class="page-header-actions">
+            <button type="button" class="btn btn-sm btn-outline btn-default add-row" data-target="#logsForm" data-toggle="modal" aria-hidden="true" role="button">
+                <i class="icon wb-plus"></i> 新增
+            </button>
+        </div>
+    </div>
+    <hr class="margin-0">
+    <div class="page-content">
+        <table class="table table-bordered table-hover text-nowrap dataTable table-striped width-full" id="logList" data-column-defs='[{ "orderable": false, "targets": 2},{ "orderable": false, "targets": 3},{ "orderable": false, "targets": 4}]'>
+            <thead>
+                <tr>
+                    <th>路径</th>
+                    <th>类型</th>
+                    <th>用户</th>
+                    <th>时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="2" role="row" class="odd">
+                    <td tabindex="0" class="sorting_1">/log/saveConfig</td>
+                    <td>保存日志配置</td>
+                    <td>dk</td>
+                    <td>2016-12-26 18:13:07</td>
+                    <td>
+                        <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-icon btn-pure btn-default edit-row" data-target="#logsForm" data-toggle="modal">
+                                <i class="icon wb-edit" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="btn btn-icon btn-pure btn-default delete-row">
+                                <i class="icon wb-close" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="1" role="row" class="even">
+                    <td tabindex="0" class="sorting_1">/system/login</td>
+                    <td>登录</td>
+                    <td>dk</td>
+                    <td>2016-12-3 15:29:50</td>
+                    <td><div class="btn-group btn-group-sm"><button type="button" class="btn btn-icon btn-pure btn-default edit-row" data-target="#logsForm" data-toggle="modal"><i class="icon wb-edit" aria-hidden="true"></i></button><button type="button" class="btn btn-icon btn-pure btn-default delete-row"><i class="icon wb-close" aria-hidden="true"></i></button></div></td>
+                </tr>
+                <tr id="4" role="row" class="odd">
+                    <td tabindex="0" class="sorting_1">/system/menu</td>
+                    <td>你不知道的</td>
+                    <td>dk</td>
+                    <td>2017-3-27 13:28:48</td>
+                    <td><div class="btn-group btn-group-sm"><button type="button" class="btn btn-icon btn-pure btn-default edit-row" data-target="#logsForm" data-toggle="modal"><i class="icon wb-edit" aria-hidden="true"></i></button><button type="button" class="btn btn-icon btn-pure btn-default delete-row"><i class="icon wb-close" aria-hidden="true"></i></button></div></td>
+                </tr>
+                <tr id="3" role="row" class="even">
+                    <td tabindex="0" class="sorting_1">wgweg</td>
+                    <td>gwegw</td>
+                    <td>dk</td>
+                    <td>2017-3-27 13:28:02</td>
+                    <td><div class="btn-group btn-group-sm"><button type="button" class="btn btn-icon btn-pure btn-default edit-row" data-target="#logsForm" data-toggle="modal"><i class="icon wb-edit" aria-hidden="true"></i></button><button type="button" class="btn btn-icon btn-pure btn-default delete-row"><i class="icon wb-close" aria-hidden="true"></i></button></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal" id="logsForm" aria-hidden="true" aria-labelledby="logsForm" role="dialog" tabindex="-1">
+        <div class="modal-dialog modal-center">
+            <form class="modal-content " id="compileRoleForm">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">日志设置</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form form-horizontal logs-settings">
+                        <div class="form-group row">
+                            <label class="col-xs-2 control-label">路径</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" name="url" placeholder="请填写需要记录日志的URL">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-xs-2 control-label">名称</label>
+                            <div class="col-xs-9">
+                                <input type="text" class="form-control" name="type" placeholder="请填写URL对应的显示名称">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit">保存</button>
+                    <a class="btn btn-default" data-dismiss="modal">取消</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/alertifyjs/dist/js/alertify.js"></script>
+<script src="/vendor/datatables/media/js/jquery.dataTables.min.js" data-name="dataTables"></script>
+<script src="/vendor/datatables-bootstrap/3/dataTables.bootstrap.min.js" data-deps="dataTables"></script>
+<script src="/vendor/datatables-responsive/js/dataTables.responsive.js" data-deps="dataTables"></script>
+<script src="/vendor/formvalidation.io/dist/js/formValidation.min.js" data-name="formValidation"></script>
+<script src="/vendor/formvalidation.io/dist/js/framework/bootstrap4.min.js" data-name="bootstrap" data-deps="formValidation"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ (function (document, window, $) {
+    "use strict";
+
+    $(function () {
+        var oTable, $thisRow,
+            $pageContent = $('#qadmin-pageContent');
+
+        oTable = $('.dataTable').DataTable($.po('dataTable',{
+            autoWidth: false,
+            processing: true,
+            rowId: "configId",
+            columns: [
+                {"data": "url"},
+                {"data": "type"},
+                {"data": "createUser.loginName"},
+                {"data": "createTime"},
+                {
+                    "render": function () {
+                        return '<div class="btn-group btn-group-sm"><button type="button"' +
+                            ' class="btn btn-icon btn-pure btn-default edit-row" data-target="#logsForm"' +
+                            ' data-toggle="modal"><i class="icon wb-edit" aria-hidden="true"></i>' +
+                            '</button><button type="button" class="btn btn-icon btn-pure btn-default' +
+                            ' delete-row"><i class="icon wb-close" aria-hidden="true"></i></button></div>';
+                    }
+                }
+            ]
+        }));
+
+        $('#compileRoleForm').formValidation($.po('formValidation', {
+            fields: {
+                url: {
+                    validators: {
+                        notEmpty: {
+                            message: "请填写URL地址"
+                        }
+                    }
+                },
+                type: {
+                    validators: {
+                        notEmpty: {
+                            message: "请填写URL对应名称"
+                        }
+                    }
+                }
+            }
+        }))
+            .on('success.form.fv', function (e) {
+                e.preventDefault();
+
+                var validator = $(e.target).data('formValidation'),
+                    logConfig = {
+                        url: validator.getFieldElements('url').val(),
+                        type: validator.getFieldElements('type').val()
+                    },
+                    ID = $thisRow === null ? '' : oTable.row($thisRow).id();
+
+                function changeTable(obj) {
+                    if ($thisRow !== null) {
+                        $thisRow.find('td:eq(0)').text(obj.url);
+                        $thisRow.find('td:eq(1)').text(obj.type);
+                        toastr.success('修改成功！');
+                    } else {
+                        oTable.row.add(obj).draw(false);
+                        toastr.success('添加成功！');
+                    }
+                }
+
+                $.ajax({
+                    url: $.ctx + '/log/saveConfig?configId=' + ID ,
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    dataType: 'JSON',
+                    success: function (data) {
+                        if (data.success) {
+                            logConfig.configId = data.config.configId;
+                            logConfig.createTime = data.config.createTime;
+                            logConfig.createUser = data.config.createUser;
+
+                            $('#logsForm').one('hidden.bs.modal', function () {
+                                changeTable(logConfig);
+                            }).modal('hide');
+                        } else {
+                            toastr.error('出错了，请重试！');
+                        }
+                    },
+                    error: function () {
+                        toastr.error('服务器异常，请稍后再试！');
+                    }
+                });
+            });
+
+        $pageContent.on('hide.bs.modal', '#logsForm', function () { // 模态窗隐藏后
+            $("#compileRoleForm").formValidation('resetForm', true);
+        });
+
+        $pageContent.on('click', '.delete-row', function () { // 删除当前日志
+            var $item = $(this).closest('tr'),ID,
+                $tr = $item.prev();
+
+            if($item.hasClass('child') && $tr.hasClass('parent')){
+                $item = $tr;
+            }
+            ID = oTable.row($item).id();
+
+            alertify.theme('bootstrap')
+            .confirm('你确定要删除吗？', function(){
+                $.ajax({
+                    url: $.ctx + '/log/deleteConfig?configId=' + ID,
+                    type: 'POST',
+                    data: {id: ID},
+                    dataType: 'JSON',
+                    success: function (data) {
+                        if (data.success) {
+                            oTable.row($item).remove().draw(false);
+                            toastr.success('删除成功！');
+                        } else {
+                            toastr.error(data.msg);
+                        }
+                    },
+                    error: function () {
+                        toastr.error('服务器异常，请稍后再试！');
+                    }
+                });
+            });
+        });
+
+        $pageContent.on('click', '.add-row', function () { // 新增日志
+            $thisRow = null;
+        });
+
+        $pageContent.on('click', '.edit-row', function () { // 编辑当前日志
+            $thisRow = $(this).closest('tr');
+            var rowData = {
+                url: $thisRow.find('td:eq(0)').text(),
+                type: $thisRow.find('td:eq(1)').text()
+            };
+
+            $('input[name="url"]').val(rowData.url);
+            $('input[name="type"]').val(rowData.type);
+        });
+
+    });
+})(document, window, jQuery);
+</script>

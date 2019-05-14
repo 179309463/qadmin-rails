@@ -1,0 +1,37 @@
+<ul class="site-menu">
+    <li class="site-menu-category">表格示例</li>
+    <li class="site-menu-item">
+        <a data-pjax href="/examples/tables/basic.html" target="_blank">
+            <i class="site-menu-icon fa fa-table" aria-hidden="true"></i><span class="site-menu-title">基本表格</span>
+        </a>
+    </li>
+    <li class="site-menu-item">
+        <a data-pjax href="/examples/tables/treegrid.html" target="_blank">
+            <i class="site-menu-icon fa fa-sort-amount-asc" aria-hidden="true"></i><span class="site-menu-title">树形表格</span>
+        </a>
+    </li>
+    <li class="dropdown site-menu-item has-sub">
+        <a href="javascript:;" data-toggle="dropdown" data-dropdown-toggle="false">
+            <i class="site-menu-icon fa fa-list-alt" aria-hidden="true"></i><span class="site-menu-title">DataTables</span><span class="site-menu-arrow"></span>
+        </a>
+        <div class="dropdown-menu">
+        <%= render file: 'layouts/includes/site-menu/topbar/tables/data-tables' %>
+        </div>
+    </li>
+    <li class="dropdown site-menu-item has-sub">
+        <a href="javascript:;" data-toggle="dropdown" data-dropdown-toggle="false">
+            <i class="site-menu-icon fa fa-list-alt" aria-hidden="true"></i><span class="site-menu-title">BootstrapTable</span><span class="site-menu-arrow"></span>
+        </a>
+        <div class="dropdown-menu">
+        <%= render file: 'layouts/includes/site-menu/topbar/tables/bootstrap-table' %>
+        </div>
+    </li>
+    <li class="dropdown site-menu-item has-sub">
+        <a href="javascript:;" data-toggle="dropdown" data-dropdown-toggle="false">
+            <i class="site-menu-icon fa fa-list-alt" aria-hidden="true"></i><span class="site-menu-title">AG-Grid</span><span class="site-menu-arrow"></span>
+        </a>
+        <div class="dropdown-menu">
+        <%= render file: 'layouts/includes/site-menu/topbar/tables/ag-grid' %>
+        </div>
+    </li>
+</ul>

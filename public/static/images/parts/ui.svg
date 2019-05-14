@@ -1,0 +1,20 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<g>
+	<rect x="1.5" y="11.5" style="fill:#E1EBF2;" width="36" height="18"></rect>
+	<g>
+		<path style="fill:#788B9C;" d="M37,12v17H2V12H37 M38,11H1v19h37V11L38,11z"></path>
+	</g>
+</g>
+<circle style="fill:#36404D;" cx="19.5" cy="20.5" r="2.5"></circle>
+<circle style="fill:#36404D;" cx="9.5" cy="20.5" r="2.5"></circle>
+<circle style="fill:#36404D;" cx="29.5" cy="20.5" r="2.5"></circle>
+<g>
+	<circle style="fill:#BAE0BD;" cx="31" cy="31" r="8.5"></circle>
+	<g>
+		<path style="fill:#5E9C76;" d="M31,23c4.411,0,8,3.589,8,8s-3.589,8-8,8s-8-3.589-8-8S26.589,23,31,23 M31,22
+			c-4.971,0-9,4.029-9,9s4.029,9,9,9s9-4.029,9-9S35.971,22,31,22L31,22z"></path>
+	</g>
+</g>
+<polyline style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;" points="26.821,31.025 29.591,33.794
+	35.821,27.563 "></polyline>
+</svg>

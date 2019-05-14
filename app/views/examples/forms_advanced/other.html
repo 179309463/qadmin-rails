@@ -1,0 +1,295 @@
+<title>其他表单元素 - 表单示例</title>
+
+<link rel="stylesheet" href="/lib/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css">
+<link rel="stylesheet" href="/lib/bootstrap-maxlength/src/bootstrap-maxlength.css">
+<link rel="stylesheet" href="/lib/jquery-strength/jquery-strength.css">
+<link rel="stylesheet" href="/vendor/card/dist/card.css">
+
+<style>
+.bootstrap-select {
+    width: 100%!important
+}
+
+.datepair-wrap {
+    position: relative
+}
+
+.input-daterange-wrap {
+    float: left
+}
+
+.input-daterange-to {
+    float: left;
+    width: 40px;
+    height: 2.287rem;
+    line-height: 2.287rem;
+    text-align: center
+}
+
+@media (max-width:1360px) {
+    .input-daterange-to,.input-daterange-wrap {
+        display: block;
+        float: none
+    }
+}
+</style>
+
+<div class="page animation-fade page-forms">
+    <div class="page-header">
+        <h1 class="page-title">其他表单元素</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:;">首页</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">表单</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">高级表单元素</a>
+            </li>
+            <li class="breadcrumb-item active">其他表单元素</li>
+        </ol>
+    </div>
+    <div class="page-content container-fluid">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Maxlength Control（输入长度限制）
+                    <small>
+                        <a class="example-plugin-link" href="https://github.com/mimo84/bootstrap-maxlength" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-md-6">
+                        <div class="example-wrap m-sm-0">
+                            <h4 class="example-title">文本框</h4>
+                            <p>
+                                <code>max-length</code> 设为35 </p>
+                            <div class="example">
+                                <input type="text" class="maxlength-input form-control" data-plugin="maxlength"
+                                    data-placement="bottom-right-inside" maxlength="35" value="最大允许输入35个字符" placeholder="最大允许输入35个字符">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">文本域</h4>
+                            <p>
+                                <code>max-length</code> 设为100</p>
+                            <div class="example">
+                                <textarea class="maxlength-textarea form-control" data-plugin="maxlength"
+                                    data-placement="bottom-right-inside" maxlength="100" rows="3" placeholder="最大允许输入100个字符"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel">
+                    <header class="panel-heading">
+                        <h3 class="panel-title">Bootstrap Slider (范围选择）
+                            <small>
+                                <a class="example-plugin-link" href="http://seiyria.com/bootstrap-slider/" target="_blank">
+                                    官网
+                                </a>
+                            </small>
+                        </h3>
+                    </header>
+                    <div class="panel-body">
+                        <p>使用
+                            <code>data-plugin="bootstrapSlider"</code> 创建</p>
+                        <div class="example-wrap">
+                            <h4 class="example-title">默认</h4>
+                            <div class="example">
+                                <input type="text" data-plugin="bootstrapSlider" data-slider-min="0" data-slider-max="20"
+                                    data-slider-step="1" data-slider-value="14">
+                            </div>
+                        </div>
+                        <div class="example-wrap">
+                            <h4 class="example-title">范围</h4>
+                            <div class="example">
+                                <input type="text" data-plugin="bootstrapSlider" data-slider-min="10" data-slider-max="1000"
+                                    data-slider-step="5" data-slider-value="[150,850]">
+                            </div>
+                        </div>
+                        <div class="example-wrap">
+                            <h4 class="example-title">竖向显示</h4>
+                            <div class="example h-100">
+                                <input type="text" data-plugin="bootstrapSlider" data-slider-min="0" data-slider-max="20"
+                                    data-slider-step="1" data-slider-value="14" data-slider-orientation="vertical">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel">
+                    <header class="panel-heading">
+                        <h3 class="panel-title">Jquery Strength（密码强度验证）
+                            <small>
+                                <a class="example-plugin-link" href="https://github.com/amazingSurge/jquery-strength"
+                                    target="_blank">
+                                    官网
+                                </a>
+                            </small>
+                        </h3>
+                    </header>
+                    <div class="panel-body">
+                        <p>使用
+                            <code>data-plugin="strength"</code> 创建 </p>
+                        <div class="example-wrap">
+                            <form class="example mb-40">
+                                <div class="form-group">
+                                    <label class="col-form-label mb-15" for="inputPassword1">密码</label>
+                                    <input type="password" class="password-strength-example1 form-control" id="inputPassword1"
+                                        name="inputPasswords" data-plugin="strength" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label mb-15" for="inputPassword2">密码</label>
+                                    <input type="password" class="password-strength-example2 form-control" id="inputPassword2"
+                                        name="inputPasswords" data-plugin="strength" data-show-toggle="true" value="123456" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <header class="panel-heading">
+                <h3 class="panel-title">Jquery Knob（旋钮）
+                    <small>
+                        <a class="example-plugin-link" href="https://github.com/aterrien/jQuery-Knob" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </header>
+            <div class="panel-body">
+                <p>使用
+                    <code>data-plugin="knob"</code> 创建， 使用
+                    <code>data-option</code> 设置 </p>
+                <div class="row text-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-wrap">
+                            <div class="example">
+                                <input type="text" class="knob-chart knob-example-5" data-plugin="knob"
+                                    data-displayInput="false" data-fg-color="#526069" value="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-wrap">
+                            <div class="example">
+                                <input type="text" class="knob-chart knob-example-3" data-plugin="knob" data-line-cap="round"
+                                    data-fg-color="#62a8ea" data-cursor="true" value="-25">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-wrap">
+                            <div class="example">
+                                <input type="text" class="knob-chart knob-example-1" data-plugin="knob" data-fg-color="#f96868"
+                                    data-min="0" data-max="100" value="20">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-wrap">
+                            <div class="example">
+                                <input type="text" class="knob-chart knob-example-2" data-plugin="knob" data-min="-15000"
+                                    data-max="15000" data-step="1000" data-display-previous="true" data-fg-color="#926dde"
+                                    value="-10000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-wrap">
+                            <div class="example">
+                                <input type="text" class="knob-chart knob-example-6" data-plugin="knob"
+                                    data-angleOffset="90" data-linecap="round" data-min="0" data-max="100"
+                                    data-fg-color="#57c7d4" value="60">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="example-wrap">
+                            <div class="example">
+                                <input type="text" class="knob-chart knob-example-4" data-plugin="knob" data-fg-color="#3aa99e"
+                                    data-cursor="true" data-line-cap="round" data-angle-offset="-125" data-angle-arc="250"
+                                    value="11">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-lg">
+            <div class="col-sm-6">
+                <div class="panel">
+                    <header class="panel-heading">
+                        <h3 class="panel-title">Card（信用卡）
+                            <small>
+                                <a class="example-plugin-link" href="https://github.com/jessepollak/card" target="_blank">
+                                    官网
+                                </a>
+                            </small>
+                        </h3>
+                    </header>
+                    <div class="panel-body container-fluid">
+                        <p class="margin-bottom-35">通过 <code>data-plugin="card"</code>，<code>data-target="#card-container"</code>
+                            创建</p>
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <div class="example-responsive example form-group">
+                                    <div class="col-lg-12 col-md-6 clearfix form-group">
+                                        <div class="card-wrapper pull-left" id="cardContainer"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-6">
+                                    <div class="example-wrap">
+                                        <form class="card" data-plugin="card" data-target="#cardContainer">
+                                            <div class="form-group">
+                                                <label class="control-label margin-bottom-15" for="inputCardNumber">卡号
+                                                </label>
+                                                <input type="text" class="form-control" id="inputCardNumber" name="number" placeholder="卡号">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label margin-bottom-15" for="inputFullName">名称
+                                                </label>
+                                                <input type="text" class="form-control" id="inputFullName" name="name" placeholder="名称">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label margin-bottom-15" for="inputExpiry">到期时间
+                                                </label>
+                                                <input type="text" class="form-control" id="inputExpiry" name="expiry" placeholder="MM/YY">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label margin-bottom-15" for="inputCVC">CVC码
+                                                </label>
+                                                <input type="text" class="form-control" id="inputCVC" name="cvc" placeholder="CVC">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<script src="/vendor/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+<script src="/vendor/jquery-knob/dist/jquery.knob.min.js"></script>
+<script src="/vendor/bootstrap-maxlength/src/bootstrap-maxlength.js"></script>
+<script src="/lib/jquery-strength/password_strength.js"></script>
+<script src="/lib/jquery-strength/jquery-strength.min.js"></script>
+<script src="/vendor/card/dist/jquery.card.js"></script>

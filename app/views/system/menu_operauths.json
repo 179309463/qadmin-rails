@@ -1,0 +1,70 @@
+{
+    "success": true,
+    "msg": "查询成功！",
+    "data": [{
+        "id": "400009",
+        "tenantId": null,
+        "remark": null,
+        "createDate": null,
+        "name": "添加菜单",
+        "opertype": null,
+        "url": null,
+        "menuId": "4",
+        "permissionId": null
+    },
+    {
+        "id": "400007",
+        "tenantId": null,
+        "remark": null,
+        "createDate": null,
+        "name": "全部保存",
+        "opertype": null,
+        "url": null,
+        "menuId": "4",
+        "permissionId": null
+    },
+    {
+        "id": "400005",
+        "tenantId": null,
+        "remark": null,
+        "createDate": null,
+        "name": "删除",
+        "opertype": null,
+        "url": null,
+        "menuId": "4",
+        "permissionId": null
+    },
+    {
+        "id": "400003",
+        "tenantId": null,
+        "remark": null,
+        "createDate": null,
+        "name": "编辑",
+        "opertype": null,
+        "url": null,
+        "menuId": "4",
+        "permissionId": null
+    },
+    {
+        "id": "400011",
+        "tenantId": null,
+        "remark": null,
+        "createDate": null,
+        "name": "新增菜单",
+        "opertype": null,
+        "url": null,
+        "menuId": "4",
+        "permissionId": null
+    },
+    {
+        "id": "400001",
+        "tenantId": null,
+        "remark": null,
+        "createDate": null,
+        "name": "添加新菜单",
+        "opertype": null,
+        "url": null,
+        "menuId": "4",
+        "permissionId": null
+    }]
+}

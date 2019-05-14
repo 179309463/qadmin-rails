@@ -1,0 +1,410 @@
+<title>复选框 & 单选框 - 表单示例</title>
+
+<link rel="stylesheet" href="/vendor/iCheck/skins/all.css">
+<link rel="stylesheet" href="/vendor/switchery/dist/switchery.min.css">
+<link rel="stylesheet" href="/lib/jquery-labelauty/source/jquery-labelauty.css">
+
+<style>
+.bootstrap-select {
+    width: 100%!important
+}
+
+.datepair-wrap {
+    position: relative
+}
+
+.input-daterange-wrap {
+    float: left
+}
+
+.input-daterange-to {
+    float: left;
+    width: 40px;
+    height: 2.287rem;
+    line-height: 2.287rem;
+    text-align: center
+}
+
+@media (max-width:1360px) {
+    .input-daterange-to,.input-daterange-wrap {
+        display: block;
+        float: none
+    }
+}
+</style>
+
+<div class="page animation-fade page-forms">
+    <div class="page-header">
+        <h1 class="page-title">复选框 & 单选框</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:;">首页</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">表单</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">高级表单元素</a>
+            </li>
+            <li class="breadcrumb-item active">复选框 & 单选框</li>
+        </ol>
+    </div>
+    <div class="page-content container-fluid">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Icheck（单选、复选框美化）
+                    <small>
+                        <a class="example-plugin-link" href="https://github.com/fronteed/iCheck" target="_blank">官网</a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="example-wrap m-lg-0">
+                            <h4 class="example-title">复选框</h4>
+                            <p>可以通过为
+                                <code>type="checkbox"</code> 元素添加
+                                <code>data-plugin="iCheck"</code> 创建 </p>
+                            <ul class="list-unstyled example">
+                                <li class="mb-15">
+                                    <input type="checkbox" class="icheckbox-primary" id="inputUnchecked" name="inputiCheckCheckboxes"
+                                        data-plugin="iCheck" data-checkbox-class="icheckbox_minimal-blue">
+                                    <label for="inputUnchecked">未选中</label>
+                                </li>
+                                <li class="mb-15">
+                                    <input type="checkbox" class="icheckbox-primary" id="inputChecked" name="inputiCheckCheckboxes"
+                                        data-plugin="iCheck" data-checkbox-class="icheckbox_minimal-blue" checked>
+                                    <label for="inputChecked">选中</label>
+                                </li>
+                                <li class="mb-15">
+                                    <input type="checkbox" class="icheckbox-primary" id="inputDisabledUnchecked" name="inputiCheckCheckboxes"
+                                        data-plugin="iCheck" data-checkbox-class="icheckbox_minimal-blue" disabled>
+                                    <label for="inputDisabledUnchecked">禁用（未选中）</label>
+                                </li>
+                                <li class="mb-15">
+                                    <input type="checkbox" class="icheckbox-primary" id="inputCheckedDisabled" name="inputiCheckCheckboxes"
+                                        data-plugin="iCheck" data-checkbox-class="icheckbox_minimal-blue" disabled
+                                        checked>
+                                    <label for="inputCheckedDisabled">禁用（选中）</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="example-wrap m-sm-0">
+                            <h4 class="example-title">单选框</h4>
+                            <p>可以通过为
+                                <code>type="radio"</code> 元素添加
+                                <code>data-plugin="iCheck"</code> 创建</p>
+                            <ul class="list-unstyled example">
+                                <li class="mb-15">
+                                    <input type="radio" class="icheckbox-primary" id="inputRadiosUnchecked" name="inputRadios"
+                                        data-plugin="iCheck" data-radio-class="iradio_minimal-blue">
+                                    <label for="inputRadiosUnchecked">未选中</label>
+                                </li>
+                                <li class="mb-15">
+                                    <input type="radio" class="icheckbox-primary" id="inputRadiosChecked" name="inputRadios"
+                                        data-plugin="iCheck" data-radio-class="iradio_minimal-blue" checked>
+                                    <label for="inputRadiosChecked">选中</label>
+                                </li>
+                                <li class="mb-15">
+                                    <input type="radio" class="icheckbox-primary" id="inputRadiosDisabledUnchecked"
+                                        name="inputRadiosDisabledUnchecked" data-plugin="iCheck" data-radio-class="iradio_minimal-blue"
+                                        disabled>
+                                    <label for="inputRadiosDisabledUnchecked">禁用（未选中）</label>
+                                </li>
+                                <li class="mb-15">
+                                    <input type="radio" class="icheckbox-primary" id="inputRadiosCheckedDisabled" name="inputRadiosCheckedDisabled"
+                                        data-plugin="iCheck" data-radio-class="iradio_minimal-blue" checked disabled>
+                                    <label for="inputRadiosCheckedDisabled">禁用（选中）</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">颜色</h4>
+                            <p>添加
+                                <code>.icheckbox-primary</code>，
+                                <code>.icheckbox-green</code>，
+                                <code>.icheckbox-orange</code>，
+                                <code>.icheckbox-red</code>,
+                                <code>.icheckbox-grey</code> 可以改变其颜色
+                            </p>
+                            <div class="example">
+                                <ul class="list-unstyled list-inline m-0">
+                                    <li class="list-inline-item mb-20">
+                                        <input type="checkbox" class="icheckbox-primary" id="inputColorPrimary" name="inputiCheckColorCheckboxes"
+                                            data-plugin="iCheck" data-checkbox-class="icheckbox_minimal-blue" checked>
+                                        <label for="inputColorPrimary"></label>
+                                    </li>
+                                    <li class="list-inline-item mb-20">
+                                        <input type="checkbox" class="icheckbox-green" id="inputColorGreen" name="inputiCheckColorCheckboxes"
+                                            data-plugin="iCheck" data-checkbox-class="icheckbox_minimal-green" checked>
+                                        <label for="inputColorGreen"></label>
+                                    </li>
+                                    <li class="list-inline-item mb-20">
+                                        <input type="checkbox" class="icheckbox-orange" id="inputColorOrange" name="inputiCheckColorCheckboxes"
+                                            data-plugin="iCheck" data-checkbox-class="icheckbox_minimal-orange" checked>
+                                        <label for="inputColorOrange"></label>
+                                    </li>
+                                    <li class="list-inline-item mb-20">
+                                        <input type="checkbox" class="icheckbox-red" id="inputColorRed" name="inputiCheckColorCheckboxes"
+                                            data-plugin="iCheck" data-checkbox-class="icheckbox_minimal-red" checked>
+                                        <label for="inputColorRed"></label>
+                                    </li>
+                                    <li class="list-inline-item mb-20">
+                                        <input type="checkbox" class="icheckbox-grey" id="inputColorGrey" name="inputiCheckColorCheckboxes"
+                                            data-plugin="iCheck" data-checkbox-class="icheckbox_minimal-grey" checked>
+                                        <label for="inputColorGrey"></label>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled list-inline m-0">
+                                    <li class="list-inline-item mb-20">
+                                        <input type="radio" class="icheckbox-primary" id="inputiCheckColorRadios1" name="inputiCheckColorRadios1"
+                                            data-plugin="iCheck" data-radio-class="iradio_minimal-blue" checked>
+                                        <label for="inputiCheckColorRadios1"></label>
+                                    </li>
+                                    <li class="list-inline-item mb-20">
+                                        <input type="radio" class="icheckbox-green" id="inputiCheckColorRadios2" name="inputiCheckColorRadios2"
+                                            data-plugin="iCheck" data-radio-class="iradio_minimal-green" checked>
+                                        <label for="inputiCheckColorRadios2"></label>
+                                    </li>
+                                    <li class="list-inline-item mb-20">
+                                        <input type="radio" class="icheckbox-orange" id="inputiCheckColorRadios3" name="inputiCheckColorRadios3"
+                                            data-plugin="iCheck" data-radio-class="iradio_minimal-orange" checked>
+                                        <label for="inputiCheckColorRadios3"></label>
+                                    </li>
+                                    <li class="list-inline-item mb-20">
+                                        <input type="radio" class="icheckbox-red" id="inputiCheckColorRadios4" name="inputiCheckColorRadios4"
+                                            data-plugin="iCheck" data-radio-class="iradio_minimal-red" checked>
+                                        <label for="inputiCheckColorRadios4"></label>
+                                    </li>
+                                    <li class="list-inline-item mb-20">
+                                        <input type="radio" class="icheckbox-grey" id="inputiCheckColorRadios5" name="inputiCheckColorRadios5"
+                                            data-plugin="iCheck" data-radio-class="iradio_minimal-grey" checked>
+                                        <label for="inputiCheckColorRadios5"></label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Toggle Switches（开关）
+                    <small>
+                        <a class="example-plugin-link" href="http://abpetkov.github.io/switchery/" target="_blank">官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap m-lg-0">
+                            <h4 class="example-title">基本</h4>
+                            <p>通过为
+                                <code>type="checkbox"</code> 元素添加
+                                <code>data-plugin="switchery"</code> 来创建</p>
+                            <div class="example">
+                                <div class="float-left mr-20">
+                                    <input type="checkbox" id="inputBasicOff" name="inputiCheckBasicCheckboxes"
+                                        data-plugin="switchery">
+                                </div>
+                                <label class="pt-3" for="inputBasicOff">关</label>
+                            </div>
+                            <div class="example">
+                                <div class="float-left mr-20">
+                                    <input type="checkbox" id="inputBasicOn" name="inputiCheckBasicCheckboxes"
+                                        data-plugin="switchery" checked>
+                                </div>
+                                <label class="pt-3" for="inputBasicOn">开</label>
+                            </div>
+                            <div class="example">
+                                <div class="float-left mr-20">
+                                    <input type="checkbox" id="inputBasicDisabledOff" name="inputiCheckBasicCheckboxes"
+                                        data-plugin="switchery" data-disabled="true">
+                                </div>
+                                <label class="pt-3" for="inputBasicDisabledOff">禁用（关）</label>
+                            </div>
+                            <div class="example">
+                                <div class="float-left mr-20">
+                                    <input type="checkbox" id="inputBasicDisabledOn" name="inputiCheckBasicCheckboxes"
+                                        data-plugin="switchery" data-disabled="true" checked>
+                                </div>
+                                <label class="pt-3" for="inputBasicDisabledOn">禁用（开）</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap m-sm-0">
+                            <h4 class="example-title">颜色</h4>
+                            <p>通过添加
+                                <code>data-color</code> 属性来改变颜色</p>
+                            <ul class="list-unstyled list-inline example">
+                                <li class="list-inline-item mr-25 mb-25">
+                                    <input type="checkbox" data-plugin="switchery" checked>
+                                </li>
+                                <li class="list-inline-item mr-25 mb-25">
+                                    <input type="checkbox" data-plugin="switchery" data-color="#526069" checked>
+                                </li>
+                                <li class="list-inline-item mr-25 mb-25">
+                                    <input type="checkbox" data-plugin="switchery" data-color="#3aa99e" checked>
+                                </li>
+                                <li class="list-inline-item mr-25 mb-25">
+                                    <input type="checkbox" data-plugin="switchery" data-color="#f2a654" checked>
+                                </li>
+                                <li class="list-inline-item mr-25 mb-25">
+                                    <input type="checkbox" class="js-switch-secondary" data-plugin="switchery"
+                                        data-color="#f96868" checked>
+                                </li>
+                                <li class="list-inline-item mr-25 mb-25">
+                                    <input type="checkbox" data-plugin="switchery" data-color="#926dde" checked>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">大小</h4>
+                            <p>添加
+                                <code>data-size="large"</code>，
+                                <code>data-size="small"</code> 来改变大小</p>
+                            <ul class="list-unstyled list-inline example">
+                                <li class="list-inline-item  mr-25 mb-25">
+                                    <input type="checkbox" class="js-switch-large" data-plugin="switchery" data-size="large"
+                                        checked>
+                                </li>
+                                <li class="list-inline-item mr-25 mb-25">
+                                    <input type="checkbox" class="js-switch" data-plugin="switchery" checked>
+                                </li>
+                                <li class="list-inline-item  mr-25 mb-25">
+                                    <input type="checkbox" class="js-switch-small" data-plugin="switchery" data-size="small"
+                                        checked>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <header class="panel-heading">
+                <h3 class="panel-title">Labelauty（单选、复选框美化）
+                    <small>
+                        <a class="example-plugin-link" href="https://github.com/fntneves/jquery-labelauty" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </header>
+            <div class="panel-body container-fluid">
+                <p>添加
+                    <code>data-plugin="labelauty"</code>
+                </p>
+                <div class="row row-lg">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">Labeled Checkbox</h4>
+                            <div class="example">
+                                <div class="form-group">
+                                    <input type="checkbox" class="to-labelauty" name="inputLableautyCheckbox"
+                                        data-plugin="labelauty" data-labelauty="不同步|同步" checked>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" class="to-labelauty" name="inputLableautyCheckbox"
+                                        data-plugin="labelauty" data-labelauty="我不接受|我接受">
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" class="to-labelauty" name="inputLableautyCheckbox"
+                                        data-plugin="labelauty" data-labelauty="被禁用" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">单选框</h4>
+                            <div class="example">
+                                <div class="form-group">
+                                    <input type="radio" class="to-labelauty" name="inputLableautyRadio" data-plugin="labelauty"
+                                        data-labelauty="不同步|同步" checked>
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" class="to-labelauty" name="inputLableautyRadio" data-plugin="labelauty"
+                                        data-labelauty="我不接受|我接受">
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" class="to-labelauty" name="inputLableautyRadio" data-plugin="labelauty"
+                                        data-labelauty="被禁用" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">复选框（不带标签）</h4>
+                            <div class="example">
+                                <div class="form-group">
+                                    <input type="checkbox" class="to-labelauty-icon" name="inputLableautyNoLabeledCheckbox"
+                                        data-plugin="labelauty" data-label="false">
+                                    <span>未选中</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" class="to-labelauty-icon" name="inputLableautyNoLabeledCheckbox"
+                                        data-plugin="labelauty" data-label="false" checked>
+                                    <span>选中</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" class="to-labelauty-icon" name="inputLableautyNoLabeledCheckbox"
+                                        data-plugin="labelauty" data-label="false" disabled checked>
+                                    <span>禁用（选中）</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" class="to-labelauty-icon" name="inputLableautyNoLabeledCheckbox"
+                                        data-plugin="labelauty" data-label="false" disabled>
+                                    <span>禁用（未选中）</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">单选框（不带标签）</h4>
+                            <div class="example">
+                                <div class="form-group">
+                                    <input type="radio" class="to-labelauty-icon" name="inputLableautyNoLabeledRadio"
+                                        data-plugin="labelauty" data-label="false">
+                                    <span>未选中</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" class="to-labelauty-icon" name="inputLableautyNoLabeledRadio"
+                                        data-plugin="labelauty" data-label="false" checked>
+                                    <span>选中</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" class="to-labelauty-icon" name="inputLableautyNoLabeledRadio1"
+                                        data-plugin="labelauty" data-label="false" disabled checked>
+                                    <span>禁用（选中）</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="radio" class="to-labelauty-icon" name="inputLableautyNoLabeledRadio2"
+                                        data-plugin="labelauty" data-label="false" disabled>
+                                    <span>禁用（未选中）</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/iCheck/icheck.min.js"></script>
+<script src="/vendor/switchery/dist/switchery.min.js"></script>
+<script src="/vendor/jquery-labelauty/source/jquery-labelauty.js"></script>

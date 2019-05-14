@@ -1,0 +1,35 @@
+<nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-inverse  " id="qadmin-siteNavbar" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler hamburger hamburger-close navbar-toggler-left unfolded" data-toggle="menubar">
+            <span class="sr-only">切换菜单</span>
+            <span class="hamburger-bar"></span>
+        </button>
+        <button type="button" class="navbar-toggler collapsed" data-target="#qadmin-navbarCollapse" data-toggle="collapse" aria-expanded="false">
+            <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+        </button>
+        <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+            <img class="navbar-brand-logo d-sm-block d-lg-block d-none navbar-logo" src="/static/images/logo-white.svg" title="QAdmin">
+            <img class="navbar-brand-logo d-sm-none navbar-logo-mini" src="/static/images/logo-white-min.svg" title="QAdmin">
+        </div>
+    </div>
+    <div class="navbar-container container-fluid">
+        <div class="navbar-collapse navbar-collapse-toolbar collapse" id="qadmin-navbarCollapse" style="">
+            <ul class="nav navbar-toolbar navbar-left">
+                <li class="nav-item hidden-float" id="toggleMenubar">
+                    <a class="nav-link" data-toggle="menubar" href="javascript:;" role="button" id="qadmin-toggleMenubar">
+                        <i class="icon hamburger hamburger-arrow-left">
+                            <span class="sr-only">切换目录</span>
+                            <span class="hamburger-bar"></span>
+                        </i>
+                    </a>
+                </li>
+                <li class="navbar-menu nav-tabs-horizontal nav-tabs-animate is-load" id="qadmin-navMenu">
+                    <%- include('./site-navbar-menu.html') %>
+                </li>
+            </ul>
+            <%- include('./site-navbar-right.html') %>    
+        </div>
+    </div>
+</nav>
+
+<script src="/static/js/nav-tabs.js"></script>

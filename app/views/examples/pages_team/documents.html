@@ -1,0 +1,354 @@
+<title>知识库列表 - 页面示例</title>
+
+<link rel="stylesheet" href="/lib/bootstrap-select/dist/css/bootstrap-select.css">
+
+<style>
+.page-documents .articles,.page-documents .documents-wrap {
+    margin-bottom: 25px;
+    margin-top: 25px
+}
+
+.page-documents .form-group .dropdown-toggle {
+    height: 46px;
+    padding-left: 20px;
+    background-color: #fff;
+    border-color: #e4eaec;
+    border-width: 1px 0 1px 1px
+}
+
+.page-documents .form-group .filter-option {
+    float: none!important;
+    text-overflow: ellipsis;
+    vertical-align: middle
+}
+
+.page-documents .form-group .input-search-btn {
+    z-index: 4;
+    font-size: 20px
+}
+
+.page-documents .form-group .input-search-btn+.form-control {
+    height: 46px;
+    padding: 8px 48px 8px 13px;
+    border-radius: 0 4px 4px 0
+}
+
+.page-documents .articles {
+    padding: 50px 20px 0;
+    background-color: #fff;
+    border-radius: .286rem
+}
+
+.page-documents .articles .blocks>li {
+    margin-bottom: 50px
+}
+
+.page-documents .articles-item {
+    position: relative;
+    padding-left: 45px
+}
+
+.page-documents .articles-item>.icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 25px
+}
+
+.page-documents .articles-item a {
+    color: #76838f
+}
+
+.page-documents .categories {
+    margin-top: 25px;
+    margin-bottom: 25px
+}
+
+.page-documents .categories .blocks>li {
+    margin-bottom: 30px
+}
+
+.page-documents .category {
+    height: 100%;
+    padding: 50px 30px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: .286rem;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05)
+}
+
+.page-documents .category .icon-wrap {
+    margin-bottom: 20px
+}
+
+.page-documents .category .icon-wrap>.icon {
+    font-size: 65px
+}
+
+.page-documents .article::after {
+    display: block;
+    clear: both;
+    content: ""
+}
+
+.page-documents .article-content,.page-documents .article-sidebar {
+    float: left;
+    background-color: #fff;
+    border-radius: .286rem
+}
+
+.page-documents .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px
+}
+
+.page-documents .article-sidebar {
+    width: 260px;
+    padding: 20px 15px;
+    margin-bottom: 30px
+}
+
+.page-documents .article-sidebar .list-group {
+    margin-bottom: 0
+}
+
+.page-documents .article-sidebar .list-group .list-group {
+    display: none
+}
+
+.page-documents .article-sidebar .list-group-item {
+    padding: 0;
+    margin-bottom: 1px;
+    border: none
+}
+
+.page-documents .article-sidebar .list-group-item a {
+    display: block;
+    -webkit-box-flex: 100%;
+    -webkit-flex: 100%;
+    -ms-flex: 100%;
+    flex: 100%;
+    padding: 10px 15px;
+    overflow: hidden;
+    color: #76838f;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.page-documents .article-sidebar .list-group-item a:focus,.page-documents .article-sidebar .list-group-item a:hover {
+    color: #76838f;
+    background-color: #f3f7f9
+}
+
+.page-documents .article-sidebar .list-group-item a+.list-group {
+    margin-top: 1px
+}
+
+.page-documents .article-sidebar .list-group-item a.dropdown-toggle::after {
+    display: none
+}
+
+.page-documents .article-sidebar .list-group-item .active {
+    color: #3e8ef7;
+    background-color: #f3f7f9
+}
+
+.page-documents .article-sidebar .list-group-item .active~.dropdown-menu {
+    position: relative;
+    top: 0;
+    display: block;
+    -webkit-box-flex: 100%;
+    -webkit-flex: 100%;
+    -ms-flex: 100%;
+    flex: 100%;
+    float: none;
+    padding: 0;
+    border: none;
+    box-shadow: none
+}
+
+.page-documents .article-sidebar .list-group-item .active~.dropdown-menu .dropdown-item {
+    width: 100%;
+    padding-left: 25px;
+    margin: 1px 0
+}
+
+.page-documents .article-sidebar .list-group-item .list-group-item>a {
+    padding-left: 25px
+}
+
+.page-documents .article-content {
+    width: -webkit-calc(100% - 290px);
+    width: calc(100% - 290px);
+    padding: 20px 30px;
+    margin-left: 30px
+}
+
+.page-documents .article-content section {
+    margin-bottom: 22px
+}
+
+.page-documents .article-content section h4 {
+    margin-top: -80px;
+    border-top: 80px solid transparent
+}
+
+.page-documents .article-content section:first-child {
+    margin-top: -80px
+}
+
+.page-documents .article-content section:first-child h4 {
+    margin-top: 0
+}
+
+.page-documents .article-footer {
+    padding: 30px;
+    font-size: 24px;
+    background-color: #f3f7f9;
+    border-radius: .286rem
+}
+
+.page-documents .article-footer::after {
+    display: block;
+    clear: both;
+    content: ""
+}
+
+.page-documents .article-footer-actions {
+    float: right
+}
+
+@media (max-width:767.98px) {
+    .page-documents .article-content,.page-documents .article-sidebar {
+        width: 100%;
+        margin-left: 0
+    }
+
+    .page-documents .article-sidebar.sticky {
+        position: relative;
+        top: 0
+    }
+
+    .page-documents .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: 100px
+    }
+}
+</style>
+
+<div class="page animation-fade page-documents">
+    <div class="page-header">
+        <h1 class="page-title mb-10">
+            知识库列表
+            <small>
+                (844 条知识)
+            </small>
+        </h1>
+    </div>
+    <div class="page-content">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <select data-plugin="selectpicker" data-style="btn-outline">
+                        <option>
+                            快速开始
+                        </option>
+                        <option>
+                            客户服务
+                        </option>
+                        <option>
+                            系统管理
+                        </option>
+                        <option>
+                            程序开发
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="input-search-btn">
+                    <i class="icon fa fa-search" aria-hidden="true"></i>
+                </button>
+                <input type="text" class="form-control" placeholder="在知识库中查找...">
+            </div>
+        </div>
+        <div class="documents-wrap articles">
+            <ul class="blocks blocks-100 blocks-xlg-4 blocks-md-3 blocks-xs-2" data-plugin="matchHeight">
+                <li>
+                    <div class="articles-item">
+                        <i class="icon fa fa-archive" aria-hidden="true"></i>
+                        <h4 class="title">
+                            <a href="javascript:;">极有家/中国质造</a>
+                        </h4>
+                        <p>入驻审核、实地认证、打标</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="articles-item">
+                        <i class="icon fa fa-check-circle-o" aria-hidden="true"></i>
+                        <h4 class="title">
+                            <a href="javascript:;">开店/认证</a>
+                        </h4>
+                        <p>轻松搞定开店流程</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="articles-item">
+                        <i class="icon fa fa-edit" aria-hidden="true"></i>
+                        <h4 class="title">
+                            <a href="javascript:;">商品发布/管理</a>
+                        </h4>
+                        <p>发布、降权等商品帮助</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="articles-item">
+                        <i class="icon fa fa-shield" aria-hidden="true"></i>
+                        <h4 class="title">
+                            <a href="javascript:;">消保服务资质</a>
+                        </h4>
+                        <p>加入、解冻、查询保证金</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="articles-item">
+                        <i class="icon fa fa-ticket" aria-hidden="true"></i>
+                        <h4 class="title">
+                            <a href="javascript:;">交易管理</a>
+                        </h4>
+                        <p>快速定位解决交易问题</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="articles-item">
+                        <i class="icon fa fa-frown-o" aria-hidden="true"></i>
+                        <h4 class="title">
+                            <a href="javascript:;">投诉处罚举报</a>
+                        </h4>
+                        <p>投诉评价、违规申诉等</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="articles-item">
+                        <i class="icon fa fa-magnet" aria-hidden="true"></i>
+                        <h4 class="title">
+                            <a href="javascript:;">旺铺/店铺工具</a>
+                        </h4>
+                        <p>装修、店铺运营工具</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="articles-item">
+                        <i class="icon fa fa-group" aria-hidden="true"></i>
+                        <h4 class="title">
+                            <a href="javascript:;">营销活动</a>
+                        </h4>
+                        <p>淘宝营销活动集合</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/matchHeight/dist/jquery.matchHeight-min.js"></script>
+<script src="/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>

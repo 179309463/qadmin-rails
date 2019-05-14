@@ -1,0 +1,426 @@
+<title>标签输入 - 表单示例</title>
+
+<link rel="stylesheet" href="/vendor/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css">
+<link rel="stylesheet" href="/lib/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+<link rel="stylesheet" href="/lib/typeahead-js/typeahead.css">
+
+<style>
+.bootstrap-select {
+    width: 100%!important
+}
+
+.datepair-wrap {
+    position: relative
+}
+
+.input-daterange-wrap {
+    float: left
+}
+
+.input-daterange-to {
+    float: left;
+    width: 40px;
+    height: 2.287rem;
+    line-height: 2.287rem;
+    text-align: center
+}
+
+@media (max-width:1360px) {
+    .input-daterange-to,.input-daterange-wrap {
+        display: block;
+        float: none
+    }
+}
+</style>
+
+<div class="page animation-fade page-forms">
+    <div class="page-header">
+        <h1 class="page-title">标签输入</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:;">首页</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">表单</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">高级表单元素</a>
+            </li>
+            <li class="breadcrumb-item active">标签输入</li>
+        </ol>
+    </div>
+    <div class="page-content container-fluid">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Bootstrap Tokenfield（标签输入）
+                    <small>
+                        <a class="example-plugin-link" href="http://sliptree.github.io/bootstrap-tokenfield/" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-lg-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">基本</h4>
+                            <div class="example">
+                                <input type="text" class="form-control" data-plugin="tokenfield" value="红,黄,蓝">
+                            </div>
+                            <p>禁用</p>
+                            <div class="example">
+                                <input type="text" class="form-control" data-plugin="tokenfield" value="红,黄,蓝" disabled>
+                            </div>
+                            <p>包含搜索图标</p>
+                            <div class="form-group example">
+                                <div class="input-search">
+                                    <input type="text" class="form-control" name="" data-plugin="tokenfield" value="红,黄,蓝"
+                                        placeholder="查找...">
+                                    <button type="submit" class="input-search-btn">
+                                        <i class="icon wb-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">验证状态</h4>
+                            <p>Tokenfield 支持 Bootstrap 表单的验证状态</p>
+                            <div class="example">
+                                <div class="form-group has-success">
+                                    <label class="col-form-label" for="inputTokenfieldSuccess">成功</label>
+                                    <input type="text" class="form-control" id="inputTokenfieldSuccess" data-plugin="tokenfield"
+                                        value="红,黄,蓝">
+                                </div>
+                                <div class="form-group has-warning">
+                                    <label class="col-form-label" for="inputTokenfieldWarning">警告</label>
+                                    <input type="text" class="form-control" id="inputTokenfieldWarning" data-plugin="tokenfield"
+                                        value="红,黄,蓝">
+                                </div>
+                                <div class="form-group has-error">
+                                    <label class="col-form-label" for="inputTokenfieldError">错误</label>
+                                    <input type="text" class="form-control" id="inputTokenfieldError" data-plugin="tokenfield"
+                                        value="红,黄,蓝">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">输入组</h4>
+                            <p>您可以通过
+                                <code>data-max-option</code> 限制选项或分组的选中项数量</p>
+                            <div class="example">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">标签</span>
+                                        </div>
+                                        <input type="text" class="form-control" data-plugin="tokenfield" value="红,黄,蓝" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" data-plugin="tokenfield" value="红,黄,蓝" />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="icon wb-star" aria-hidden="true"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">高级用法</h4>
+                            <p>和 Typeahead 搭配使用</p>
+                            <div class="example">
+                                <input type="text" class="form-control" id="inputTokenfieldTypeahead" value="红,黄,蓝"
+                                    placeholder="请输入颜色">
+                            </div>
+                            <p>复杂示例中使用事件</p>
+                            <div class="example">
+                                <input type="text" class="form-control" id="inputTokenfieldEvents" data-tokens="我|me@example.com,you@example.com,这不是一个真实的邮箱" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tags Input（标签输入）
+                    <small>
+                        <a class="example-plugin-link" href="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples"
+                            target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-lg-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">文本框</h4>
+                            <p>只需要在文本框上添加
+                                <code>data-role="tagsinput"</code> 即可 </p>
+                            <div class="example">
+                                <input class="form-control" name="tags" data-plugin="tagsinput" value="Windows,macOS,Linux,其他">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">多个值</h4>
+                            <p>可以通过
+                                <code>&lt;select multiple&gt;</code> 来获得多个值，而不是一个文本的字符串，
+                                <code>&lt;option&gt;</code> 会自动被设置成一个标签，用英文的逗号隔开。 </p>
+                            <div class="example">
+                                <select data-plugin="tagsinput" multiple>
+                                    <option value="Windows">Windows</option>
+                                    <option value="Mac">macOS</option>
+                                    <option value="Linux">Linux</option>
+                                    <option value="other">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">对象（Object）</h4>
+                            <p>绑定对象而非字符串到标签上，这样在某些场景下会比较灵活</p>
+                            <div class="example">
+                                <input class="form-control" id="inputTagsObject" name="inputTagsObject">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">标签分类</h4>
+                            <p>您可以使用静态的css类，或动态的函数来设置标签的分类 </p>
+                            <div class="example">
+                                <input class="form-control" id="inputTagsCategorizing" name="inputTagsCategorizing">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js"></script>
+<script src="/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+<script src="/vendor/typeahead.js/dist/bloodhound.min.js"></script>
+<script src="/vendor/typeahead.js/dist/typeahead.jquery.min.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    window.Content = {
+ 
+        inputTokenfieldTypeahead: function () { // Tokenfield 和 Typeahead 结合使用
+            var engine = new Bloodhound({
+                local: [{
+                    value: 'red-红色'
+                }, {
+                    value: 'blue-蓝色'
+                }, {
+                    value: 'green-绿色'
+                }, {
+                    value: 'yellow-黄色'
+                }, {
+                    value: 'violet-紫罗兰'
+                }, {
+                    value: 'brown-棕色'
+                }, {
+                    value: 'purple-紫色'
+                }, {
+                    value: 'black-黑色'
+                }, {
+                    value: 'white-白色'
+                }],
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace
+            });
+
+            // engine.initialize();
+
+            $('#inputTokenfieldTypeahead').tokenfield({
+                typeahead: [null, {
+                    name: 'engine',
+                    displayKey: 'value',
+                    source: engine.ttAdapter()
+                }]
+            });
+        },
+        inputTokenfieldEvents: function () {  // Tokenfield 事件
+            $('#inputTokenfieldEvents')
+                .on('tokenfield:createtoken', function (e) {
+                    var data = e.attrs.value.split('|');
+                    e.attrs.value = data[1] || data[0];
+                    e.attrs.label = data[1] ? data[0] + ' (' + data[1] + ')' : data[0];
+                })
+                .on('tokenfield:createdtoken', function (e) {
+                    // 邮件验证
+                    var re = /\S+@\S+\.\S+/;
+                    var valid = re.test(e.attrs.value);
+                    if (!valid) {
+                        $(e.relatedTarget).addClass('invalid');
+                    }
+                })
+                .on('tokenfield:edittoken', function (e) {
+                    if (e.attrs.label !== e.attrs.value) {
+                        var label = e.attrs.label.split(' (');
+                        e.attrs.value = label[0] + '|' + e.attrs.value;
+                    }
+                })
+                .on('tokenfield:removedtoken', function (e) {
+                    if (e.attrs.length > 1) {
+                        var values = $.map(e.attrs, function (attrs) {
+                            return attrs.value;
+                        });
+                        toastr.info(e.attrs.length + '已删除：' + values.join(', '));
+                    } else {
+                        toastr.info('已删除：' + e.attrs.value);
+                    }
+                })
+                .tokenfield();
+        },
+        tagsObj: function () { // 标签使用对象
+            var cities = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                prefetch: $.ctx + '/views/examples/forms_advanced/tags_input.json'
+            });
+            cities.initialize();
+
+            var $input = $('#inputTagsObject');
+            $input.tagsinput($.po('tagsinput',{
+                itemValue: 'value',
+                itemText: 'text',
+                typeaheadjs: [{
+                    hint: true,
+                    highlight: true,
+                    minLength: 1
+                }, {
+                    name: 'cities',
+                    displayKey: 'text',
+                    source: cities.ttAdapter()
+                }]
+            }));
+
+            $input.tagsinput('add', {
+                "value": 1,
+                "text": "北京",
+                "continent": "北京"
+            });
+            $input.tagsinput('add', {
+                "value": 2,
+                "text": "广州",
+                "continent": "广东"
+            });
+            $input.tagsinput('add', {
+                "value": 3,
+                "text": "韶关",
+                "continent": "广东"
+            });
+            $input.tagsinput('add', {
+                "value": 4,
+                "text": "深圳",
+                "continent": "广东"
+            });
+            $input.tagsinput('add', {
+                "value": 5,
+                "text": "珠海",
+                "continent": "广东"
+            });
+        },
+        tagsSort: function () { //标签分类
+            var cities = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                prefetch: $.ctx + '/views/examples/forms_advanced/tags_input.json'
+            });
+            cities.initialize();
+
+            var $input = $('#inputTagsCategorizing');
+
+            $input.tagsinput($.po('tagsinput',{
+                tagClass: function (item) {
+                    switch (item.continent) {
+                        case '北京':
+                            return 'badge badge-primary';
+                        case '广东':
+                            return 'badge badge-danger';
+                        case '浙江':
+                            return 'badge badge-success';
+                        case '新疆':
+                            return 'badge badge-default';
+                        case '江苏':
+                            return 'badge badge-warning';
+                    }
+                },
+                itemValue: 'value',
+                itemText: 'text',
+                typeaheadjs: [{
+                    hint: true,
+                    highlight: true,
+                    minLength: 1
+                }, {
+                    name: 'cities',
+                    displayKey: 'text',
+                    source: cities.ttAdapter()
+                }]
+            }));
+
+            $input.tagsinput('add', {
+                "value": 1,
+                "text": "北京",
+                "continent": "北京"
+            });
+            $input.tagsinput('add', {
+                "value": 2,
+                "text": "广州",
+                "continent": "广东"
+            });
+            $input.tagsinput('add', {
+                "value": 3,
+                "text": "韶关",
+                "continent": "广东"
+            });
+            $input.tagsinput('add', {
+                "value": 4,
+                "text": "深圳",
+                "continent": "广东"
+            });
+            $input.tagsinput('add', {
+                "value": 5,
+                "text": "珠海",
+                "continent": "广东"
+            });
+
+        },
+        run: function () {
+            this.inputTokenfieldEvents();
+            this.inputTokenfieldTypeahead();
+            this.tagsObj();
+            this.tagsSort();
+        }
+    };
+
+})(document, window, jQuery);
+</script>

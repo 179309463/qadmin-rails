@@ -1,0 +1,541 @@
+<title>社交 - UI示例</title>
+
+<style>
+.card {
+	margin-bottom: 30px;
+	height: -webkit-calc(100% - 30px);
+	height: calc(100% - 30px)
+}
+
+.card-footer .nav-tabs {
+	width: 100%
+}
+
+.card-footer .nav-item {
+	display: table-cell;
+	float: none;
+	width: 1%
+}
+
+.card-footer .nav-link {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 20px
+}
+
+@media (max-width:479.98px) {
+	.background-bottom .col-xs-6 {
+		width: 100%
+	}
+
+	.background-bottom .col-xs-6+.col-xs-6 {
+		margin-top: 20px
+	}
+
+	.avatar-group .counter-icon {
+		display: block
+	}
+
+	.avatar-group .counter-icon>i {
+		margin: 0!important
+	}
+}
+
+@media (min-width:1200px) and (max-width:1366px) {
+	.col-lg-3 {
+		width: 50%
+	}
+}
+</style>
+
+<div class="page ">
+    <div class="page-header">
+        <h1 class="page-title">社交</h1>
+    </div>
+    <div class="page-content container-fluid">
+        <div class="row" data-plugin="matchHeight" data-by-row="true">
+            <div class="col-xl-4 col-lg-6">
+                <div class="card card-shadow text-center overlay">
+                    <div class="card-img-top cover overlay" style="height: calc(100% - 100px);">
+                        <img class="cover-image" src="/static/images/photos/view-1.jpg" alt="..." style="height: 100%;">
+                        <div class="overlay-panel vertical-align">
+                            <div class="vertical-align-middle">
+                                <a class="avatar avatar-100 bg-white mb-10 img-bordered m-xs-0" href="javascript:;">
+                                    <img src="/static/images/portraits/1.jpg" alt="">
+                                </a>
+                                <div class="font-size-20">郭雨萌</div>
+                                <div class="font-size-14 grey-400">设计师</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white px-30 py-20 h-100">
+                        <div class="row no-space">
+                            <div class="col-4">
+                                <div class="counter">
+                                    <div class="counter-label">关注</div>
+                                    <span class="counter-number">11.2K</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter">
+                                    <div class="counter-label">粉丝</div>
+                                    <span class="counter-number">683</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter">
+                                    <div class="counter-label">微博</div>
+                                    <span class="counter-number">326</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="card card-shadow overlay">
+                    <div class="card-img-top cover overlay" style="height: calc(100% - 100px);">
+                        <img class="cover-image" src="/static/images/photos/view-2.jpg" alt="..." style="height: 100%;">
+                        <div class="overlay-panel overlay-background overlay-top">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="font-size-20 white">郭雨萌</div>
+                                    <div class="font-size-14 grey-400">设计师</div>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <div class="avatar">
+                                        <img src="/static/images/portraits/2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center bg-white px-30 py-20 h-100">
+                        <div class="row no-space">
+                            <div class="col-4">
+                                <div class="counter">
+                                    <span class="counter-number">6809</span>
+                                    <div class="counter-label">关注</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter">
+                                    <span class="counter-number">569</span>
+                                    <div class="counter-label">粉丝</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter">
+                                    <span class="counter-number">357</span>
+                                    <div class="counter-label">微博</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="card card-shadow overlay">
+                    <div class="card-header cover overlay">
+                        <div class="cover-background h-150" style="background-image: url('/static/images/photos/view-3.jpg')"></div>
+                    </div>
+                    <div class="card-block px-30 py-20" style="height:calc(100% - 250px);">
+                        <div style="position:relative;padding-left:110px;">
+                            <a class="avatar avatar-100 bg-white img-bordered" href="javascript:;" style="position:absolute;top:-50px;left:0;">
+                                <img src="/static/images/portraits/2.jpg" alt="">
+                            </a>
+                            <div class="mb-20">
+                                <div class="font-size-20">郭雨萌</div>
+                                <div class="font-size-14">设计师</div>
+                            </div>
+                        </div>
+                        <p>
+                            昔日铁饭碗，今日大裁员，躺着就能赚钱的传统银行业要变天了，如此大规模的裁员在银行发展史上可谓罕见，但也并非无迹可寻。 </p>
+                    </div>
+                    <div class="card-footer text-center bg-blue-grey-400 p-30 h-100">
+                        <div class="row no-space">
+                            <div class="col-6">
+                                <div class="counter counter-inverse">
+                                    <span class="counter-number">7896</span>
+                                    <div class="counter-label inline-block ml-5">关注</div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="counter counter-inverse">
+                                    <span class="counter-number">621</span>
+                                    <div class="counter-label inline-block ml-5">粉丝</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="card card-inverse card-shadow bg-green-500 white">
+                    <div class="card-block p-20 h-full">
+                        <a class="avatar float-left mr-20" href="javascript:;">
+                            <img src="/static/images/portraits/15.jpg" alt="">
+                        </a>
+                        <div style="overflow:hidden;">
+                            <small class="float-right grey-200">昨天, 13:48</small>
+                            <div class="font-size-18">段旭</div>
+                            <div class="grey-200 font-size-14 mb-10">Web 设计师</div>
+                            <blockquote class="blockquote cover-quote font-size-16 white">昔日铁饭碗，今日大裁员，躺着就能赚钱的传统银行业要变天了
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="card card-shadow card-inverse white bg-weibo">
+                    <div class="card-block p-20 h-full">
+                        <h3 class="white mt-0">昔日铁饭碗，今日大裁员，躺着就能赚钱的传统银行业要变天了</h3>
+                        <small>2016.9.9 iphone 7 plus</small>
+                        <div class="mt-30">
+                            <i class="icon fa fa-weibo font-size-26"></i>
+                            <ul class="list-inline float-right mt-15">
+                                <li class="list-inline-item">
+                                    <i class="icon wb-heart"></i> 598
+                                </li>
+                                <li class="list-inline-item">
+                                    <i class="icon wb-thumb-up"></i> 96
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6">
+                <div class="card card-shadow card-inverse white bg-facebook">
+                    <div class="card-block p-20 h-full">
+                        <h3 class="white mt-0">昔日铁饭碗，今日大裁员，躺着就能赚钱的传统银行业要变天了</h3>
+                        <small>2016.9.9 iphone 7 plus</small>
+                        <div class="mt-30">
+                            <i class="icon fa fa-facebook font-size-26"></i>
+                            <ul class="list-inline float-right mt-15">
+                                <li class="list-inline-item">
+                                    <i class="icon wb-heart"></i> 1256
+                                </li>
+                                <li class="list-inline-item">
+                                    <i class="icon wb-star"></i> 379
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card card-inverse card-shadow bg-green-600 white">
+                    <div class="card-block p-30">
+                        <a class="avatar avatar-100 img-bordered bg-white float-left mr-20" href="javascript:;">
+                            <img src="/static/images/portraits/11.jpg" alt="">
+                        </a>
+                        <div class="vertical-align h-100 text-truncate">
+                            <div class="vertical-align-middle">
+                                <div class="font-size-20 mb-5 text-truncate">段旭</div>
+                                <div class="font-size-14 text-truncate">管理员</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card card-inverse card-shadow bg-blue-600 white text-center">
+                    <div class="card-block p-30">
+                        <a class="avatar avatar-100 img-bordered bg-white" href="javascript:;">
+                            <img src="/static/images/portraits/12.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card card-inverse card-shadow bg-white">
+                    <div class="card-block p-30">
+                        <a class="avatar avatar-100 float-left mr-20" href="javascript:;">
+                            <img src="/static/images/portraits/13.jpg" alt="">
+                        </a>
+                        <div class="vertical-align text-right h-100 text-truncate">
+                            <div class="vertical-align-middle">
+                                <div class="font-size-20 mb-5 blue-600 text-truncate">郭雨萌</div>
+                                <div class="font-size-14 text-truncate">Web 设计师</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="card card-inverse card-shadow bg-blue-600 white">
+                    <div class="card-block p-30">
+                        <a class="avatar avatar-100 img-bordered bg-white float-right" href="javascript:;">
+                            <img src="/static/images/portraits/14.jpg" alt="">
+                        </a>
+                        <div class="vertical-align h-100 text-truncate">
+                            <div class="vertical-align-middle">
+                                <div class="font-size-20 mb-5 text-truncate">郭雨萌</div>
+                                <div class="font-size-14 text-truncate">Web 设计师</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-plugin="masonry">
+            <div class="col-lg-6 masonry-item">
+                <div class="card card-shadow overlay">
+                    <div class="card-header bg-blue-600 text-center p-30 pb-15">
+                        <div class="font-size-20 white">郭雨萌</div>
+                        <div class="grey-300 font-size-14 mb-20">Web 设计师</div>
+                        <a class="avatar avatar-100 img-bordered mb-10 bg-white" href="javascript:;">
+                            <img src="/static/images/portraits/4.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="card-footer px-30 py-20 text-center bg-white">
+                        <div class="row no-space">
+                            <div class="col-4">
+                                <div class="counter">
+                                    <span class="counter-number blue-600">102</span>
+                                    <div class="counter-label">项目</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter">
+                                    <span class="counter-number blue-600">83</span>
+                                    <div class="counter-label">客户</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter">
+                                    <span class="counter-number blue-600">13.5K</span>
+                                    <div class="counter-label">关注</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 masonry-item">
+                <div class="card card-shadow avatar-group">
+                    <div class="widget-header text-center p-30">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a class="avatar avatar-lg m-5" href="javascript:;">
+                                    <img src="/static/images/portraits/7.jpg" alt="">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="avatar avatar-lg m-5" href="javascript:;">
+                                    <img src="/static/images/portraits/8.jpg" alt="">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="avatar avatar-lg m-5" href="javascript:;">
+                                    <img src="/static/images/portraits/9.jpg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="font-size-18 blue-600">郭雨萌</div>
+                        <div class="font-size-14">设计师</div>
+                    </div>
+                    <div class="card-footer bg-blue-grey-400 white text-center py-20 px-30">
+                        <div class="row no-space ">
+                            <div class="col-4">
+                                <div class="counter counter-inverse">
+                                    <span class="counter-icon">
+                                        <i class="icon wb-eye mr-15" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="counter-number">102</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter counter-inverse">
+                                    <span class="counter-icon">
+                                        <i class="icon wb-heart mr-15" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="counter-number">8</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="counter counter-inverse">
+                                    <span class="counter-icon">
+                                        <i class="icon wb-user mr-15" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="counter-number">12.6K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 masonry-item">
+                <div class="card card-shadow background-bottom overlay">
+                    <div class="card-header card-header-transparent cover">
+                        <div class="cover-background h-250" style="background-image: url('/static/images/photos/view-4.jpg')"></div>
+                        <div class="overlay-panel overlay-background overlay-bottom">
+                            <div class="row no-space">
+                                <div class="col-sm-6">
+                                    <a class="avatar avatar-lg bg-white float-left mr-20 img-bordered" href="javascript:;">
+                                        <img src="/static/images/portraits/10.jpg" alt="">
+                                    </a>
+                                    <div>
+                                        <div class="font-size-20 mb-0">郭雨萌</div>
+                                        <p class="mb-0 text-nowrap">
+                                            <i class="icon wb-map mr-10" aria-hidden="true"></i>
+                                            <span class="text-break"> 北京 / 朝阳</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="row no-space text-center">
+                                        <div class="col-4">
+                                            <div class="counter counter-inverse">
+                                                <div class="counter-label">关注</div>
+                                                <span class="counter-number">6584</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="counter counter-inverse">
+                                                <div class="counter-label">粉丝</div>
+                                                <span class="counter-number">2046</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="counter counter-inverse">
+                                                <div class="counter-label">微博</div>
+                                                <span class="counter-number">325</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 masonry-item">
+                <div class="card card-shadow text-center overlay">
+                    <div class="card-header cover">
+                        <div class="cover-background" style="background-image: url('/static/images/photos/view-5.jpg')">
+                            <div class="vertical-align px-0">
+                                <div class="vertical-align-bottom w-full">
+                                    <a class="avatar avatar-100 img-bordered bg-white mt-20" href="javascript:;">
+                                        <img src="/static/images/portraits/17.jpg" alt="">
+                                    </a>
+                                    <h3 class="white">郭雨萌</h3>
+                                    <p class="white">
+                                        <i class="icon wb-map mr-10" aria-hidden="true"></i> 上海
+                                    </p>
+                                    <button type="button" class="btn btn-primary mb-20">关注</button>
+                                    <div class="row no-space overlay-background pt-10 pb-15">
+                                        <div class="col-4">
+                                            <div class="counter counter-inverse">
+                                                <span class="counter-number">13.2K</span>
+                                                <div class="counter-label">关注</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="counter counter-inverse">
+                                                <span class="counter-number">246</span>
+                                                <div class="counter-label">粉丝</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="counter counter-inverse">
+                                                <span class="counter-number">32</span>
+                                                <div class="counter-label">微博</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 masonry-item">
+                <div class="card card-shadow overlay">
+                    <div class="card-header bg-blue-600 white p-15 clearfix">
+                        <a class="avatar avatar-lg float-left mr-20" href="javascript:;">
+                            <img src="/static/images/portraits/16.jpg" alt="">
+                        </a>
+                        <div class="font-size-18">郭雨萌</div>
+                        <div class="grey-300 font-size-14">Web 设计师</div>
+                    </div>
+                    <div class="card-block">
+                        <ul class="list-group list-group-bordered mb-0">
+                            <li class="list-group-item">
+                                <span class="badge badge-pill badge-success">6</span>
+                                <i class="icon wb-inbox" aria-hidden="true" draggable="true"></i> 收件箱
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge badge-pill badge-info">2</span>
+                                <i class="icon wb-user" aria-hidden="true" draggable="true"></i> 用户
+                            </li>
+                            <li class="list-group-item">
+                                <i class="icon wb-bell" aria-hidden="true" draggable="true"></i> 通知
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge badge-pill badge-info">10</span>
+                                <i class="icon wb-info-circle" aria-hidden="true" draggable="true"></i>消息
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 masonry-item">
+                <div class="card card-shadow">
+                    <div class="card-header card-header-transparent cover">
+                        <div class="cover-background p-30" style="background-image: url('/static/images/photos/view-6.jpg')">
+                            <blockquote class="blockquote cover-quote white">昔日铁饭碗，今日大裁员，躺着就能赚钱的传统银行业要变天了。</blockquote>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="avatar avatar-sm float-left mr-10 mt-5">
+                            <img src="/static/images/portraits/3.jpg" alt="">
+                        </div>
+                        <div class="info mb-25">
+                            <div class="blue-grey-700 text-uppercase">郭雨萌</div>
+                            <div class="blue-grey-400 text-capitalize">开发者</div>
+                        </div>
+                        <p class="mb-40">昔日铁饭碗，今日大裁员，躺着就能赚钱的传统银行业要变天了，如此大规模的裁员在银行发展史上可谓罕见，但也并非无迹可寻。</p>
+                        <div class="text-right">
+                            <a class="text-action" href="javascript:;">
+                                <i class="icon wb-heart"></i>
+                                <span>23</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 masonry-item">
+                <div class="card card-shadow overlay">
+                    <div class="card-header h-150 bg-blue-600 vertical-align py-20 px-25">
+                        <blockquote class="blockquote cover-quote vertical-align-middle white font-size-20">
+                            昔日铁饭碗，今日大裁员，躺着就能赚钱的传统银行业要变天了。
+                        </blockquote>
+                    </div>
+                    <div class="card-block pt-0 mt-30">
+                        <div class="avatar avatar-lg img-bordered bg-white mb-10">
+                            <img src="/static/images/portraits/13.jpg" alt="">
+                        </div>
+                        <div class="info mb-25">
+                            <div class="blue-grey-700">郭雨萌</div>
+                            <div class="blue-grey-400">开发者</div>
+                        </div>
+                        <p class="mb-35 blue-grey-500">昔日铁饭碗，今日大裁员，躺着就能赚钱的传统银行业要变天了。 </p>
+                        <div class="text-right">
+                            <a class="text-action" href="javascript:;">
+                                <i class="icon wb-heart"></i>
+                                <span>16</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+<script src="/vendor/matchHeight/dist/jquery.matchHeight-min.js"></script>
+<script src="/vendor/masonry/dist/masonry.pkgd.min.js"></script>

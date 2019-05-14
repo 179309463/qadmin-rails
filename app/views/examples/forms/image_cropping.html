@@ -1,0 +1,387 @@
+<title>图片裁剪</title>
+
+<link rel="stylesheet" href="/vendor/cropper/dist/cropper.min.css">
+
+<style>
+.cropper-preview,.img-preview {
+    overflow: hidden
+}
+
+.btn-group .btn+.btn,.btn-group .btn+.btn-group,.btn-group .btn-group+.btn,.btn-group .btn-group+.btn-group {
+    margin-left: 0
+}
+
+.img-preview {
+    float: left;
+    margin: 0 10px 10px 0
+}
+
+.img-preview>img {
+    max-width: 100%
+}
+
+.preview-lg {
+    width: 263px;
+    height: 148px
+}
+
+.preview-md {
+    width: 139px;
+    height: 78px
+}
+
+.preview-sm {
+    width: 69px;
+    height: 39px
+}
+
+.preview-xs {
+    width: 35px;
+    height: 20px;
+    margin-right: 0
+}
+
+.cropper,.cropper-toolbar {
+    margin-bottom: 30px
+}
+
+@media (min-width:1200px) {
+    .cropper {
+        max-height: 600px
+    }
+}
+
+@media (min-width:768px) {
+    .cropper {
+        max-height: 400px
+    }
+}
+
+@media (max-width:767.98px) {
+    .cropper {
+        max-height: 300px
+    }
+}
+
+@media (max-width:479.98px) {
+    .cropper {
+        max-height: 246px
+    }
+}
+
+@media (max-width:586px) {
+    .btn-group .btn {
+        padding: 6px 8px
+    }
+
+    .cropper {
+        max-height: 246px
+    }
+}
+</style>
+
+<div class="page animation-fade page-forms">
+    <div class="page-header">
+        <h1 class="page-title">图片裁剪</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a>首页</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">表单</a>
+            </li>
+            <li class="breadcrumb-item active">图片裁剪</li>
+        </ol>
+        <div class="page-header-actions">
+            <a class="btn btn-default btn-outline btn-round" href="https://github.com/fengyuanchen/cropper" target="_blank">
+                <i class="icon wb-link" aria-hidden="true"></i> 官网
+            </a>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">简单示例</h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="cropper" id="simpleCropper">
+                            <img src="/static/images/photos/animal-4.jpg" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="cropper-preview clearfix" id="simpleCropperPreview">
+                            <div class="img-preview preview-lg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">完整示例</h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="cropper text-center" id="exampleFullCropper">
+                            <img src="/static/images/photos/animal-4.jpg" alt="...">
+                        </div>
+                        <div class="cropper-toolbar text-center">
+                            <div class="btn-group mb-20">
+                                <button type="button" class="btn btn-primary" data-cropper-method="zoom" data-option="0.1"
+                                        data-toggle="tooltip" data-container="body" title="放大">
+                                    <span class="cropper-tooltip" title="放大">
+                                        <i class="wb-zoom-in"></i>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-cropper-method="zoom" data-option="-0.1"
+                                        data-toggle="tooltip" data-container="body" title="缩小">
+                                    <span class="cropper-tooltip" title="缩小">
+                                        <i class="wb-zoom-out"></i>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-cropper-method="rotate" data-option="-90"
+                                        data-toggle="tooltip" data-container="body" title="逆时针旋转90°">
+                                    <span class="cropper-tooltip" title="逆时针旋转90°">
+                                        <i class="wb-arrow-left cropper-flip-horizontal"></i>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-cropper-method="rotate" data-option="90"
+                                        data-toggle="tooltip" data-container="body" title="顺时针旋转90°">
+                                    <span class="cropper-tooltip" title="顺时针旋转90°">
+                                        <i class="wb-arrow-right"></i>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-cropper-method="rotate" data-option="-5"
+                                        data-toggle="tooltip" data-container="body" title="逆时针旋转">
+                                    <span class="cropper-tooltip" title="逆时针旋转">
+                                        <i class="wb-refresh cropper-flip-horizontal"></i>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-cropper-method="rotate" data-option="5"
+                                        data-toggle="tooltip" data-container="body" title="顺时针旋转">
+                                    <span class="cropper-tooltip" title="顺时针旋转">
+                                        <i class="icon wb-reload" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="btn-group mb-20">
+                                <button type="button" class="btn btn-primary" data-cropper-method="setDragMode"
+                                        data-option="move" data-toggle="tooltip" data-container="body" title="移动">
+                                    <span class="cropper-tooltip" title="移动">
+                                        <i class="icon wb-move" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-cropper-method="setDragMode"
+                                        data-option="crop" data-toggle="tooltip" data-container="body" title="裁剪">
+                                    <span class="cropper-tooltip" title="裁剪">
+                                        <i class="icon wb-crop" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-cropper-method="getCroppedCanvas"
+                                        data-option='{ "width": 320, "height": 180 }' data-toggle="tooltip" data-container="body"
+                                        title="获取图片">
+                                    <span class="cropper-tooltip" title="获取图片">
+                                        <i class="icon wb-image" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-cropper-method="clear" data-toggle="tooltip"
+                                        data-container="body" title="清除">
+                                    <span class="cropper-tooltip" title="清除">
+                                        <i class="icon wb-close" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <label class="btn btn-primary mb-0" data-toggle="tooltip" for="inputImage"
+                                        data-container="body" title="" data-original-title="上传文件">
+                                    <input type="file" class="hidden-xs-up" id="inputImage" name="file" accept="image/*">
+                                    <span class="cropper-tooltip" title="上传文件">
+                                        <i class="icon wb-upload" aria-hidden="true"></i>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cropper-preview clearfix" id="exampleFullCropperPreview">
+                            <div class="img-preview preview-lg"></div>
+                            <div class="img-preview preview-md"></div>
+                            <div class="img-preview preview-sm"></div>
+                            <div class="img-preview preview-xs"></div>
+                        </div>
+                        <h4>数据：</h4>
+                        <div class="cropper-data">
+                            <div class="input-group mb-15">
+                                <label class="input-group-prepend" for="inputDataX">
+                                    <span class="input-group-text">X 轴</span>
+                                </label>
+                                <input type="number" class="form-control" id="inputDataX" name="inputNumbers"
+                                        placeholder="x">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">px</span>
+                                </div>
+                            </div>
+                            <div class="input-group mb-15">
+                                <label class="input-group-prepend" for="inputDataY">
+                                    <span class="input-group-text">Y 轴</span>
+                                </label>
+                                <input type="number" class="form-control" id="inputDataY" name="inputNumbers"
+                                        placeholder="y">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">px</span>
+                                </div>
+                            </div>
+                            <div class="input-group mb-15">
+                                <label class="input-group-prepend" for="inputDataWidth">
+                                    <span class="input-group-text">宽度</span>
+                                </label>
+                                <input type="number" class="form-control" id="inputDataWidth" name="inputNumbers"
+                                        placeholder="width">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">px</span>
+                                </div>
+                            </div>
+                            <div class="input-group mb-15">
+                                <label class="input-group-prepend" for="inputDataHeight">
+                                    <span class="input-group-text">高度</span>
+                                </label>
+                                <input type="number" class="form-control" id="inputDataHeight" name="inputNumbers"
+                                        placeholder="height">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">px</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-block" id="setCropperData" type="button">设置数据</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade docs-cropped" id="getDataURLModal" aria-hidden="true" aria-labelledby="getDataURLTitle" role="dialog"
+        tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="getDataURLTitle">裁剪</h4>
+            </div>
+            <div class="modal-body">
+                <div class="text-center" id="getImageData"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/cropper/dist/cropper.min.js" data-name="cropper"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    var $content = $('#qadmin-pageContent');
+    // 简单示例
+    // ----------------------
+    $("#simpleCropper img").cropper({
+        preview: "#simpleCropperPreview >.img-preview",
+        responsive: true
+    });
+
+    // 复杂示例
+    // --------------------
+    var $exampleFullCropper = $("#exampleFullCropper img"),
+        $inputDataX = $("#inputDataX"),
+        $inputDataY = $("#inputDataY"),
+        $inputDataHeight = $("#inputDataHeight"),
+        $inputDataWidth = $("#inputDataWidth");
+
+    // cropper
+    $exampleFullCropper.cropper({
+        aspectRatio: 16 / 9,
+        preview: "#exampleFullCropperPreview > .img-preview",
+        responsive: true,
+        crop: function () {
+            var data = $(this).data('cropper');
+            if (typeof data !== 'undefined') {
+                data = data.getCropBoxData();
+                $inputDataX.val(Math.round(data.left));
+                $inputDataY.val(Math.round(data.top));
+                $inputDataHeight.val(Math.round(data.height));
+                $inputDataWidth.val(Math.round(data.width));
+            }
+        }
+    });
+
+    // 按钮
+    $content.on("click", "[data-cropper-method]", function () {
+        var data = $(this).data(),
+            method = $(this).data('cropper-method'),
+            result;
+        if (method) {
+            result = $exampleFullCropper.cropper(method, data.option);
+        }
+
+        if (method === 'getCroppedCanvas') {
+            $('#getDataURLModal').modal();
+            $('#getImageData').html(result);
+        }
+
+    });
+
+    // 处理上传
+    var $inputImage = $("#inputImage");
+
+    if (window.FileReader) {
+        $inputImage.change(function () {
+            var fileReader = new FileReader(),
+                files = this.files,
+                file;
+
+            if (!files.length) {
+                return;
+            }
+
+            file = files[0];
+
+            if (/^image\/\w+$/.test(file.type)) {
+                fileReader.readAsDataURL(file);
+                fileReader.onload = function () {
+                    $exampleFullCropper.cropper("reset", true).cropper("replace", this.result);
+                    $inputImage.val("");
+                };
+            } else {
+                toastr.warnings("请选择图片文件");
+            }
+        });
+    } else {
+        $inputImage.addClass("hide");
+    }
+
+    // 设置数据
+    $("#setCropperData").click(function () {
+        var data = {
+            left: parseInt($inputDataX.val()),
+            top: parseInt($inputDataY.val()),
+            width: parseInt($inputDataWidth.val()),
+            height: parseInt($inputDataHeight.val())
+        };
+        $exampleFullCropper.cropper("setCropBoxData", data);
+    });
+
+    $.leavePage = function () {
+        $("#simpleCropper img").cropper('destroy');
+        $exampleFullCropper.cropper('destroy');
+    };
+
+})(document, window, jQuery);
+</script>

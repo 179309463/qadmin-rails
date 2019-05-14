@@ -1,0 +1,14 @@
+.lightbox-block {
+	max-width: 600px;
+	padding: 15px 20px;
+	margin: 40px auto;
+	overflow: auto;
+	background: #fff;
+	border-radius: 3px;
+}
+
+.mfp-bg {
+  z-index: 2042; }
+
+.mfp-wrap {
+  z-index: 2043; }

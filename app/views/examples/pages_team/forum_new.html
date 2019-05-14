@@ -1,0 +1,197 @@
+<link rel="stylesheet" href="/lib/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" href="/lib/bootstrap-select/dist/css/bootstrap-select.css">
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+.page-forum .page-content .table {
+    table-layout: fixed;
+}
+.page-forum .page-content .table .content {
+    position: relative;
+}
+.page-forum .page-content .table .content > * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.page-forum .page-content .table .flags {
+    display: inline-block;
+}
+.page-forum .page-content .table a {
+    text-decoration: none;
+}
+.page-forum .page-content .table .title {
+    line-height: 25px;
+}
+.page-forum .page-content .table .title > * {
+    margin-right: 10px;
+}
+.page-forum .page-content .table .title .locked {
+    color: #a3afb7;
+}
+.page-forum .page-content .table .sticky-top {
+    font-size: 90%;
+}
+.page-forum .page-content .table .sticky-top .icon {
+    margin-right: 4px;
+}
+.page-forum .page-content .table .metas {
+    color: #a3afb7;
+}
+.page-forum .page-content .table .metas > span {
+    position: relative;
+    margin-right: 10px;
+}
+.page-forum .page-content .table .metas > span + span:before {
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 2px;
+    height: 2px;
+    content: "";
+    background-color: #a7b0b8;
+}
+.page-forum .page-content .table .forum-posts {
+    text-align: right;
+}
+@media (max-width: 1199px) {
+    .page-forum .page-content .table .content {
+        padding-right: 100px;
+    }
+    .page-forum .page-content .table .flags {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+@media (max-width: 480px) {
+    .page-forum .nav-tabs-line > li > a {
+        padding: 10px;
+    }
+    .page-forum .responsive-hide {
+        display: none !important;
+    }
+    .page-forum .page-content .table .content {
+        padding-right: 0;
+    }
+}
+.slidePanel-header {
+    background-color: #9ece67;
+}
+.slidePanel-header:before, .slidePanel-header:after {
+    display: table;
+    content: " ";
+}
+.slidePanel-header:after {
+    clear: both;
+}
+.slidePanel .actions-top {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+.slidePanel .actions-bottom {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}
+.slidePanel .avatar, .slidePanel .name {
+    margin-right: 6px;
+}
+.slidePanel .time {
+    color: #a3afb7;
+}
+.slidePanel .forum-header, .slidePanel .forum-content, .slidePanel .forum-metas {
+    margin-bottom: 20px;
+}
+.slidePanel .forum-header:before, .slidePanel .forum-content:before, .slidePanel .forum-metas:before, .slidePanel .forum-header:after, .slidePanel .forum-content:after, .slidePanel .forum-metas:after {
+    display: table;
+    content: " ";
+}
+.slidePanel .forum-header:after, .slidePanel .forum-content:after, .slidePanel .forum-metas:after {
+    clear: both;
+}
+.slidePanel .forum-content:last-child {
+    margin-bottom: 0;
+}
+.slidePanel .tags {
+    margin-bottom: 15px;
+}
+</style>
+
+<div class="modal-header">
+    <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+    <h4 class="modal-title">发布新帖子</h4>
+</div>
+<div class="modal-body container-fluid">
+    <form>
+        <div class="form-group">
+            <label class="control-label margin-bottom-15" for="topicTitle">帖子主题：</label>
+            <input type="text" class="form-control" id="topicTitle" name="title" placeholder="填写标题...">
+        </div>
+        <div class="form-group">
+            <textarea name="content" class="markdown-edit" rows="10"></textarea>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-6">
+                    <label class="control-label margin-bottom-15" for="topicCategory">帖子标签</label>
+                    <select id="topicCategory" data-plugin="selectpicker">
+                        <option>PHP</option>
+                        <option>Javascript</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>Ruby</option>
+                    </select>
+                </div>
+                <div class="col-xs-6">
+                    <label class="control-label margin-bottom-15" for="topic_tags">推荐标签：</label>
+                    <select id="topic_tags" data-plugin="selectpicker">
+                        <option>PHP</option>
+                        <option>Javascript</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>Ruby</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer text-left">
+    <button class="btn btn-primary" data-dismiss="modal" type="submit">创建</button>
+    <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;">取消</a>
+</div>
+
+<script src="/vendor/bootstrap-markdown/js/bootstrap-markdown.js" data-name="markdown"></script>
+<script src="/vendor/bootstrap-markdown/locale/bootstrap-markdown.zh.js" data-deps="markdown"></script>
+<script src="/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="/vendor/marked/marked.min.js"></script>
+<script src="/vendor/to-markdown/dist/to-markdown.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window) {
+    'use strict';
+
+    window.Content = App.extend({
+        run: function (next) {
+            $('.markdown-edit').markdown({
+                language: 'zh',
+                iconlibrary: 'fa'
+            });
+
+            next();
+        }
+    });
+    
+})(document, window);
+</script>

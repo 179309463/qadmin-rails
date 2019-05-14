@@ -1,0 +1,18 @@
+<div class="page page-full animation-fade">
+    <div class="page-content padding-20 height-full">
+        
+        <div class="padding-bottom-10">
+            <button class="btn btn-dark btn-outline" onclick="onBtStartEditing()">编辑(第一行, 名字)</button>
+            <button class="btn btn-dark btn-outline" onclick="onBtStartEditing(46)">编辑并清除(第一行, 名字)</button>
+            <button class="btn btn-dark btn-outline" onclick="onBtStartEditing(null, 'T')">编辑(第一行, 名字，默认为T)</button>
+            <button class="btn btn-dark btn-outline" onclick="onBtStopEditing()">取消编辑</button>
+            <button class="btn btn-dark btn-outline" onclick="onBtNextCell()">下一个单元格</button>
+            <button class="btn btn-dark btn-outline" onclick="onBtPreviousCell()">上一个单元格</button>            
+        </div>
+        <div id="myGrid" class="height-full-40 ag-fresh"></div>        
+        
+    </div>
+</div>
+
+<script src="/lib/ag-grid-enterprise/dist/ag-grid-enterprise.js"></script>
+<script src="/views/examples/tables/ag-grid/cell-editing/exampleCellEditing.js"></script>

@@ -1,0 +1,792 @@
+<title>表单验证</title>
+
+<link rel="stylesheet" href="/lib/formvalidation.io/dist/css//formValidation.min.css">
+
+<style>
+.page-forms .has-feedback .form-control-feedback {
+    right: 15px;
+}
+.page-forms .summary-errors p {
+    color: inherit;
+}
+.page-forms .summary-errors ul li a {
+    color: inherit;
+}
+.page-forms .summary-errors ul li a:hover {
+    text-decoration: none;
+}
+@media (min-width: 768px) {
+    .page-forms #exampleFullForm .form-horizontal .control-label {
+        text-align: inherit;
+    }
+}
+</style>
+
+<div class="page page-full animation-fade page-forms">
+    <div class="page-header">
+        <h1 class="page-title">表单验证</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a>首页</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">表单</a>
+            </li>
+            <li class="breadcrumb-item active">表单验证</li>
+        </ol>
+        <div class="page-header-actions">
+            <a class="btn btn-default btn-outline btn-round" href="http://formvalidation.io" target="_blank">
+                <i class="icon wb-link" aria-hidden="true"></i> <span class="hidden-xs">官网</span>
+            </a>
+        </div>
+    </div>
+    <div class="page-content container-fluid">
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">样式</h3>
+            </div>
+            <div class="panel-body">
+                <p>在表单元素的父元素上添加<code>.has-warning</code>、<code>.has-error</code> 或 <code>.has-success</code> ，其他同级元素如
+                    <code>.control-label</code>、 <code>.form-control</code> 和 <code>.help-block</code> 也会引用这些样式</p>
+                <form class="row">
+                    <div class="col-md-4 form-group has-success has-feedback">
+                        <div class="row">
+                            <label class="col-md-12 col-sm-3 control-label">成功</label>
+                            <div class="col-md-12 col-sm-9">
+                                <input type="text" class="form-control" id="inputSuccess" aria-describedby="inputSuccessStatus">
+                                <span class="form-control-feedback" aria-hidden="true"><i class="icon wb-check" aria-hidden="true"></i></span>
+                                <span class="sr-only" id="inputSuccessStatus">成功</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group has-warning has-feedback">
+                        <div class="row">
+                            <label class="col-md-12 col-sm-3 control-label">警告</label>
+                            <div class="col-md-12 col-sm-9">
+                                <input type="text" class="form-control" id="inputWarning" aria-describedby="inputWarningStatus">
+                                <span class="form-control-feedback" aria-hidden="true"><i class="icon wb-warning" aria-hidden="true"></i></span>
+                                <span class="sr-only" id="inputWarningStatus">警告</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group has-error has-feedback">
+                        <div class="row">
+                            <label class="col-md-12 col-sm-3 control-label">错误</label>
+                            <div class="col-md-12 col-sm-9">
+                                <input type="text" class="form-control" id="inputError" aria-describedby="inputErrorStatus">
+                                <span class="form-control-feedback" aria-hidden="true"><i class="icon wb-close" aria-hidden="true"></i></span>
+                                <span class="sr-only" id="inputErrorStatus">错误</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">标准模式</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" id="exampleStandardForm" autocomplete="off">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">姓名</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="standard_name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">邮箱</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="standard_email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">简介</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="standard_content" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary" id="validateButton2">提交</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">摘要模式</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" id="exampleSummaryForm" autocomplete="off">
+                            <div class="summary-errors alert alert-danger alert-dismissible">
+                                <button type="button" class="close" aria-label="Close" data-dismiss="alert">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <p>错误信息：</p>
+                                <ul></ul>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">姓名</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="summary_name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">邮件</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="summary_email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">简介</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" name="summary_content" rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary" id="validateButton3">提交</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">完整示例 <span class="panel-desc">基本验证将在表单控件之后显示错误标签</span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <form id="exampleFullForm" autocomplete="off">
+                    <div class="row row-lg">
+                        <div class="col-lg-6 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">用户名 <span class="required">*</span>
+                                </label>
+                                <div class=" col-lg-12 col-sm-9">
+                                    <input type="text" class="form-control" name="username" placeholder="请输入用户名" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">邮箱 <span class="required">*</span>
+                                </label>
+                                <div class="col-lg-12 col-sm-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="icon wb-envelope" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="email" class="form-control" name="email" placeholder="email@email.com" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">密码 <span class="required">*</span>
+                                </label>
+                                <div class="col-lg-12 col-sm-9">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="icon wb-lock" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="password" class="form-control" name="password" placeholder="8个字符以上" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">生日 <span class="required">*</span>
+                                </label>
+                                <div class="col-lg-12 col-sm-9">
+                                    <input type="text" class="form-control" name="birthday" placeholder="YYYY/MM/DD" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">GitHub</label>
+                                <div class="col-lg-12 col-sm-9">
+                                    <input type="url" class="form-control" name="github" placeholder="https://github.com/qadmin">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">公司</label>
+                                <div class="col-lg-12 col-sm-9">
+                                    <select class="form-control" id="company" name="company" required="">
+                                        <option value="">选择公司</option>
+                                        <option value="baidu">百度</option>
+                                        <option value="alibaba">阿里巴巴</option>
+                                        <option value="jingdong">京东</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">管理员： <span class="required">*</span>
+                                </label>
+                                <div class="col-lg-12 col-sm-9">
+                                    <div class="input-group">
+                                        <div>
+                                            <div class="radio-custom radio-primary">
+                                                <input type="radio" id="inputAwesome" name="porto_is" value="awesome" required="">
+                                                <label for="inputAwesome">高富帅</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="radio-custom radio-primary">
+                                                <input type="radio" id="inputVeryAwesome" name="porto_is" value="very-awesome">
+                                                <label for="inputVeryAwesome">以上全部</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">用途： <span class="required">*</span>
+                                </label>
+                                <div class="col-lg-12 col-sm-9">
+                                    <div class="input-group">
+                                        <div>
+                                            <div class="checkbox-custom checkbox-primary">
+                                                <input type="checkbox" id="inputForProject" name="for[]" value="项目" required="">
+                                                <label for="inputForProject">项目</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="checkbox-custom checkbox-primary">
+                                                <input type="checkbox" id="inputForWebsite" name="for[]" value="网站">
+                                                <label for="inputForWebsite">网站</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="checkbox-custom checkbox-primary">
+                                                <input type="checkbox" id="inputForAll" name="for[]" value="其他">
+                                                <label for="inputForAll">所有</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">技能： <span class="required">*</span>
+                                </label>
+                                <div class="col-lg-12 col-sm-9">
+                                    <textarea class="form-control" name="skills" rows="3" placeholder="填写技能" required=""></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12 col-sm-3 control-label">浏览器</label>
+                                <div class="col-lg-12 col-sm-9">
+                                    <select class="form-control" id="browsers" name="browsers" title="请选择浏览器" size="5" multiple="multiple" required="">
+                                        <option value="chrome">Chrome / Safari</option>
+                                        <option value="ff">Firefox</option>
+                                        <option value="ie">Internet Explorer</option>
+                                        <option value="opera">Opera</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-lg">
+                        <div class="col-lg-12 text-right margin-top-15">
+                            <button type="submit" class="btn btn-primary" id="validateButton1">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">规则</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row row-lg">
+                    <div class="col-md-6">
+
+                        <div class="example-wrap margin-md-0">
+                            <h4 class="example-title">基本</h4>
+                            <div class="example">
+                                <form class="form-horizontal" id="exampleConstraintsForm" autocomplete="off">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">必填</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="requiredInput" data-fv-notempty="true" data-fv-notempty-message="必填项">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <select class="form-control" name="requiredSelect" data-fv-notempty="true">
+                                                <option value="">请选择</option>
+                                                <option value="foo">Foo</option>
+                                                <option value="bar">Bar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <div class="input-group">
+                                                <div class="checkbox-custom checkbox-primary">
+                                                    <input type="checkbox" id="requiredCheckbox" name="requiredCheckbox" data-fv-notempty="true" data-fv-notempty-message="必填项">
+                                                    <label for="requiredCheckbox">我同意注册协议</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">最小长度</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="vMinLength" data-fv-stringlength="true" data-fv-stringlength-min="8" data-fv-notempty-message="必填项" data-fv-stringlength-message="请输入8个以上的字符" placeholder="minlength = 8">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">最大长度</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="vMaxLength" data-fv-stringlength="true" data-fv-stringlength-max="5" data-fv-stringlength-message="请输入不超过5个的字符" placeholder="maxlength = 3">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">长度区间</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="vBetweenLength" data-fv-stringlength="true" data-fv-stringlength-max="10" data-fv-stringlength-min="5" data-fv-stringlength-message="请输入5到10个字符" placeholder="data-rangelength = [5,10]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">最小值</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="vMin" data-fv-greaterthan="true" data-fv-greaterthan-value="6" data-fv-greaterthan-message="请输入大于6的数字" placeholder="min = 6">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">最大值</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="vMax" data-fv-lessthan="true" data-fv-lessthan-value="50" data-fv-greaterthan-message="请输入小于50的数字" placeholder="max = 50">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">区间</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="vRange" data-fv-between="true" data-fv-between-min="6" data-fv-between-max="50" data-fv-between-message="请输入6-50之间的数字" placeholder="range = [6, 50]">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">正则表达式</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="vRegExp" data-fv-regexp="true" data-fv-regexp-regexp="#[A-fa fa-f0-9]{6}" data-fv-regexp-message="请输入正确的HEXA颜色值" placeholder="请输入HEXA颜色值">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">等于（确认）</label>
+                                        <div class="col-sm-9">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" name="foo_one" data-fv-notempty="true" data-fv-notempty-message="必填项" data-fv-identical="true" data-fv-identical-field="foo_two" data-fv-identical-message="两次输入内容不一致">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control" name="foo_two" data-fv-notempty="true" data-fv-notempty-message="必填项" data-fv-identical="true" data-fv-identical-field="foo_one" data-fv-identical-message="两次输入内容不一致">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">类型</h4>
+                            <div class="example">
+                                <form class="form-horizontal" id="exampleConstraintsFormTypes" autocomplete="off">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">邮箱</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="type_email" placeholder="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">链接</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="type_url" placeholder="url">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">数字</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="type_digits" placeholder="012">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">数字</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="type_numberic" placeholder="120">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">颜色</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="type_color" placeholder="color">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">日期</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="type_date" placeholder="YYYY-MM-DD">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">手机</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="type_phone" placeholder="13012345678">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">信用卡</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="type_credit_card" placeholder="信用卡">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">IP</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="type_ip" placeholder="ip">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/vendor/formvalidation.io/dist/js/formValidation.min.js" data-name="formValidation"></script>
+<script src="/vendor/formvalidation.io/dist/js/framework/bootstrap4.min.js" data-deps="formValidation"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    window.Content = {
+        run: function () {
+            // 完整示例
+            // ------------------------
+            $('#exampleFullForm').formValidation($.po('formValidation', {
+                button: {
+                    selector: '#validateButton1',
+                    disabled: 'disabled'
+                },
+                fields: {
+                    username: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写用户名'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 30
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z0-9]+$/
+                            }
+                        }
+                    },
+                    email: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写邮箱'
+                            },
+                            emailAddress: {
+                                message: '邮箱格式错误'
+                            }
+                        }
+                    },
+                    password: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写密码'
+                            },
+                            stringLength: {
+                                min: 8
+                            }
+                        }
+                    },
+                    birthday: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写生日'
+                            },
+                            date: {
+                                format: 'YYYY/MM/DD'
+                            }
+                        }
+                    },
+                    github: {
+                        validators: {
+                            url: {
+                                message: '请填写URL'
+                            }
+                        }
+                    },
+                    skills: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写技能'
+                            },
+                            stringLength: {
+                                max: 300
+                            }
+                        }
+                    },
+                    porto_is: {
+                        validators: {
+                            notEmpty: {
+                                message: '请至少选择一项'
+                            }
+                        }
+                    },
+                    'for[]': {
+                        validators: {
+                            notEmpty: {
+                                message: '请至少选择一项'
+                            }
+                        }
+                    },
+                    company: {
+                        validators: {
+                            notEmpty: {
+                                message: '请选择公司'
+                            }
+                        }
+                    },
+                    browsers: {
+                        validators: {
+                            notEmpty: {
+                                message: '请选择浏览器'
+                            }
+                        }
+                    }
+                }
+            }));
+
+            // 规则
+            // -------------------------------
+            $('#exampleConstraintsForm, #exampleConstraintsFormTypes').formValidation($.po('formValidation', {
+                fields: {
+                    type_email: {
+                        validators: {
+                            emailAddress: {
+                                message: '邮箱格式不正确'
+                            }
+                        }
+                    },
+                    type_url: {
+                        validators: {
+                            url: {
+                                message: '链接格式错误'
+                            }
+                        }
+                    },
+                    type_digits: {
+                        validators: {
+                            digits: {
+                                message: '输入值不是一个数'
+                            }
+                        }
+                    },
+                    type_numberic: {
+                        validators: {
+                            integer: {
+                                message: '请输入数字'
+                            }
+                        }
+                    },
+                    type_phone: {
+                        validators: {
+                            phone: {
+                                message: '请输入正确的手机号'
+                            }
+                        }
+                    },
+                    type_credit_card: {
+                        validators: {
+                            creditCard: {
+                                message: '信用卡卡号错误'
+                            }
+                        }
+                    },
+                    type_date: {
+                        validators: {
+                            date: {
+                                format: 'YYYY/MM/DD'
+                            }
+                        }
+                    },
+                    type_color: {
+                        validators: {
+                            color: {
+                                type: ['hex', 'hsl', 'hsla', 'keyword', 'rgb', 'rgba'], // The default value for type
+                                message: '颜色值错误'
+                            }
+                        }
+                    },
+                    type_ip: {
+                        validators: {
+                            ip: {
+                                ipv4: true,
+                                ipv6: true,
+                                message: 'IP格式有误'
+                            }
+                        }
+                    }
+                }
+            }));
+
+            // 标准模式
+            // ---------------------------------
+            $('#exampleStandardForm').formValidation($.po('formValidation', {
+                button: {
+                    selector: '#validateButton2',
+                    disabled: 'disabled'
+                },
+                fields: {
+                    standard_name: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写用户名'
+                            }
+                        }
+                    },
+                    standard_email: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写密码'
+                            },
+                            emailAddress: {
+                                message: '请填写邮箱'
+                            }
+                        }
+                    },
+                    standard_content: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写内容'
+                            },
+                            stringLength: {
+                                max: 500,
+                                message: '内容长度不能超过500个字符'
+                            }
+                        }
+                    }
+                }
+            }));
+
+            // 摘要模式
+            // -------------------------------
+            $('.summary-errors').hide();
+
+            $('#exampleSummaryForm').formValidation($.po('formValidation', {
+                button: {
+                    selector: '#validateButton3',
+                    disabled: 'disabled'
+                },
+                fields: {
+                    summary_name: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写用户名'
+                            }
+                        }
+                    },
+                    summary_email: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写密码'
+                            },
+                            emailAddress: {
+                                message: '请填写邮箱'
+                            }
+                        }
+                    },
+                    summary_content: {
+                        validators: {
+                            notEmpty: {
+                                message: '请填写内容'
+                            },
+                            stringLength: {
+                                max: 500,
+                                message: '内容长度不能超过500个字符'
+                            }
+                        }
+                    }
+                }
+            }))
+
+                .on('success.form.fv', function () {
+                    // 验证通过后重置错误信息提示
+                    $('.summary-errors').html('');
+                })
+
+                .on('err.field.fv', function (e, data) {
+                    $('.summary-errors').show();
+
+                    /*// 获取字段消息
+                     var messages = data.fv.getMessages(data.element);*/
+
+                    // 如果已存在，删除字段消息
+                    $('.summary-errors').find('li[data-field="' + data.field + '"]').remove();
+
+                    /*// 遍历消息
+                     for (var i in messages) {
+                     // 在消息框中创建'li'元素
+                     $('<li/>')
+                     .attr('data-field', data.field)
+                     .wrapInner(
+                     $('<a/>')
+                     .attr('href', 'javascript: void(0);')
+                     // .addClass('alert alert-danger alert-dismissible')
+                     .html(messages[i])
+                     .on('click', function () {
+                     // 定位到无效字段
+                     data.element.focus();
+                     })
+                     ).appendTo('.summary-errors > ul');
+                     }*/
+
+                    // 隐藏默认消息
+                    // $field.data('fv.messages')
+                    data.element
+                        .data('fv.messages')
+                        .find('.help-block[data-fv-for="' + data.field + '"]')
+                        .hide();
+                })
+
+                .on('success.field.fv', function (e, data) {
+                    // 移除字段消息
+                    $('.summary-errors > ul').find('li[data-field="' + data.field + '"]').remove();
+                    if ($('#exampleSummaryForm').data('formValidation').isValid()) {
+                        $('.summary-errors').hide();
+                    }
+                });
+        }
+    };
+})(document, window, jQuery);
+</script>

@@ -1,0 +1,416 @@
+<ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+    <li class="nav-item dropdown" id="qadmin-navbarUser">
+        <a class="nav-link navbar-avatar" data-toggle="dropdown" href="javascript:;" aria-expanded="false" data-animation="scale-up" role="button">
+            <span class="avatar avatar-online">
+                <img src="/static/images/avatar.svg" alt="...">
+                <i></i>
+            </span>
+        </a>
+        <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item" href="/system/account?tab=display" role="menuitem" target="_blank">
+                <i class="icon wb-layout" aria-hidden="true"></i>
+                <span>显示设置</span>
+            </a>
+            <a class="dropdown-item" href="/system/account?tab=password" role="menuitem" target="_blank">
+                <i class="icon wb-pencil" aria-hidden="true"></i>
+                <span>修改密码</span>
+            </a>
+            <a class="dropdown-item" href="/system/account" role="menuitem" target="_blank">
+                <i class="icon wb-settings" aria-hidden="true"></i>
+                <span>账户信息</span>
+            </a>
+            <div class="dropdown-submenu">
+                <a class="dropdown-item" href="javascript:;" tabindex="-1">
+                    <i class="icon wb-random" aria-hidden="true"></i>
+                    <span>切换版本</span>
+                </a>
+                <div class="dropdown-menu" role="menu">
+                    <a class="dropdown-item" href="/" role="menuitem">Iframe
+                        版</a>
+                    <a class="dropdown-item" href="/?pjax=true" role="menuitem">Pjax 版</a>
+                </div>
+            </div>
+            <div class="dropdown-submenu">
+                <a class="dropdown-item" href="javascript:;" tabindex="-1">
+                    <i class="icon wb-random" aria-hidden="true"></i>
+                    <span>切换布局</span>
+                </a>
+                <div class="dropdown-menu" role="menu">
+                    <a class="dropdown-item change-layout" href="/" data-layout="base" role="menuitem">Base 布局</a>
+                    <a class="dropdown-item change-layout" href="/?&theme=topbar" data-layout="topbar" role="menuitem">Topbar 布局</a>
+                </div>
+            </div>
+            <div class="dropdown-divider" role="presentation"></div>
+            <a class="dropdown-item" id="qadmin-signOut" data-ctx="" href="/system/logout" role="menuitem">
+                <i class="icon wb-power"></i>
+                <span>退出</span>
+            </a>
+        </div>
+    </li>
+    <li class="nav-item d-none d-sm-block" id="qadmin-QRcode" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="在手机上预览本页">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#qadmin-mobileView">
+            <i class="icon wb-mobile"></i>
+            <span class="sr-only">在手机上预览</span>
+        </a>
+        <div class="modal fade" id="qadmin-mobileView" aria-hidden="true" aria-labelledby="qadmin-mobileView" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-sidebar modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title">在手机上预览本页</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="thumbnail">
+                            <img class="img-fluid img-bordered" id="qadmin-mobileViewQRcode" src="/static/images/api.png">
+                        </p>
+                        <p class="margin-top-20 font-size-12">
+                            <i class="icon wb-bell" aria-hidden="true"></i> 您可以用手机APP(如微信、支付宝等)的扫码功能扫码下面的二维码，在手机上查看本页显示效果。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <!-- <li class="hidden-xs" id="qadmin-demo-app" data-toggle="tooltip" data-placement="bottom" title="下载桌面版">
+        <a class="icon wb-download dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false" role="button">
+            <span class="sr-only">下载桌面版</span></a>
+        <ul class="dropdown-menu dropdown-menu-success bullet dropdown-menu-right" aria-labelledby="demoApp" role="menu">
+            <li role="presentation">
+                <a href="#" role="menuitem"><i class="icon fa fa-windows"></i> Windows 版</a>
+            </li>
+            <li role="presentation">
+                <a href="#" role="menuitem"><i class="icon fa fa-apple"></i> MacOS 版</a>
+            </li>
+        </ul>
+    </li> -->
+    <li class="nav-item d-none d-sm-block open-kf" id="qadmin-service" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="在线咨询">
+        <a class="nav-link" href="#" role="button">
+            <i class="icon wb-user"></i>
+            <span class="sr-only">在线咨询</span>
+        </a>
+    </li>
+    <li class="nav-item dropdown" id="qadmin-navbarMessage">
+        <a class="nav-link msg-btn" data-toggle="dropdown" href="javascript:;" aria-expanded="false" data-animation="scale-up" role="button">
+            <i class="icon wb-bell" aria-hidden="true"></i>
+            <span class="badge badge-danger up msg-num"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
+            <li class="dropdown-menu-header" role="presentation">
+                <h5>最新消息</h5>
+                <span class="badge badge-round label-danger"></span>
+            </li>
+            <li class="list-group" role="presentation">
+                <div class="navbar-message-content" id="qadmin-messageContent" data-height="220px" data-plugin="slimScroll"></div>
+                <script type="text/html" id="qadmin-messageTpl">
+                    {{if msgList.length < 1}}
+                    <p class="text-center height-200 vertical-align">
+                        <small class="vertical-align-middle opacity-four">没有新消息</small>
+                    </p>
+                    {{else}}
+                    {{each msgList}}
+                    <a class="list-group-item" href="#"  data-message-id="{{$value.messageId}}" data-title="{{$value.title}}" data-content="{{$value.content}}" role="menuitem">
+                        <div class="media">
+                            <div class="media-left padding-right-10">
+                                <i class="icon {{$value.type | iconType}} white icon-circle" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-body">
+                                <h6 class="media-heading">{{$value.title}}</h6>
+                                <time class="media-meta" datetime="{{$value.sendTime}}">
+                                    {{$value.sendTime | timeMsg}}
+                                </time>
+                            </div>
+                        </div>
+                    </a>{{/each}}
+                    {{/if}}
+                </script>
+            </li>
+            <div class="dropdown-menu-footer" role="presentation">
+                <a class="dropdown-item" href="/system/account.html" role="menuitem" target="_blank" data-pjax>
+                    <i class="icon fa fa-navicon"></i>所有消息
+                </a>
+            </div>
+        </ul>
+    </li>
+    <li class="nav-item d-none d-sm-block" id="qadmin-navbarDisplay" data-toggle="tooltip" data-placement="bottom" title="设置主题与布局等">
+        <a class="nav-link" href="/system/settings_display.html" target="_blank" data-pjax>
+            <i class="icon wb-layout"></i>
+            <span class="sr-only">主题与布局</span>
+        </a>
+    </li>
+    <li class="nav-item d-none d-sm-block" id="qadmin-navbarFullscreen" data-toggle="tooltip" data-placement="bottom" title="全屏">
+        <a class="nav-link" data-toggle="fullscreen" href="javascript:; " role="button">
+            <i class="icon icon-fullscreen"></i>
+            <span class="sr-only">全屏</span>
+        </a>
+    </li>
+</ul>
+
+<script src="/lib/toastr/toastr.js"></script>
+<script src="/vendor/bootbox.js/dist/bootbox.all.min.js"></script>
+<script src="/lib/artTemplate/template.min.js"></script>
+<script src="/vendor/screenfull/dist/screenfull.min.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (window, document, $) {
+
+    'use strict';
+
+    /**
+     * 消息通知
+     */
+
+    var notifyMsg = {
+        init: function () {
+            var self = this,
+                $msgDom = $('#qadmin-navbarMessage').find('span.msg-num');
+
+            // 建立websocket连接
+            var socket = new WebSocket('ws://' + window.location.host + $.ctx + '/socket');
+
+            socket.onopen = function () {
+                socket.send('发送数据');
+            };
+
+            socket.onmessage = function (event) {
+                var fn, allMsg, msgFn, msgNumber,
+                	unReadFn = window.notifyFn.unReadMsg,
+                    data = JSON.parse(event.data);
+
+                if (data.status) { // 初次链接时未读消息
+                    msgNumber = self.firstMsg(data.total, $msgDom);
+                    if (unReadFn && $.isFunction(unReadFn)) {
+                    	unReadFn(msgNumber);
+                    }
+                    return;
+                }
+
+                fn = window.notifyFn.messagePage;
+                msgFn = window.notifyFn.messageNum;
+                allMsg = $msgDom.data('message') + 1;
+
+                $msgDom.data('message', allMsg);
+
+                if (allMsg > 99) { // 未读消息数大于99时
+                    allMsg = '99+';
+                }
+                $msgDom.text(allMsg);
+
+                toastr.options = {
+                    positionClass: 'toast-bottom-right',
+                    onclick: function () {
+                        self.readMsg(data);
+                    }
+                };
+                toastr.clear();
+                toastr.info(data.title);
+
+                if ($('#qadmin-navbarMessage ul').is(':visible')) { // 顶部导航条消息栏展开时
+                    self.loading();
+                }
+
+                if (fn && $.isFunction(fn)) { // 存在message页面时相关操作
+                    fn(self);
+                }
+
+                if (msgFn && $.isFunction(msgFn)) { // 存在账户信息页面时消息计数
+                    msgFn('1');
+                }
+            };
+
+            socket.onclose = function (event) {
+                toastr.info('消息通知服务已关闭', event);
+            };
+        },
+        firstMsg: function (count, $el) { // 初次加载未读消息数
+            var msgNumber;
+
+            if (count === 0) {
+                msgNumber = '';
+            } else if (count > 99) {
+                msgNumber = '99+';
+            } else {
+                msgNumber = count;
+            }
+
+            $el.data('message', count).text(msgNumber);
+            return msgNumber;
+        },
+        readMsg: function (opts) { // 阅读当前消息，改变消息状态
+            var $navNews = $('#qadmin-navbarMessage').find('span.msg-num'),
+                msgsNum = Number($navNews.data('message'));
+
+            toastr.clear();
+            bootbox.alert({
+                size: 'small',
+                title: opts.title,
+                message: opts.content
+            });
+
+            if(opts.readFlag) {
+                return;
+            }
+
+            $.ajax({
+                url: $.ctx + '/message/read',
+                type: 'POST',
+                data: {messageId: opts.messageId},
+                dataType: 'JSON',
+                success: function (data) {
+                    var msgNumber,
+                        fn = window.notifyFn.msgStatus,
+                        msgFn = window.notifyFn.messageNum;
+
+                    if (data.success) {
+                        msgsNum -= 1;
+                        msgNumber = msgsNum;
+
+                        if (msgsNum > 99) { // 未读消息数
+                            msgNumber = '99+';
+                        } else if (msgNumber === 0) {
+                            msgNumber = '';
+                        }
+
+                        $navNews.data('message', msgsNum).text(msgNumber);
+
+                        if (fn && $.isFunction(fn)) {
+                            fn(opts.messageId);
+                        }
+
+                        if (msgFn && $.isFunction(msgFn)) { // 存在账户信息页面时消息计数
+                            msgFn();
+                        }
+                    } else {
+                        toastr.error('出错了，请重试！');
+                    }
+                },
+                error: function () {
+                    toastr.error('服务器异常，请稍后再试！');
+                }
+            });
+        },
+        render: function () { // 当前通知辅助渲染（图标&日期）
+            var self = this;
+
+            template.helper('iconType', function (type) {
+                switch (type) {
+                    case 'SYSTEM':
+                        return 'fa fa-desktop system';
+                    case 'TASK':
+                        return 'fa fa-tasks task';
+                    case 'SETTING':
+                        return 'fa fa-cog setting';
+                    case 'EVENT':
+                        return 'fa fa-calendar event';
+                    default:
+                        return 'fa fa-comment-o other';
+                }
+            });
+
+            template.helper('timeMsg', function (date) {
+                var msgTime, arr,
+                    currentTime = new Date();
+
+                // ios new Data兼容
+                arr = date.split(/[- : \/]/);
+                msgTime = new Date(arr[0], arr[1] - 1, arr[2], arr[3], arr[4], arr[5]);
+
+                return self.timeDistance(msgTime, currentTime);
+
+            });
+        },
+        loading: function () { // 加载最近5条通知
+            this.render();
+
+            $.ajax({
+                url: $.ctx + '/message/queryUnread',
+                type: 'GET',
+                dataType: 'JSON',
+                success: function (data) {
+                    if (data.success) {
+                        var html = template('qadmin-messageTpl', data);
+                        $('#qadmin-messageContent').html(html);
+
+                    } else {
+                        toastr.error('出错了，请重试！');
+                    }
+                },
+                error: function () {
+                    toastr.error('服务器异常，请稍后再试！');
+                }
+            });
+        },
+        timeDistance: function (reference, current) { // 间隔时间
+            var time;
+
+            time = current.getTime() - reference.getTime();
+
+            for (var i = 0; i < 6; i++) {
+                switch (i) {
+                    case 0:
+                        time = time / 1000;
+                        if (time >= 1 && time < 60) {
+                            return time.toFixed(0) + '秒前';
+                        } else if (time < 1) {
+                            return '刚刚';
+                        }
+                        break;
+                    case 1:
+                        time = time / 60;
+                        if (time >= 0 && time < 60) {
+                            return time.toFixed(0) + '分钟前';
+                        }
+                        break;
+                    case 2:
+                        time = time / 60;
+                        if (time >= 0 && time < 60) {
+                            return time.toFixed(0) + '小时前';
+                        }
+                        break;
+                    case 3:
+                        time = time / 24;
+                        if (time >= 0 && time < 60) {
+                            return time.toFixed(0) + '天前';
+                        }
+                        break;
+                    case 4:
+                        time = time / 30;
+                        if (time >= 0 && time < 60) {
+                            return time.toFixed(0) + '月前';
+                        }
+                        break;
+                    case 5:
+                        time = time / 365;
+                        if (time >= 0 && time < 60) {
+                            return time.toFixed(0) + '年前';
+                        }
+                        break;
+                }
+            }
+        }
+    };
+
+    window.notifyFn = notifyMsg;
+
+    // 需配合后端使用
+    //notifyMsg.init();
+
+    // 获取消息
+    $('#qadmin-navbarMessage > .msg-btn').on('click', function () {
+        notifyMsg.loading();
+    });
+
+    // 查看未读消息
+    $(document).on('click', '#qadmin-messageContent > a', function (e) {
+        e.preventDefault();
+        var opts = $(this).data();
+        notifyMsg.readMsg(opts);
+    });
+})(window, document, jQuery);
+</script>
+

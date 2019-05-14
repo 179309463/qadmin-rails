@@ -1,0 +1,774 @@
+<title>日历 - 页面示例</title>
+
+<link rel="stylesheet" href="/vendor/fullcalendar/dist/core/main.min.css">
+<link rel="stylesheet" href="/vendor/fullcalendar/dist/bootstrap/main.min.css">
+<link rel="stylesheet" href="/vendor/fullcalendar/dist/daygrid/main.min.css">
+<link rel="stylesheet" href="/vendor/fullcalendar/dist/timegrid/main.min.css">
+<link rel="stylesheet" href="/vendor/fullcalendar/dist/list/main.min.css">
+
+<link rel="stylesheet" href="/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css">
+<link rel="stylesheet" href="/lib/jquery-selective/jquery-selective.css">
+
+<style>
+.page{background-color:white;}
+.fc-content{color:white;}
+.fc-event, .fc-event-dot{background-color:#3e8ef7;}
+.calendar-container{padding:20px}
+#calendar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+</style>
+
+<div class="page animation-fade page-calendar page-aside-fixed page-aside-left page-full">
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full" data-plugin="slimScroll">
+            <section class="page-aside-section">
+                <h5 class="page-aside-title">
+                    列表</h5>
+                <div class="list-group has-actions">
+                    <div class="list-group-item">
+                        <div class="list-content">
+                            <span class="item-right">10</span>
+
+                            <span class="list-text">管理员</span>
+                            <div class="item-actions">
+                                <span class="btn btn-pure btn-icon" data-toggle="list-editable">
+                                    <i class="icon wb-edit" aria-hidden="true"></i>
+                                </span>
+                                <span class="btn btn-pure btn-icon" data-tag="list-delete">
+                                    <i class="icon wb-trash" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="list-editable">
+                            <div class="form-group form-material">
+                                <input type="text" class="form-control empty" name="label" data-bind=".list-text" value="Admin Calendar">
+                                <button type="button" class="input-editable-close icon wb-close" data-toggle="list-editable-close"
+                                        aria-label="关闭" aria-expanded="true"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="list-content">
+                            <span class="item-right">5</span>
+
+                            <span class="list-text">主页</span>
+                            <div class="item-actions">
+                                <span class="btn btn-pure btn-icon" data-toggle="list-editable">
+                                    <i class="icon wb-edit" aria-hidden="true"></i>
+                                </span>
+                                <span class="btn btn-pure btn-icon" data-tag="list-delete">
+                                    <i class="icon wb-trash" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="list-editable">
+                            <div class="form-group form-material">
+                                <input type="text" class="form-control empty" name="label" data-bind=".list-text" value="Home Calendar">
+                                <button type="button" class="input-editable-close icon wb-close" data-toggle="list-editable-close"
+                                        aria-label="关闭" aria-expanded="true"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="list-content">
+                            <span class="item-right">16</span>
+
+                            <span class="list-text">工作</span>
+                            <div class="item-actions">
+                                <span class="btn btn-pure btn-icon" data-toggle="list-editable">
+                                    <i class="icon wb-edit" aria-hidden="true"></i>
+                                </span>
+                                <span class="btn btn-pure btn-icon" data-tag="list-delete">
+                                    <i class="icon wb-trash" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="list-editable">
+                            <div class="form-group form-material">
+                                <input type="text" class="form-control empty" name="label" data-bind=".list-text" value="Work Calendar">
+                                <button type="button" class="input-editable-close icon wb-close" data-toggle="list-editable-close"
+                                        aria-label="关闭" aria-expanded="true"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page-aside-section">
+                <h5 class="page-aside-title">
+                    事件</h5>
+                <div class="list-group calendar-list">
+                    <a class="list-group-item calendar-event" data-title="Meeting" data-stick=true data-color="red-600"
+                       href="javascript:;">
+                        <i class="wb-medium-point red-600 mr-10" aria-hidden="true"></i>开会
+                    </a>
+                    <a class="list-group-item calendar-event" data-title="Birthday Party" data-stick=true data-color="green-600"
+                       href="javascript:;">
+                        <i class="wb-medium-point green-600 mr-10" aria-hidden="true"></i>生日
+                    </a>
+                    <a class="list-group-item calendar-event" data-title="Call Jimba" data-stick=true data-color="orange-600"
+                       href="javascript:;">
+                        <i class="wb-medium-point orange-600 mr-10" aria-hidden="true"></i>联系客户
+                    </a>
+                    <a class="list-group-item calendar-event" data-title="Dinner with Team" data-stick=true data-color="cyan-600"
+                       href="javascript:;">
+                        <i class="wb-medium-point cyan-600 mr-10" aria-hidden="true"></i>团队活动
+                    </a>
+                    <a id="addNewEventBtn" class="list-group-item" href="javascript:;">
+                        <i class="icon wb-plus" aria-hidden="true"></i> 添加新事件
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="page-main">
+        <div class="calendar-container">
+            <div id="calendar"></div>
+        </div>
+    </div>
+
+    <div class="site-action">
+        <button type="button" class="site-action site-floataction btn-raised btn btn-success btn-floating">
+            <i class="front-icon wb-plus animation-scale-up" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+
+<div class="modal fade" id="addNewEvent" aria-hidden="true" aria-labelledby="addNewEvent" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <form class="modal-content form-horizontal" action="#" method="post" role="form">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" data-dismiss="modal">
+                    ×
+                </button>
+                <h4 class="modal-title">
+                    新增事件</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="newEname">名称：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="newEname" name="newEname">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="starts">开始：</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="starts" data-container="#addNewEvent"
+                                   data-plugin="datepicker" data-language="zh-CN">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="icon wb-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="ends">结束：</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="ends" data-container="#addNewEvent" data-plugin="datepicker"
+                                   data-language="zh-CN">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="icon wb-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="repeats">重复：</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="repeats" name="repeats" data-plugin="TouchSpin"
+                               data-min="0" data-max="10" value="0">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-2">标记：</label>
+                    <div class="col-sm-10">
+                        <ul class="color-selector">
+                            <li class="bg-blue-600">
+                                <input type="radio" checked name="eventColorChosen" id="eventColorChosen2">
+                                <label for="eventColorChosen2"></label>
+                            </li>
+                            <li class="bg-green-600">
+                                <input type="radio" name="eventColorChosen" id="eventColorChosen3">
+                                <label for="eventColorChosen3"></label>
+                            </li>
+                            <li class="bg-cyan-600">
+                                <input type="radio" name="eventColorChosen" id="eventColorChosen4">
+                                <label for="eventColorChosen4"></label>
+                            </li>
+                            <li class="bg-orange-600">
+                                <input type="radio" name="eventColorChosen" id="eventColorChosen5">
+                                <label for="eventColorChosen5"></label>
+                            </li>
+                            <li class="bg-red-600">
+                                <input type="radio" name="eventColorChosen" id="eventColorChosen6">
+                                <label for="eventColorChosen6"></label>
+                            </li>
+                            <li class="bg-blue-grey-600">
+                                <input type="radio" name="eventColorChosen" id="eventColorChosen7">
+                                <label for="eventColorChosen7"></label>
+                            </li>
+                            <li class="bg-purple-600">
+                                <input type="radio" name="eventColorChosen" id="eventColorChosen8">
+                                <label for="eventColorChosen8"></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="people">人员：</label>
+                    <div class="col-sm-10">
+                        <select id="eventPeople" multiple="multiple" data-plugin="jquery-selective"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-actions">
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                        添加事件
+                    </button>
+                    <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="editNewEvent" aria-hidden="true" aria-labelledby="editNewEvent" role="dialog" tabindex="-1"
+     data-show="false">
+    <div class="modal-dialog">
+        <form class="modal-content form-horizontal" action="#" method="post" role="form">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" data-dismiss="modal">
+                    ×
+                </button>
+                <h4 class="modal-title">
+                    编辑事件</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="editEname">名称：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="editEname" name="editEname">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="editStarts">开始：</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="editStarts" name="editStarts" data-container="#editNewEvent"
+                                   data-plugin="datepicker" data-language="zh-CN">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="icon wb-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="editEnds">结束：</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="editEnds" data-container="#editNewEvent"
+                                   data-plugin="datepicker" data-language="zh-CN">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="icon wb-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="editRepeats">重复：</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="editRepeats" name="repeats" data-plugin="TouchSpin"
+                               data-min="0" data-max="10" value="0">
+                    </div>
+                </div>
+                <div class="form-group row" id="editColor">
+                    <label class="col-form-label col-sm-2">标记：</label>
+                    <div class="col-sm-10">
+                        <ul class="color-selector">
+                            <li class="bg-blue-600">
+                                <input type="radio" data-color="blue|600" name="colorChosen" id="editColorChosen2">
+                                <label for="editColorChosen2"></label>
+                            </li>
+                            <li class="bg-green-600">
+                                <input type="radio" data-color="green|600" name="colorChosen" id="editColorChosen3">
+                                <label for="editColorChosen3"></label>
+                            </li>
+                            <li class="bg-cyan-600">
+                                <input type="radio" data-color="cyan|600" name="colorChosen" id="editColorChosen4">
+                                <label for="editColorChosen4"></label>
+                            </li>
+                            <li class="bg-orange-600">
+                                <input type="radio" data-color="orange|600" name="colorChosen" id="editColorChosen5">
+                                <label for="editColorChosen4"></label>
+                            </li>
+                            <li class="bg-red-600">
+                                <input type="radio" data-color="red|600" name="colorChosen" id="editColorChosen6">
+                                <label for="editColorChosen6"></label>
+                            </li>
+                            <li class="bg-blue-grey-600">
+                                <input type="radio" data-color="blue-grey|600" name="colorChosen" id="editColorChosen7">
+                                <label for="editColorChosen7"></label>
+                            </li>
+                            <li class="bg-purple-600">
+                                <input type="radio" data-color="purple|600" name="colorChosen" id="editColorChosen8">
+                                <label for="editColorChosen8"></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="editPeople">人员：</label>
+                    <div class="col-sm-10">
+                        <select id="editPeople" multiple="multiple" data-plugin="jquery-selective"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-actions">
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                        保存
+                    </button>
+                    <button class="btn btn-danger" data-dismiss="modal" type="button">
+                        删除
+                    </button>
+                    <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="addNewCalendar" aria-hidden="true" aria-labelledby="addNewCalendar" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <form class="modal-content form-horizontal" action="#" method="post" role="form">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" data-dismiss="modal">
+                    ×
+                </button>
+                <h4 class="modal-title">
+                    新增日历</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="ename">名称：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="ename" name="ename">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm-2">标记：</label>
+                    <div class="col-sm-10">
+                        <ul class="color-selector">
+                            <li class="bg-blue-600">
+                                <input type="radio" checked name="colorChosen" id="colorChosen2">
+                                <label for="colorChosen2"></label>
+                            </li>
+                            <li class="bg-green-600">
+                                <input type="radio" name="colorChosen" id="colorChosen3">
+                                <label for="colorChosen3"></label>
+                            </li>
+                            <li class="bg-cyan-600">
+                                <input type="radio" name="colorChosen" id="colorChosen4">
+                                <label for="colorChosen4"></label>
+                            </li>
+                            <li class="bg-orange-600">
+                                <input type="radio" name="colorChosen" id="colorChosen5">
+                                <label for="colorChosen5"></label>
+                            </li>
+                            <li class="bg-red-600">
+                                <input type="radio" name="colorChosen" id="colorChosen6">
+                                <label for="colorChosen6"></label>
+                            </li>
+                            <li class="bg-blue-grey-600">
+                                <input type="radio" name="colorChosen" id="colorChosen7">
+                                <label for="colorChosen7"></label>
+                            </li>
+                            <li class="bg-purple-600">
+                                <input type="radio" name="colorChosen" id="colorChosen8">
+                                <label for="colorChosen8"></label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="people">人员</label>
+                    <div class="col-sm-10">
+                        <select id="people" multiple="multiple" data-plugin="jquery-selective"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-actions">
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                        新增事件
+                    </button>
+                    <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="addNewCalendarForm" aria-hidden="true" aria-labelledby="addNewCalendarForm" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog">
+        <form class="modal-content" action="#" method="post" role="form">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" data-dismiss="modal">
+                    ×
+                </button>
+                <h4 class="modal-title">
+                    创建新日历</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-form-label mb-15" for="name">日历名称：</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="日历名称">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label mb-15" for="name">选择成员：</label>
+                    <select multiple="multiple" data-plugin="jquery-selective"></select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-actions">
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                        创建日历
+                    </button>
+                    <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+<script src="/vendor/moment/min/moment.min.js" data-name="moment"></script>
+<script src="/vendor/fullcalendar/dist/core/main.min.js" data-name="fullcalendar" data-deps="moment"></script>
+<script src="/vendor/fullcalendar/dist/bootstrap/main.min.js" data-deps="fullcalendar"></script>
+<script src="/vendor/fullcalendar/dist/interaction/main.min.js" data-deps="fullcalendar"></script>
+<script src="/vendor/fullcalendar/dist/daygrid/main.min.js" data-deps="fullcalendar"></script>
+<script src="/vendor/fullcalendar/dist/timegrid/main.min.js" data-deps="fullcalendar"></script>
+<script src="/vendor/fullcalendar/dist/list/main.min.js" data-deps="fullcalendar"></script>
+
+<script src="/vendor/fullcalendar/dist/core/locales/zh-cn.js" data-deps="fullcalendar"></script>
+<script src="/vendor/jquery-selective/dist/jquery-selective.min.js"></script>
+
+<script src="/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" data-name="datepicker"></script>
+<script src="/vendor/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js" data-deps="datepicker"></script>
+<script src="/vendor/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+<script src="/vendor/bootbox.js/dist/bootbox.all.min.js"></script>
+<script src="/static/js/plugins/action-btn.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    window.Content = App.extend({
+        handleFullcalendar: function () {
+            var my_events = [{
+                title: '每天',
+                start: '2016-10-01'
+            }, {
+                title: '长事件',
+                start: '2016-10-07',
+                end: '2016-10-10',
+                backgroundColor: $.colors("cyan", 600),
+                borderColor: $.colors("cyan", 600)
+            }, {
+                id: 999,
+                title: '重复事件',
+                start: '2016-10-09T16:00:00',
+                backgroundColor: $.colors("red", 600),
+                borderColor: $.colors("red", 600)
+            }, {
+                title: '会议',
+                start: '2016-10-11',
+                end: '2016-10-13'
+            }, {
+                title: '开会',
+                start: '2016-10-12T10:30:00',
+                end: '2016-10-12T12:30:00'
+            }, {
+                title: '午餐',
+                start: '2016-10-12T12:00:00'
+            }, {
+                title: '开会',
+                start: '2016-10-12T14:30:00'
+            }, {
+                title: '休息',
+                start: '2016-10-12T17:30:00'
+            }, {
+                title: '活动',
+                start: '2016-10-12T20:00:00'
+            }, {
+                title: '生日会',
+                start: '2016-10-13T07:00:00'
+            }];
+            var actionBtn = $('.site-action').actionBtn().data('actionBtn');
+            var my_options = {
+                plugins: [ 'bootstrap', 'dayGrid', 'timeGrid', 'list', 'interaction' ],
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                defaultDate: '2016-10-12',
+                locale: 'zh-cn',
+                themeSystem: 'bootstrap',
+                selectable: true,
+                selectHelper: true,
+                select: function () {
+                    $('#addNewEvent').modal('show');
+                },
+                editable: true,
+                eventLimit: true,
+                // windowResize: function (view) {
+                //     var width = $(window).outerWidth();
+                //     var options = $.extend({}, my_options);
+                //     options.events = view.calendar.getEventCache();
+                //     options.aspectRatio = width < 667 ? 0.5 : 1.35;
+
+                //     $('#calendar').fullCalendar('destroy');
+                //     $('#calendar').fullCalendar(options);
+                // },
+                eventClick: function (event) {
+                    var color = event.backgroundColor ? event.backgroundColor : $.colors('blue', 600);
+                    $('#editEname').val(event.title);
+
+                    if (event.start) {
+                        $('#editStarts').datepicker('update', event.start._d);
+                    } else {
+                        $('#editStarts').datepicker('update', '');
+                    }
+                    if (event.end) {
+                        $('#editEnds').datepicker('update', event.end._d);
+                    } else {
+                        $('#editEnds').datepicker('update', '');
+                    }
+
+                    $('#editColor [type=radio]').each(function () {
+                        var $this = $(this),
+                            value = $this.data('color').split('|');
+                        value = $.colors(value[0], value[1]);
+
+                        if (value === color) {
+                            $this.prop('checked', true);
+                        } else {
+                            $this.prop('checked', false);
+                        }
+                    });
+                    $('#editColor [value="' + event.backgroundColor + '"]').prop('checked', true);
+
+                    $('#editNewEvent').modal('show').one('hidden.bs.modal', function () {
+                        event.title = $('#editEname').val();
+
+                        var color = $('#editColor [type=radio]:checked').data('color').split('|');
+                        color = $.colors(color[0], color[1]);
+                        event.backgroundColor = color;
+                        event.borderColor = color;
+
+                        event.start = new Date($('#editStarts').data('datepicker').getDate());
+                        event.end = new Date($('#editEnds').data('datepicker').getDate());
+                        $('#calendar').fullCalendar('updateEvent', event);
+                    });
+                },
+                eventDragStart: function () {
+                    actionBtn.show();
+                },
+                eventDragStop: function () {
+                    actionBtn.hide();
+                },
+                events: my_events,
+                droppable: true
+            };
+
+            var _options;
+            var my_options_mobile = $.extend({}, my_options);
+
+            my_options_mobile.aspectRatio = 0.5;
+            _options = $(window).outerWidth() < 667 ? my_options_mobile : my_options;
+
+            $('#editNewEvent').modal();
+            new FullCalendar.Calendar($('#calendar')[0],_options).render();
+        },
+
+        handleSelective: function () {
+            var member = [{
+                id: 'uid_1',
+                name: '刘松洋',
+                avatar: '/static/images/portraits/1.jpg'
+            }, {
+                id: 'uid_2',
+                name: '邓艳红',
+                avatar: '/static/images/portraits/2.jpg'
+            }, {
+                id: 'uid_3',
+                name: '张润展',
+                avatar: '/static/images/portraits/3.jpg'
+            }, {
+                id: 'uid_4',
+                name: '李吉琴',
+                avatar: '/static/images/portraits/4.jpg'
+            }];
+
+            var items = [{
+                id: 'uid_1',
+                name: '赵振宁',
+                avatar: '/static/images/portraits/1.jpg'
+            }, {
+                id: 'uid_2',
+                name: '陈宝荣',
+                avatar: '/static/images/portraits/2.jpg'
+            }];
+
+            $('[data-plugin="jquery-selective"]').selective({
+                namespace: 'addMember',
+                local: member,
+                selected: items,
+                buildFromHtml: false,
+                tpl: {
+                    optionValue: function (data) {
+                        return data.id;
+                    },
+                    frame: function () {
+                        return '<div class="' + this.namespace + '">' +
+                            this.options.tpl.items.call(this) +
+                            '<div class="' + this.namespace + '-trigger">' +
+                            this.options.tpl.triggerButton.call(this) +
+                            '<div class="' + this.namespace + '-trigger-dropdown">' +
+                            this.options.tpl.list.call(this) +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    },
+                    triggerButton: function () {
+                        return '<div class="' + this.namespace + '-trigger-button"><i class="wb-plus"></i></div>';
+                    },
+                    listItem: function (data) {
+                        return '<li class="' + this.namespace + '-list-item"><img class="avatar" src="' + data.avatar + '">' + data.name + '</li>';
+                    },
+                    item: function (data) {
+                        return '<li class="' + this.namespace + '-item"><img class="avatar" src="' + data.avatar + '" title="' + data.name + '">' +
+                            this.options.tpl.itemRemove.call(this) +
+                            '</li>';
+                    },
+                    itemRemove: function () {
+                        return '<span class="' + this.namespace + '-remove"><i class="wb-minus-circle"></i></span>';
+                    },
+                    option: function (data) {
+                        return '<option value="' + this.options.tpl.optionValue.call(this, data) + '">' + data.name + '</option>';
+                    }
+                }
+            });
+        },
+
+        handleAction: function () {
+            //var actionBtn = $('.site-action').actionBtn().data('actionBtn');
+        },
+
+        handleEventList: function () {
+            $('#addNewEventBtn').on('click', function () {
+                $('#addNewEvent').modal('show');
+            });
+
+            $('.calendar-list .calendar-event').each(function () {
+                var $this = $(this),
+                    color = $this.data('color').split('-');
+                $this.data('event', {
+                    title: $this.data('title'),
+                    stick: $this.data('stick'),
+                    backgroundColor: $.colors(color[0], color[1]),
+                    borderColor: $.colors(color[0], color[1])
+                });
+                $this.draggable({
+                    zIndex: 999,
+                    revert: true,
+                    revertDuration: 0,
+                    helper: function () {
+                        return '<a class="fc-day-grid-event fc-event fc-start fc-end" style="background-color:' + $.colors(color[0], color[1]) + ';border-color:' + $.colors(color[0], color[1]) + '">' +
+                            '<div class="fc-content">' +
+                            '<span class="fc-title">' + $this.data('title') + '</span>' +
+                            '</div>' +
+                            '</a>';
+                    }
+                });
+            });
+        },
+
+        handleListItem: function () {
+            $('.site-action').on('click', function (e) {
+                $('#addNewCalendar').modal('show');
+                e.stopPropagation();
+            });
+
+            $(document).on('click', '[data-tag=list-delete]', function () {
+                bootbox.setDefaults($.po('bootbox'));
+                bootbox.dialog({
+                    message: "你想删除这个日历吗?",
+                    buttons: {
+                        success: {
+                            label: "确定",
+                            className: "btn-danger",
+                            callback: function () {
+                                // $(e.target).closest('.list-group-item').remove();
+                            }
+                        }
+                    }
+                });
+            });
+        },
+
+        run: function (next) {
+            $('#addNewCalendarForm').modal({
+                show: false
+            });
+
+            $('#addNewEvent').modal({
+                show: false
+            });
+
+            $('#editNewEvent').modal({
+                show: false
+            });
+
+
+            this.handleEventList();
+            this.handleFullcalendar();
+            this.handleAction();
+            this.handleSelective();
+            this.handleListItem();
+
+            next();
+        }
+    });
+
+})(document, window, jQuery);
+</script>

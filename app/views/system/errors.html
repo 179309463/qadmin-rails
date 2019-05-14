@@ -1,0 +1,81 @@
+<title>出错了</title>
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ .page-errors .page-error {
+	height: 90vh;
+}
+.page-error .error-mark {
+	margin-bottom: 33px;
+}
+.page-error header .icon:before {
+	margin-bottom: 20px;
+	font-size: 120px;
+}
+.page-error header h1 {
+	font-size: 120px;
+	color: #76838f;
+}
+.page-error header h3 {
+	margin-top: 30px;
+}
+.page-error header p {
+	margin-bottom: 30px;
+	text-transform: uppercase;
+}
+main.site-page .page-error .page-copyright {
+	display: none;
+}
+</style>
+
+<div class="page page-full vertical-align text-center animation-fade page-error">
+    <div class="page-content vertical-align-middle">
+        <header>
+            <h1 class="animation-slide-top"><span>404</span></h1>
+            <p>找不到您访问的页面</p>
+
+        </header>
+        <button class="btn btn-outline btn-primary btn-round" id="closeTab" href="javascript:;">关闭当前页</button>
+        <footer class="page-copyright">
+            <p>&copy; 2016
+                <a href="http://qadmin.com" target="_blank">QAdmin</a>
+            </p>
+        </footer>
+    </div>
+</div>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ (function () {
+    'use strict';
+
+    var btn;
+    if (typeof $ === 'undefined') {
+        btn = document.getElementById('closeTab');
+
+        btn.innerHTML = '退回上一页';
+
+        btn.onclick = function () {
+            history.go(-1);
+        };
+    } else {
+        window.Content = {
+            run: function () {
+                if (typeof $.site.contentTabs !== 'undefined') {
+                    $('#qadmin-pageContent').on('click', '#closeTab', function () {
+                        $.site.contentTabs.closeTab();
+                    });
+                }
+            }
+        };
+    }
+})();
+</script>>

@@ -1,0 +1,505 @@
+<title>即时通讯 - 页面示例</title>
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+.page-message .page-main {
+    height: 100%;
+}
+.page-message .page-aside .form-control {
+    height: 56px;
+    padding: 10px 40px 10px 20px;
+    border-color: rgba(0, 0, 0, .06);
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+}
+.page-message .page-aside .input-search-btn {
+    padding-right: 20px;
+    border-radius: 0;
+}
+.page-message .page-aside-inner {
+    height: 100%;
+}
+.page-message-list {
+    height: -webkit-calc(100% - 56px);
+    height:         calc(100% - 56px);
+}
+.page-message-list .list-group .list-group-item {
+    z-index: 0;
+    padding: 16px 30px;
+    white-space: nowrap;
+    border-bottom: 0;
+    border-radius: 0;
+}
+.page-message-list .list-group .list-group-item:hover, .page-message-list .list-group .list-group-item.active {
+    background-color: #e8f1f8;
+}
+.page-message-list .list-group .list-group-item.active:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    content: " ";
+    background: #62a8ea;
+}
+.page-message-list .list-group .list-group-item .media-time {
+    color: #a3afb7;
+}
+.page-message-chats {
+    height: -webkit-calc(100% - 76px);
+    height:         calc(100% - 76px);
+    padding: 20px 20px;
+    overflow-y: scroll;
+    text-align: center;
+    background-color: #fff;
+}
+.page-message-chats > .btn {
+    color: #89bceb;
+}
+.page-message-chats > .btn:hover {
+    color: #76838f;
+}
+.page-message-chats .chats {
+    padding: 0;
+}
+.page-message-chats .chats .chat-avatar .avatar {
+    width: 60px;
+    margin-top: -10px;
+}
+.page-message-chats .chats .time {
+    margin: 40px 0;
+    font-size: 12px;
+    color: #a3afb7;
+    text-align: center;
+}
+.page-message-input {
+    position: relative;
+    padding: 20px 110px 20px 20px;
+    background-color: #f3f7f9;
+}
+.page-message-input .message-input {
+    position: relative;
+}
+.page-message-input .message-input textarea {
+    height: 36px;
+    max-height: 100px;
+    padding-right: 110px;
+    resize: none;
+}
+.page-message-input .message-input-actions {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.page-message-input .message-input-actions input {
+    display: none;
+}
+.page-message-input .message-input-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+@media (max-width: 1199px) {
+    .page-message .page-aside .list-group-item {
+        padding: 14px 16px;
+        font-size: 12px;
+    }
+    .page-message .page-aside .list-group-item h4 {
+        font-size: 12px;
+    }
+    .page-message .page-aside .list-group-item .avatar {
+        width: 34px;
+    }
+    .page-message .page-aside .list-group-item .badge {
+        padding: 1px 4px;
+    }
+}
+@media (max-width: 1199px) {
+    .page-message .page-aside .list-group-item {
+        padding: 14px 16px;
+        font-size: 12px;
+    }
+    .page-message .page-aside .list-group-item h4 {
+        font-size: 12px;
+    }
+    .page-message .page-aside .list-group-item .avatar {
+        width: 34px;
+    }
+    .page-message .page-aside .list-group-item .badge {
+        padding: 1px 4px;
+    }
+}
+</style>
+
+<div class="page animation-fade page-message page-aside-fixed page-aside-left page-full">
+
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner">
+            <div class="input-search">
+                <button class="input-search-btn" type="submit">
+                    <i class="icon wb-search" aria-hidden="true"></i>
+                </button>
+                <form>
+                    <input class="form-control" type="text" placeholder="查找好友" name="">
+                </form>
+            </div>
+            <div class="page-message-list">
+                <div class="h-full" data-plugin="slimScroll">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-online" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/1.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">嵇慧莉</h4>
+                                    <span class="media-time">15 秒前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger">3</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-online" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/2.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">刘文平</h4>
+                                    <span class="media-time">1 分钟前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-online" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/3.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">孙玉珍</h4>
+                                    <span class="media-time">5 分钟前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-online" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/4.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">柳映秋</h4>
+                                    <span class="media-time">15 分钟前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger">5</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item active">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-away" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/5.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">周伊娅</h4>
+                                    <span class="media-time">40 分钟前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-away" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/6.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">陈思思</h4>
+                                    <span class="media-time">2 小时前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-online" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/7.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">陈朝红</h4>
+                                    <span class="media-time">3 小时前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-off" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/8.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">蒋海燕</h4>
+                                    <span class="media-time">3 小时前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-off" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/9.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">张倩</h4>
+                                    <span class="media-time">5 小时前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="media">
+                                <div class="pr-10">
+                                    <a class="avatar avatar-off" href="javascript:;">
+                                        <img class="img-fluid" src="/static/images/portraits/10.jpg">
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">孙咏梅</h4>
+                                    <span class="media-time">7 小时前</span>
+                                </div>
+                                <div class="media-right">
+                                    <span class="badge badge-pill badge-danger"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-main">
+
+        <div class="page-message-chats">
+            <button type="button" id="historyBtn" class="btn btn-inverse btn-round">
+                历史消息
+            </button>
+            <div class="chats">
+                <div class="chat">
+                    <div class="chat-avatar">
+                        <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right" title="">
+                            <img src="/static/images/portraits/4.jpg">
+                        </a>
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-content">
+                            <p>
+                                我对你是真心的 </p>
+                        </div>
+                        <div class="chat-content">
+                            <p>
+                                在所有的朋友里面 </p>
+                        </div>
+                        <div class="chat-content">
+                            <p>
+                                没有一个比我对你更真心 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat chat-left">
+                    <div class="chat-avatar">
+                        <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title="">
+                            <img src="/static/images/portraits/5.jpg">
+                        </a>
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-content">
+                            <p>
+                                怎么证明？ </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-avatar">
+                        <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="right" title="">
+                            <img src="/static/images/portraits/4.jpg">
+                        </a>
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-content">
+                            <p>
+                                只要不花钱，怎么证明都行！ </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="time">1 小时前</p>
+                <div class="chat chat-left">
+                    <div class="chat-avatar">
+                        <a class="avatar" data-toggle="tooltip" href="javascript:;" data-placement="left" title="">
+                            <img src="/static/images/portraits/5.jpg">
+                        </a>
+                    </div>
+                    <div class="chat-body">
+                        <div class="chat-content">
+                            <p>滚！！</p>
+                        </div>
+                        <div class="chat-content">
+                            <p>咱俩的友谊从此走到尽头</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="page-message-input">
+            <div class="message-input">
+                <textarea class="form-control" rows="1"></textarea>
+                <div class="message-input-actions btn-group">
+                    <button class="btn btn-pure btn-icon btn-default" type="button">
+                        <i class="icon wb-emoticon" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-pure btn-icon btn-default" type="button">
+                        <i class="icon wb-image" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-pure btn-icon btn-default" type="button">
+                        <i class="icon wb-paperclip" aria-hidden="true"></i>
+                    </button>
+                    <input id="messageImage" type="file" name="messageImage">
+                    <input id="messageFile" type="file" name="messageFile">
+                </div>
+            </div>
+            <button class="message-input-btn btn btn-primary" type="button">发送</button>
+        </form>
+
+    </div>
+</div>
+    
+<script src="/vendor/autosize/dist/autosize.min.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    var $pageContent = $('#qadmin-pageContent');
+    window.Content = App.extend({
+        scrollChatsToBottom: function () {
+            var $chatsWrap = $(".page-message-chats");
+            var chatsWrapH = $chatsWrap.height();
+            var chatsH = $(".chats", $chatsWrap).outerHeight();
+            var historyBtnH = $("#historyBtn").outerHeight();
+
+            $chatsWrap.scrollTop(chatsH + historyBtnH - chatsWrapH);
+        },
+
+        handleResize: function () {
+            var self = this;
+
+            $(window).on("resize", function () {
+                self.scrollChatsToBottom();
+            });
+        },
+
+        handleTalking: function () {
+            var self = this;
+            var $chatsWrap = $(".page-message-chats");
+            var $textareaWrap = $('.page-message-input');
+
+            autosize($('.message-input textarea'));
+
+            $pageContent.on('autosize:resized', '.message-input textarea', function () {
+                var height = $textareaWrap.outerHeight();
+                $chatsWrap.css('height', 'calc(100% - ' + height + 'px)');
+                self.scrollChatsToBottom();
+            });
+
+
+            $pageContent.on("click", ".message-input-btn>button", function () {
+                var talkContents = $(".message-input>.form-control").val();
+                var $newMsg = $(
+                    "<div class='chat-content'>" +
+                    "<p>" + talkContents + "</p>" +
+                    "</div>"
+                );
+
+                if (talkContents.length > 0) {
+                    $(".chat").last().find(".chat-body").append($newMsg);
+                    $(".message-input>.form-control").attr("placeholder", "");
+                    $(".message-input>.form-control").val("");
+                } else {
+                    $(".message-input>.form-control").attr("placeholder", "type text here...");
+                }
+
+                $(".message-input>.form-control").focus();
+
+                self.scrollChatsToBottom();
+            });
+        },
+        run: function (next) {
+            this.scrollChatsToBottom();
+            this.handleResize();
+            this.handleTalking();
+
+            next();
+        }
+    });
+
+    
+}(document, window, jQuery));
+</script>

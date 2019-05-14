@@ -1,0 +1,1006 @@
+<title>文件管理 - 页面示例</title>
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+.page-media .page-content-actions .checkbox-custom {
+    margin-bottom: 20px;
+}
+.page-media .page-content-actions .actions-inner {
+    border-bottom: 1px solid #e4eaec;
+}
+.page-media .page-content-actions .btn-outline.btn-default {
+    z-index: 2;
+}
+.page-media .blocks {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+.page-media .blocks > li {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-bottom: 0;
+}
+.page-media .time {
+    color: #a3afb7;
+}
+.page-media .media-item .checkbox-custom label::before {
+    position: relative;
+}
+.page-media .media-item .dropdown:hover .dropdown-toggle {
+    color: #76838f;
+}
+.page-media .media-item .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+.page-media .media-list {
+    padding: 20px 30px;
+    overflow: hidden;
+}
+.page-media .media-list .image-wrap > .image {
+    max-width: 100%;
+}
+.page-media .media-list .media-item-actions {
+    display: none;
+}
+.page-media .media-list .media-item {
+    cursor: pointer;
+}
+.page-media .media-list.is-grid .media-item {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.page-media .media-list.is-grid .media-item:hover, .page-media .media-list.is-grid .media-item.active {
+    background-color: #f3f7f9;
+    border-color: #e4eaec;
+}
+.page-media .media-list.is-grid .media-item:hover .dropdown, .page-media .media-list.is-grid .media-item.active .dropdown {
+    display: block;
+}
+.page-media .media-list.is-grid .media-item .checkbox-custom {
+    position: absolute;
+    top: 9px;
+    left: 34px;
+    padding: 0;
+    margin: 0;
+}
+.page-media .media-list.is-grid .media-item .image-wrap {
+    margin-bottom: 10px;
+}
+.page-media .media-list.is-grid .media-item .dropdown {
+    display: none;
+    float: right;
+}
+.page-media .media-list.is-grid .media-item .dropdown.open .dropdown-toggle, .page-media .media-list.is-grid .media-item .dropdown.open .dropdown-toggle:hover {
+    color: #526069;
+}
+.page-media .media-list.is-grid .media-item .dropdown-toggle {
+    color: #a3afb7;
+}
+.page-media .media-list.is-grid .media-item .dropdown-menu {
+    -webkit-transform-origin: 100% 0;
+        -ms-transform-origin: 100% 0;
+         -o-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+    -webkit-animation-duration: .3s;
+         -o-animation-duration: .3s;
+            animation-duration: .3s;
+}
+.page-media .media-list.is-grid .media-item .dropdown-menu .icon {
+    margin-right: 10px;
+}
+.page-media .media-list.is-grid .media-item .dropdown-menu > li > a {
+    padding: 3px 10px;
+}
+.page-media .media-list.is-list {
+    padding-right: 0;
+    padding-left: 0;
+}
+.page-media .media-list.is-list .blocks > li {
+    width: 100%;
+}
+.page-media .media-list.is-list .media-item {
+    position: relative;
+    padding: 20px 30px;
+    white-space: nowrap;
+}
+.page-media .media-list.is-list .media-item > div {
+    display: inline-block;
+}
+.page-media .media-list.is-list .media-item:hover {
+    background-color: #f3f7f9;
+}
+.page-media .media-list.is-list .media-item:hover .media-item-actions {
+    display: block;
+}
+.page-media .media-list.is-list .media-item:after {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    display: block;
+    width: -webkit-calc(100% - 60px);
+    width:         calc(100% - 60px);
+    content: "";
+    border-bottom: 1px solid #e4eaec;
+}
+.page-media .media-list.is-list .checkbox-custom {
+    margin-right: 30px;
+}
+.page-media .media-list.is-list .image-wrap {
+    width: 140px;
+    height: 100px;
+    margin-right: 20px;
+    font-size: 0;
+}
+.page-media .media-list.is-list .image-wrap:before {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    content: "";
+}
+.page-media .media-list.is-list .info-wrap {
+    vertical-align: top;
+}
+.page-media .media-list.is-list .info-wrap .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.page-media .media-list.is-list .dropdown {
+    display: none;
+}
+.page-media .media-list.is-list .media-item-actions {
+    margin-top: 15px;
+}
+.page-media .media-list.is-list .media-item-actions .btn-icon {
+    margin-left: 1px;
+    color: #a3afb7;
+}
+@media (max-width: 480px) {
+    .page-media .is-list .info-wrap {
+        display: block !important;
+        padding-left: 60px;
+    }
+    .page-media .is-list .info-wrap:before, .page-media .is-list .info-wrap:after {
+        display: table;
+        content: " ";
+    }
+    .page-media .is-list .info-wrap:after {
+        clear: both;
+    }
+    .page-media .is-list .media-item-actions {
+        display: block;
+        margin-top: 5px;
+    }
+    .page-media .page-header .page-header-actions {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px;
+        -webkit-transform: none;
+            -ms-transform: none;
+             -o-transform: none;
+                transform: none;
+    }
+    .page-media .slidePanel .media-header .share {
+        display: block;
+        float: none;
+        margin-top: 20px;
+    }
+}
+.slidePanel-header {
+    width: 100%;
+    height: 350px;
+}
+.slidePanel-header .slidePanel-actions {
+    min-height: 46px;
+}
+.slidePanel .overlay-top {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.slidePanel .overlay-background {
+    background-color: rgba(38, 50, 56, .6);
+}
+.slidePanel .media-header {
+    position: relative;
+    margin-bottom: 20px;
+}
+.slidePanel .media-header:before, .slidePanel .media-header:after {
+    display: table;
+    content: " ";
+}
+.slidePanel .media-header:after {
+    clear: both;
+}
+.slidePanel .media-header .time {
+    line-height: 40px;
+}
+.slidePanel .media-header .share {
+    display: inline-block;
+    float: right;
+}
+.slidePanel .media-header .tags {
+    display: inline-block;
+}
+.slidePanel .avatar {
+    vertical-align: middle;
+}
+</style>
+
+<div class="page bg-white page-media page-aside-fixed page-aside-left page-full">
+
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full" data-plugin="slimScroll">
+            <section class="page-aside-section">
+                <h5 class="page-aside-title">主要</h5>
+                <div class="list-group">
+                    <a class="list-group-item active" href="javascript:;">
+                        <i class="icon wb-dashboard" aria-hidden="true"></i>概览
+                    </a>
+                    <a class="list-group-item" href="javascript:;">
+                        <i class="icon wb-pluse" aria-hidden="true"></i>活动
+                    </a>
+                    <a class="list-group-item" href="javascript:;">
+                        <i class="icon wb-heart" aria-hidden="true"></i>喜欢
+                    </a>
+                    <a class="list-group-item" href="javascript:;">
+                        <i class="icon wb-folder" aria-hidden="true"></i>文件夹
+                    </a>
+                </div>
+            </section>
+            <section class="page-aside-section">
+                <h5 class="page-aside-title">筛选</h5>
+                <div class="list-group">
+                    <a class="list-group-item" href="javascript:;">
+                        <i class="icon wb-image" aria-hidden="true"></i>图片
+                    </a>
+                    <a class="list-group-item" href="javascript:;">
+                        <i class="icon wb-volume-high" aria-hidden="true"></i>音频
+                    </a>
+                    <a class="list-group-item" href="javascript:;">
+                        <i class="icon wb-camera" aria-hidden="true"></i>视频
+                    </a>
+                    <a class="list-group-item" href="javascript:;">
+                        <i class="icon wb-file" aria-hidden="true"></i>日记
+                    </a>
+                    <a class="list-group-item" href="javascript:;">
+                        <i class="icon wb-link-intact" aria-hidden="true"></i>链接
+                    </a>
+                    <a class="list-group-item" href="javascript:;">
+                        <i class="icon wb-order" aria-hidden="true"></i>文件
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="page-main">
+
+        <div class="page-header">
+            <h1 class="page-title">图片</h1>
+            <div class="page-header-actions">
+                <form>
+                    <div class="input-search input-search-dark">
+                        <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                        <input type="text" class="form-control" name="" placeholder="查找...">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="page-content page-content-table" data-selectable="selectable">
+
+            <div class="page-content-actions">
+                <div class="float-right">
+                    <div class="btn-group media-arrangement" role="group">
+                        <button class="btn btn-outline btn-default active" id="arrangement-grid" type="button">
+                            <i class="icon wb-grid-4" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-outline btn-default" id="arrangement-list" type="button">
+                            <i class="icon wb-list" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="actions-inner">
+                    <div class="checkbox-custom checkbox-primary checkbox-lg">
+                        <input type="checkbox" id="media_all" class="selectable-all">
+                        <label for="media_all"></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-list is-grid pb-50">
+                <ul class="blocks blocks-100 blocks-xxl-4 blocks-xl-3 blocks-lg-3 blocks-md-2 blocks-sm-2" data-plugin="animateList"
+                    data-child=">li">
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="/views/examples/pages/media/index.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_1">
+                                <label for="media_1"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-1.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 1</div>
+                                <div class="time">1 分钟前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- TODO: 添加侧边栏 -->
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_2">
+                                <label for="media_2"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-10.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 2</div>
+                                <div class="time">20 分钟前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_3">
+                                <label for="media_3"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-11.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 3</div>
+                                <div class="time">1 小时前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_4">
+                                <label for="media_4"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-12.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 4</div>
+                                <div class="time">3 小时前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_5">
+                                <label for="media_5"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-13.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 5</div>
+                                <div class="time">7 小时前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_6">
+                                <label for="media_6"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-14.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 6</div>
+                                <div class="time">16 小时前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_7">
+                                <label for="media_7"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-15.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 7</div>
+                                <div class="time">1 天前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_8">
+                                <label for="media_8"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-16.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 8</div>
+                                <div class="time">2 天前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_9">
+                                <label for="media_9"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-2.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 9</div>
+                                <div class="time">3 天前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_10">
+                                <label for="media_10"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-3.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 10</div>
+                                <div class="time">7 天前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_11">
+                                <label for="media_11"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-4.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 11</div>
+                                <div class="time">1 周前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="media-item" data-toggle="slidePanel" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/media-panel.tpl">
+                            <div class="checkbox-custom checkbox-primary checkbox-lg">
+                                <input type="checkbox" class="selectable-item" id="media_12">
+                                <label for="media_12"></label>
+                            </div>
+                            <div class="image-wrap">
+                                <img class="image rounded" src="/static/images/photos/view-5.jpg" alt="...">
+                            </div>
+                            <div class="info-wrap">
+                                <div class="dropdown">
+                                    <span class="icon wb-settings" role="button" data-toggle="dropdown" data-animation="scale-up"></span>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-pencil" aria-hidden="true"></i>编辑
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-download" aria-hidden="true"></i>下载
+                                        </a>
+                                        <a class="dropdown-item" href="javascript:;">
+                                            <i class="icon wb-trash" aria-hidden="true"></i>删除
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="title">图片 12</div>
+                                <div class="time">2 周前</div>
+                                <div class="media-item-actions btn-group">
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Edit"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-pencil" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Download"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-download" aria-hidden="true"></i>
+                                    </button>
+                                    <button class="btn btn-icon btn-pure btn-default" data-original-title="Delete"
+                                            data-toggle="tooltip" data-container="body" data-placement="top" data-trigger="hover"
+                                            type="button">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-action">
+    <button type="button" class="site-action-toggle btn-raised btn btn-success btn-floating">
+        <i class="front-icon wb-upload animation-scale-up" aria-hidden="true"></i>
+        <i class="back-icon wb-close animation-scale-up" aria-hidden="true"></i>
+    </button>
+    <div class="site-action-buttons">
+        <button type="button" data-action="download" class="btn-raised btn btn-success btn-floating animation-slide-bottom">
+            <i class="icon wb-download" aria-hidden="true"></i>
+        </button>
+        <button type="button" data-action="trash" class="btn-raised btn btn-success btn-floating animation-slide-bottom">
+            <i class="icon wb-trash" aria-hidden="true"></i>
+        </button>
+    </div>
+    <input type="file" id="fileupload" name="upload">
+</div>
+
+<script src="/static/js/plugins/action-btn.js"></script>
+<script src="/static/js/plugins/sticky-header.js"></script>
+<script src="/static/js/plugins/selectable.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    var $pageContent = $('#qadmin-pageContent');
+    window.Content = App.extend({
+        handleArrangement: function () {
+            $pageContent.on('click', '#arrangement-grid', function () {
+                var $this = $(this);
+                if ($this.hasClass('active')) {
+                    return;
+                }
+                $('#arrangement-list').removeClass('active');
+                $this.addClass('active');
+                $('.media-list').removeClass('is-list').addClass('is-grid');
+                $('.media-list>ul>li').removeClass('animation-fade').addClass('animation-scale-up');
+
+            });
+
+            $pageContent.on('click', '#arrangement-list', function () {
+                var $this = $(this);
+                if ($this.hasClass('active')) {
+                    return;
+                }
+                $('#arrangement-grid').removeClass('active');
+                $this.addClass('active');
+                $('.media-list').removeClass('is-grid').addClass('is-list');
+                $('.media-list>ul>li').removeClass('animation-scale-up').addClass('animation-fade');
+            });
+        },
+
+        handleActive: function () {
+            $.po('selectable').rowSelector = '.media-item';
+        },
+
+        handleAction: function () {
+            var actionBtn = $('.site-action').actionBtn().data('actionBtn');
+            var $selectable = $('[data-selectable]');
+
+            $pageContent.on('click', '.site-action-toggle', '.site-action', function (e) {
+                var $selected = $selectable.asSelectable('getSelected');
+
+                if ($selected.length === 0) {
+                    $('#fileupload').trigger('click');
+                    e.stopPropagation();
+                }
+            });
+
+            $pageContent.on('click', '[data-action="trash"]', '.site-action', function () {
+                toastr.info('删除所选文件');
+            });
+
+            $pageContent.on('click', '[data-action="download"]', '.site-action', function () {
+                toastr.info('下载所选文件');
+            });
+
+            $pageContent.on('asSelectable::change', '[data-selectable]', function (e, api, checked) {
+                if (checked) {
+                    actionBtn.show();
+                } else {
+                    actionBtn.hide();
+                }
+            });
+        },
+
+        handleDropdownAction: function () {
+            $pageContent.on('show.bs.dropdown', '.info-wrap>.dropdown', function () {
+                $(this).closest('.media-item').toggleClass('item-active');
+            }).on('hidden.bs.dropdown', '.info-wrap>.dropdown', function () {
+                $(this).closest('.media-item').toggleClass('item-active');
+            });
+            $pageContent.on('click', '.info-wrap .dropdown-menu', function (e) {
+                e.stopPropagation();
+            });
+
+        },
+
+        run: function (next) {
+            $pageContent.on('click', '.media-item-actions', function (e) {
+                e.stopPropagation();
+            });
+
+            this.handleArrangement();
+            this.handleAction();
+            this.handleActive();
+            this.handleDropdownAction();
+
+            next();
+        }
+    });
+    
+})(document, window, jQuery);
+</script>

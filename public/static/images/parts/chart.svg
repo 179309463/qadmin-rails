@@ -1,0 +1,21 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve">
+<g>
+	<rect x="31.5" y="3.5" style="fill:#BAE0BD;" width="7" height="35"></rect>
+	<path style="fill:#5E9C76;" d="M38,4v34h-6V4H38 M39,3h-8v36h8V3L39,3z"></path>
+</g>
+<g>
+	<rect x="21.5" y="17.5" style="fill:#BAE0BD;" width="7" height="21"></rect>
+	<path style="fill:#5E9C76;" d="M28,18v20h-6V18H28 M29,17h-8v22h8V17L29,17z"></path>
+</g>
+<g>
+	<rect x="11.5" y="24.5" style="fill:#BAE0BD;" width="7" height="14"></rect>
+	<path style="fill:#5E9C76;" d="M18,25v13h-6V25H18 M19,24h-8v15h8V24L19,24z"></path>
+</g>
+<g>
+	<rect x="1.5" y="30.5" style="fill:#BAE0BD;" width="7" height="8"></rect>
+	<path style="fill:#5E9C76;" d="M8,31v7H2v-7H8 M9,30H1v9h8V30L9,30z"></path>
+</g>
+<g>
+	<polygon style="fill:#4E7AB5;" points="15.464,6.95 3.686,18.728 2.272,17.314 14.05,5.536 10.515,2 19,2 19,10.485 	"></polygon>
+</g>
+</svg>

@@ -1,0 +1,111 @@
+
+
+<!DOCTYPE html>
+<html class="no-js css-menubar height-full" lang="zh-cn">
+
+<head>
+    <title>请重新登录</title>
+    
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta name="keywords" content="QAdmin框架,后台管理系统框架,后台框架,ui框架,后台bootstrap框架,响应式后台,后台主题" />
+<meta name="description" content="QAdmin在线演示系统，QAdmin是一个基于Java及jQuery等最新Web技术的企业级通用管理系统快速开发框架，可以帮助企业极大的提高工作效率，节省开发成本，提升品牌形象" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="qadmin.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="/static/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="/static/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="QAdmin">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="/static/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="//images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!-- 样式 -->
+<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="/static/skins/base/pjax/default.css" id="siteStyle">
+<!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0; url='/portal/browser.html/'" />
+<![endif]-->
+<!--[if lt IE 10]>
+<script src="/vendor/media-match/media.match.min.js"></script>
+<script src="/vendor/respond/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+    <!-- 自定义 -->
+    <style>
+    /**
+    * QAdmin v1.2.0 (http://www.qadmin.com/)
+    * Copyright 2015-2017 QAdmin Team
+    * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+    */
+    .page-locked:before {
+        background-image: url("/static/images/lockscreen.jpg");
+    }
+    .page-locked .avatar {
+        margin-bottom: 15px;
+    }
+    .page-locked .avatar.avatar-lg {
+        width: 160px;
+        height: 160px;
+    }
+    .page-locked .locked-user {
+        margin-bottom: 35px;
+        color: #fff;
+    }
+    .page-locked form {
+        width: 300px;
+        margin: 22px auto;
+    }
+    </style>
+    <!-- 插件 -->
+    <link rel="stylesheet" href="/vendor/animsition/dist/css/animsition.min.css">
+    <!-- 图标 -->
+    <link rel="stylesheet" href="/vendor/web-icons/css/web-icons.css">
+</head>
+
+<body class="page-locked layout-full page-dark">
+
+<div class="page animation-fade vertical-align text-center animsition-fade h-full">
+    <div class="page-content vertical-align-middle">
+        <div class="avatar avatar-lg">
+            <img src="/static/images/avatar_3.svg" alt="zhangzhiyuan@qadmin_demo">
+        </div>
+        <h4 class="locked-user">zhangzhiyuan@qadmin_demo</h4>
+        <form action="/" role="form">
+            <div class="input-group">
+                <input type="password" class="form-control last" name="password" placeholder="请输入您的密码继续登录">
+                <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="icon wb-unlock" aria-hidden="true"></i>
+                            <span class="sr-only">登录</span>
+                    </button>
+                    </span>
+            </div>
+        </form>
+        <p>
+            <a href="/login">或者使用其他账号登录</a>
+        </p>
+    </div>
+</div>
+
+</body>
+
+</html>

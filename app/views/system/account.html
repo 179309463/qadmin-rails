@@ -1,0 +1,204 @@
+<title>账户信息</title>
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ .page-account .widget-header {
+	padding: 40px 15px;
+	background-color: #fff;
+}
+.page-account .widget-footer {
+	padding: 10px;
+	background-color: #f6f9fd;
+}
+.page-account .widget .avatar {
+	width: 130px;
+	margin-bottom: 10px;
+}
+.page-account .account-user {
+	margin-bottom: 10px;
+	color: #263238;
+}
+.page-account .account-stat-count {
+	display: block;
+	margin-bottom: 3px;
+	font-size: 20px;
+	font-weight: 300;
+	color: #526069;
+}
+.page-account .account-stat-count + span {
+	color: #a3afb7;
+}
+.page-account .tab-content .tab-message .media {
+	padding-top: 0;
+}
+.page-account .tab-content .tab-message .media-heading {
+	margin-top: 5px;
+}
+.page-account .tab-content .tab-message .media-left {
+	padding: 5px 10px 0 0;
+}
+.page-account .tab-content .tab-message .media-left .icon {
+	margin-left: .6em;
+}
+.page-account .tab-content .tab-message .media-left .icon.system {
+	background-color: #f96868;
+}
+.page-account .tab-content .tab-message .media-left .icon.task {
+	background-color: #46be8a;
+}
+.page-account .tab-content .tab-message .media-left .icon.setting {
+	background-color: #62a8ea;
+}
+.page-account .tab-content .tab-message .media-left .icon.event {
+	background-color: #8d6658;
+}
+.page-account .tab-content .tab-message .media-left .icon.other {
+	background-color: #f2a654;
+}
+.page-account .tab-content .tab-message .media-right .btn {
+	margin: 5px 0 0;
+	visibility: hidden;
+}
+.page-account .tab-content .tab-message .media time {
+	opacity: .5;
+}
+.page-account .tab-content .tab-message .media:hover .media-right .btn {
+	visibility: visible;
+}
+</style>
+
+<link rel="stylesheet" href="/lib/jquery-strength/jquery-strength.css">
+<link rel="stylesheet" href="/vendor/alertifyjs/dist/css/alertify.css">
+<div class="page page-full animation-fade page-account">
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="widget widget-shadow text-center">
+                    <div class="widget-header">
+                        <div class="widget-header-content">
+                            <a class="avatar avatar-lg" href="javascript:;">
+                                <img src="/static/images/avatar_4.svg" alt="admin">
+                            </a>
+                            <h4 class="account-user">Admin</h4>
+                            <p>上次登录：2015-11-12</p>
+                        </div>
+                    </div>
+                    <div class="widget-footer">
+                        <div class="row no-space">
+                            <div class="col-xs-4">
+                                <strong class="account-stat-count">260</strong> <span>登录</span>
+                            </div>
+                            <div class="col-xs-4">
+                                <strong class="account-stat-count msg-number">180</strong> <span>消息</span>
+                            </div>
+                            <div class="col-xs-4">
+                                <strong class="account-stat-count log-number">2K+</strong> <span>日志</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="panel">
+                    <div class="panel-body nav-tabs-animate">
+                        <ul class="nav nav-tabs nav-tabs-line tabList" role="tablist">
+                            <li class="news<% if (fileName === 'index.html'){ %> active<% } %>" role="presentation" id="accountMsg">
+                                <a href="/system/account.html" data-pjax="#accountContent" aria-expanded="true">
+                                    <i class="icon fa fa-comment-o" aria-hidden="true"></i> 消息
+                                    <span class="badge badge-danger"></span></a>
+                            </li>
+                            <li class="<% if (fileName === 'log.html'){ %> active<% } %>" role="presentation " id="accountLog">
+                                <a href="/system/account/log/index.html" data-pjax="#accountContent" aria-expanded="false">
+                                    <i class="icon fa fa-file-text-o" aria-hidden="true"></i> 日志
+                                </a>
+                            </li>
+                            <li class="<% if (fileName === 'password.html'){ %> active<% } %>" role="presentation">
+                                <a href="/system/password.html" data-pjax="#accountContent" aria-expanded="false">
+                                    <i class="icon fa fa-key" aria-hidden="true"></i> 密码
+                                </a>
+                            </li>
+                            <li class="<% if (fileName === 'display.html'){ %> active<% } %>" role="presentation">
+                                <a href="/system/account/display/index.html" data-pjax="#accountContent" aria-expanded="false">
+                                    <i class="icon fa fa-magic" aria-hidden="true"></i> 显示
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content margin-top-15">
+                            <div class="animation-slide-left tab-message active" id="accountContent">
+                                <%- include(path1) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/lib/jquery-strength/jquery-strength.min.js"></script>
+<script src="/vendor/alertifyjs/dist/js/alertify.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ (function (window, document, $) {
+    'use strict';
+
+    window.Content.extend({
+        run: function (next) {
+            $('.tabList').on('click', 'li', function () {
+                var $item = $(this);
+
+                $item.siblings('li').removeClass('active');
+                $item.addClass('active');
+            });
+
+            $.extend(window.notifyFn, { // 扩展账户信息页面时左侧名片&&选项卡消息计数
+                messageNum: function (opt) {
+                    var $navMsg = $('#qadmin-navbarMessage').find('span.msg-num'),
+                        $total = $('.msg-number'),
+                        msgNumber = $navMsg.text(),
+                        allMsg = Number($total.text());
+
+                    $(".tabList>li.news span").text(msgNumber);
+                    if (opt === '1') {
+                        $total.text(allMsg + 1);
+                    }
+                },
+                unReadMsg: function (count) { // 显示未读消息
+                    $(".tabList>li.news span").text(count);
+                }
+            });
+
+            // 获取消息数量
+            // TODO: 需要配合后端服务来使用
+
+            // $.ajax({
+            //     url: $.ctx + '/user/account',
+            //     dataType: 'JSON',
+            //     success: function (data) {
+            //         if(data.success){
+            //             $('.msg-number').text(data.msgCount);
+            //             $('.log-number').text(data.logCount);
+            //         }else{
+            //             toastr.error('出错了，请重试！');
+            //         }
+            //     },
+            //     error: function () {
+            //         toastr.error('服务器异常，请稍后再试！');
+            //     }
+            // });
+
+            next();
+        }
+    });
+
+})(window, document, jQuery);
+</script>

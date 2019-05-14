@@ -1,0 +1,126 @@
+<title>AJAX</title>
+
+<link rel="stylesheet" href="/vendor/glyphicons/styles/glyphicons.css">
+<link rel="stylesheet" href="/lib/datatables-bootstrap/4/dataTables.bootstrap.css">
+<link rel="stylesheet" href="/vendor/datatables-fixedheader/css/fixedHeader.dataTables.scss">
+<link rel="stylesheet" href="/lib/datatables-responsive/css/responsive.dataTables.css">
+<link rel="stylesheet" href="/vendor/highlight/src/styles/default.css">
+<link rel="stylesheet" href="/vendor/highlight/src/styles/github-gist.css">
+
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+.page-data-tables .dt-scroll-x {
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.page-data-tables .dt-dom-multiple-elements .dataTables_length {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.page-data-tables .dt-dom-multiple-elements .dataTables_filter {
+    margin-top: 15px;
+}
+.page-data-tables .dt-dom-multiple-elements .dataTables_paginate {
+    margin-top: -36px;
+}
+.page-data-tables td.highlight {
+    background-color: #f3f7f9;
+}
+.page-data-tables td.details-control {
+    cursor: pointer;
+}
+.page-data-tables td.details-control:before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+    line-height: 14px;
+    color: #fff;
+    text-align: center;
+    content: "+";
+    background-color: #62a8ea;
+    border: 2px solid #fff;
+    border-radius: 16px;
+}
+.page-data-tables tr.shown td.details-control:before {
+    content: "-";
+    background-color: #f96868;
+}
+
+pre[data-plugin="highlight"] code, code.hljs {
+    border: none;
+}
+</style>
+
+<script src="/vendor/datatables/media/js/jquery.dataTables.min.js" data-name="dataTables"></script>
+<script src="/lib/datatables-bootstrap/4/dataTables.bootstrap.min.js" data-deps="dataTables"></script>
+<script src="/vendor/datatables-responsive/js/dataTables.responsive.js" data-deps="dataTables"></script>
+
+<div class="page page-full animation-fade page-data-tables page-aside-fixed page-aside-left page-full">
+    <div class="page-aside">
+        <div class="page-aside-switch">
+            <i class="icon wb-chevron-left" aria-hidden="true"></i>
+            <i class="icon wb-chevron-right" aria-hidden="true"></i>
+        </div>
+        <div class="page-aside-inner h-full" data-plugin="slimScroll">
+            <section class="page-aside-section">
+                <h5 class="page-aside-title">AJAX</h5>
+                <div class="list-group">
+                    <a class="list-group-item" href="/examples/data_tables/ajax/index.html" data-pjax="#DTConent">
+                        <i class="icon fa fa-circle-o"></i> Ajax数据源(数组)
+                    </a>
+                    <a class="list-group-item" href="/examples/data_tables/ajax/objects.html" data-pjax="#DTConent">
+                        <i class="icon fa fa-circle-o"></i> Ajax数据源(对象)
+                    </a>
+                    <a class="list-group-item" href="/examples/data_tables/ajax/deep.html" data-pjax="#DTConent">
+                        <i class="icon fa fa-circle-o"></i> 嵌套对象数据(对象)
+                    </a>
+                    <a class="list-group-item" href="/examples/data_tables/ajax/objects_subarrays.html" data-pjax="#DTConent">
+                        <i class="icon fa fa-circle-o"></i> 嵌套对象数据(数组)
+                    </a>
+                    <a class="list-group-item" href="/examples/data_tables/ajax/orthogonal_data.html" data-pjax="#DTConent">
+                        <i class="icon fa fa-circle-o"></i> 正交数据
+                    </a>
+                    <a class="list-group-item" href="/examples/data_tables/ajax/null_data_source.html" data-pjax="#DTConent">
+                        <i class="icon fa fa-circle-o"></i> 给一列生成自定义内容
+                    </a>
+                    <a class="list-group-item" href="/examples/data_tables/ajax/custom_data_property.html" data-pjax="#DTConent">
+                        <i class="icon fa fa-circle-o"></i> 自定义数据源属性
+                    </a>
+                    <a class="list-group-item" href="/examples/data_tables/ajax/custom_data_flat.html" data-pjax="#DTConent">
+                        <i class="icon fa fa-circle-o"></i> 不指定数据源属性
+                    </a>
+                    <a class="list-group-item" href="/examples/data_tables/ajax/defer_render.html" data-pjax="#DTConent">
+                        <i class="icon fa fa-circle-o"></i> 延迟渲染数据以提高速度
+                    </a>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    <div class="page-main">
+        <div class="page-header">
+            <h1 class="page-title">DataTables AJAX</h1>
+            <div class="page-header-actions">
+                <a class="btn btn-inverse btn-round" href="https://datatables.net/" target="_blank">
+                    <i class="icon wb-link" aria-hidden="true"></i> <span class="hidden-xs">官网</span></a>
+                <a class="btn btn-inverse btn-round" href="http://datatables.club/" target="_blank">
+                    <i class="icon fa fa-language" aria-hidden="true"></i> <span class="hidden-xs">中文网</span></a>
+            </div>
+        </div>
+        <div class="page-content" id="DTConent">
+            <%- include(path1) %>
+        </div>
+    </div>
+</div>
+
+<script src="/lib/highlight/highlight.min.js"></script>

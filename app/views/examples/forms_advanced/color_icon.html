@@ -1,0 +1,385 @@
+
+<title>颜色 & 字体选择器 - 表单示例</title>
+
+<link rel="stylesheet" href="/vendor/glyphicons/styles/glyphicons.css">
+<link rel="stylesheet" href="/vendor/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+<link rel="stylesheet" href="/lib/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.css">
+<link rel="stylesheet" href="/vendor/highlight/src/styles/default.css">
+<link rel="stylesheet" href="/vendor/highlight/src/styles/github-gist.css">
+
+<style>
+.bootstrap-select {
+    width: 100%!important
+}
+
+.datepair-wrap {
+    position: relative
+}
+
+.input-daterange-wrap {
+    float: left
+}
+
+.input-daterange-to {
+    float: left;
+    width: 40px;
+    height: 2.287rem;
+    line-height: 2.287rem;
+    text-align: center
+}
+
+@media (max-width:1360px) {
+    .input-daterange-to,.input-daterange-wrap {
+        display: block;
+        float: none
+    }
+}
+</style>
+
+<div class="page animation-fade page-forms">
+    <div class="page-header">
+        <h1 class="page-title">颜色 & 字体选择器</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:;">首页</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">表单</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="javascript:;">高级表单元素</a>
+            </li>
+            <li class="breadcrumb-item active">颜色 & 字体选择器</li>
+        </ol>
+    </div>
+    <div class="page-content container-fluid">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Color Picker（拾色器）
+                    <small>
+                        <a class="example-plugin-link" href="https://github.com/itsjavi/bootstrap-colorpicker" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">基本模式</h4>
+                            <p>添加
+                                <code>data-plugin="colorpicker"</code>
+                            </p>
+                            <div class="example">
+                                <input id="cp1" type="text" class="form-control" value="#5367ce" data-plugin="colorpicker">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">组件模式</h4>
+                            <p>在
+                                <code>.input-group</code> 添加
+                                <code>data-plugin="colorpicker"</code> 来调用拾色器</p>
+                            <div class="example">
+                                <div class="input-group colorpicker-component" data-plugin="colorpicker">
+                                    <input type="text" value="#00AABB" class="form-control">
+                                    <div class="input-group-append input-group-addon">
+                                        <span class="input-group-text">
+                                            <i></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">自定义选项</h4>
+                            <p>如通过
+                                <code>data-format="rgb"</code> 将当前颜色值格式化为RGB模式
+                            </p>
+                            <div class="example">
+                                <input type="text" class="form-control" data-plugin="colorpicker" data-format="rgb"
+                                    value="#79d1c9">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">事件</h4>
+                            <p>下面示例演示改变后显示提示信息
+                            </p>
+                            <div class="example">
+                                <input class="btn btn-primary btn-outline" id="colorpickerEvent" type="button" value="#00000">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">颜色透明</h4>
+                            <p>添加
+                                <code>data-color="transparent"</code> 及
+                                <code>data-format="hex"</code> 实现</p>
+                            <div class="example">
+                                <input type="text" class="form-control" data-plugin="colorpicker" data-color="transparent"
+                                    data-format="hex">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">水平模式</h4>
+                            <p>添加
+                                <code>data-color="transparent"</code> 实现</p>
+                            <div class="example">
+                                <input type="text" class="form-control" value="#88cc33" data-plugin="colorpicker"
+                                    data-horizontal="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">内联模式</h4>
+                            <p>添加
+                                <code>data-container="true"</code> 及
+                                <code>data-inline="true"</code> 实现</p>
+                            <div class="example">
+                                <div class="inline-block" data-plugin="colorpicker" data-color="#ffaa00" data-container="true"
+                                    data-inline="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">常用颜色</h4>
+                            <p>添加
+                                <code>data-container="true"</code> 及
+                                <code>data-inline="true"</code> 实现</p>
+                            <div class="example">
+                                <div class="inline-block" data-plugin="colorpicker" data-color="#ffaa00" data-container="true"
+                                    data-inline="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Font Icon Picker（图标选择器）
+                    <small>
+                        <a class="example-plugin-link" href="https://github.com/itsjavi/fontawesome-iconpicker" target="_blank">
+                            官网
+                        </a>
+                    </small>
+                </h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">默认</h4>
+                            <p>添加
+                                <code>data-plugin="iconpicker"</code> 即可调用图标选择器</p>
+                            <input class="form-control icp icp-auto" value="fab fa-anchor" type="text" data-plugin="iconpicker">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">在输入组中使用</h4>
+                            <p>添加
+                                <code>data-placement="bottomRight"</code>
+                            </p>
+                            <div class="input-group">
+                                <input data-plugin="iconpicker" data-placement="bottomRight" class="form-control icp icp-auto"
+                                    value="fab fa-archive" type="text">
+                                <span class="input-group-append input-group-addon input-group-text">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">在搜索框中使用</h4>
+                            <p>添加
+                                <code>data-input-search="true"</code></code>
+                            </p>
+                            <div class="example">
+                                <div class="input-search">
+                                    <button type="submit" class="input-search-btn">
+                                        <i class="icon wb-search" aria-hidden="true"></i>
+                                    </button>
+                                    <input class="form-control icp icp-auto" data-plugin="iconpicker" data-input-search="true"
+                                        value="fab fa-plane" type="text" placeholder="请输入关键词">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">下拉模式</h4>
+                            <p>添加
+                                <code>data-toggle="dropdown"</code></code>
+                            </p>
+                            <div class="example">
+                                <div class="btn-group">
+                                    <button data-selected="graduation-cap" type="button" class="icp icp-dd btn btn-default dropdown-toggle iconpicker-component"
+                                        data-plugin="iconpicker" data-toggle="dropdown">
+                                        选择图标
+                                        <i class="icon fa fa-fw"></i>
+                                    </button>
+                                    <div class="dropdown-menu"></div>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary iconpicker-component">
+                                        <i class="icon fa fa-fw fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="icp icp-dd btn btn-primary dropdown-toggle"
+                                        data-selected="fa-car" data-plugin="iconpicker" data-toggle="dropdown">
+                                        <span class="sr-only">选择图标</span>
+                                    </button>
+                                    <div class="dropdown-menu"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <div class="example-wrap">
+                            <h4 class="example-title">内联模式</h4>
+                            <p>添加
+                                <code>data-placement="inline"</code>
+                            </p>
+                            <div class="example">
+                                <div class="form-group">
+                                    <div data-plugin="iconpicker" data-title="内联模式" data-placement="inline" class="icp icp-auto"
+                                        data-selected="fa-align-justify"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">自定义配置</h4>
+                            <div class="example">
+                                <input class="form-control icp icp-opts" id="definedIcon1" value="github" type="text">
+                                <pre data-plugin="highlight" class="well mt-15 h-200 js">{
+    title: '自定义配置',
+    icons: ['fa-github', 'fa-heart', 'fa-html5', 'fa-css3'],
+    selectedCustomClass: 'badge badge-success',
+    mustAccept:true,
+    placement:'bottomRight',
+    showFooter:true,
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">使用 glypghicons</h4>
+                            <div class="example">
+                                <input class="form-control icp icp-glyphs" id="definedIcon2" value="star" type="text">
+                                <pre data-plugin="highlight" class="well mt-15 h-200 js">
+{
+    title: '使用 glypghicons',
+    icons: $.merge([
+        'glyphicon-home',
+        'glyphicon-repeat',
+        'glyphicon-search',
+        'glyphicon-arrow-left',
+        'glyphicon-arrow-right',
+        'glyphicon-star'],
+    $.iconpicker.defaultOptions.icons),
+    fullClassFormatter: function(val){
+        if(val.match(/^fa-/)){
+            return 'fa '+val;
+        }else{
+            return 'glyphicon '+val;
+        }
+    }
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+<script src="/vendor/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.min.js"></script>
+<script src="/lib/highlight/highlight.min.js"></script>
+
+<script>
+(function (document, window, $) {
+    'use strict';
+
+    window.Content = {
+        colorpickerEvent: function () {
+            $('#colorpickerEvent').colorpicker().on('changeColor', function(e) {
+                toastr.info('颜色值已改变');
+                e.stopPropagation();
+            });
+        },
+        run: function () {
+            this.colorpickerEvent();
+
+            $('#definedIcon1').iconpicker({
+                title: '自定义配置',
+                icons: [
+                    {title:'fa-github',searchTerms:['fa-github']},
+                    {title:'fa-heart',searchTerms:['fa-heart']},
+                    {title:'fa-html5',searchTerms:['fa-html5']},
+                    {title:'fa-css3',searchTerms:['fa-css3']}
+                ],
+                fullClassFormatter: function(value) {
+                    return "icon fa " + value;
+                },
+                templates: {
+                    popover: '<div class="iconpicker-popover popover"><div class="arrow"></div>' + '<div class="popover-title"></div><div class="popover-content"></div></div>',
+                    footer: '<div class="popover-footer"></div>',
+                    buttons: '<button class="iconpicker-btn iconpicker-btn-cancel btn btn-default btn-sm">取消</button>' + ' <button class="iconpicker-btn iconpicker-btn-accept btn btn-primary btn-sm">确认</button>',
+                    search: '<input type="search" class="form-control iconpicker-search" placeholder="查找图标">',
+                    iconpicker: '<div class="iconpicker"><div class="iconpicker-items"></div></div>',
+                    iconpickerItem: '<a role="button" href="#" class="iconpicker-item"><i></i></a>'
+                },
+                selectedCustomClass: 'badge badge-success',
+                mustAccept:true,
+                placement:'bottomRight',
+                showFooter:true
+            });
+            $('#definedIcon2').iconpicker({
+                title: '使用 glypghicons',
+                icons: $.merge([
+                    {title:'glyphicon-home',searchTerms:['glyphicon-home']},
+                    {title:'glyphicon-repeat',searchTerms:['glyphicon-repeat']},
+                    {title:'glyphicon-search',searchTerms:['glyphicon-search']},
+                    {title:'glyphicon-arrow-left',searchTerms:['glyphicon-arrow-left']},
+                    {title:'glyphicon-arrow-right',searchTerms:['glyphicon-arrow-right']},
+                    {title:'glyphicon-star',searchTerms:['glyphicon-star']}
+                ], []),//$.iconpicker.defaultOptions.icons),
+                fullClassFormatter: function(value) {
+                    if(value.match(/^fab fa-/)){
+                        return 'icon fa '+value;
+                    }else{
+                        return 'icon glyphicon '+value;
+                    }
+                },
+                templates: {
+                    popover: '<div class="iconpicker-popover popover"><div class="arrow"></div>' + '<div class="popover-title"></div><div class="popover-content"></div></div>',
+                    footer: '<div class="popover-footer"></div>',
+                    buttons: '<button class="iconpicker-btn iconpicker-btn-cancel btn btn-default btn-sm">取消</button>' + ' <button class="iconpicker-btn iconpicker-btn-accept btn btn-primary btn-sm">确认</button>',
+                    search: '<input type="search" class="form-control iconpicker-search" placeholder="查找图标">',
+                    iconpicker: '<div class="iconpicker"><div class="iconpicker-items"></div></div>',
+                    iconpickerItem: '<a role="button" href="#" class="iconpicker-item"><i></i></a>'
+                }
+            });
+        }
+    };
+
+})(document, window, jQuery);
+</script>

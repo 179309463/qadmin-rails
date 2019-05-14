@@ -1,0 +1,1104 @@
+[
+    {
+        "layer": "03",
+        "icon": "wb-dashboard",
+        "id": 11230,
+        "text": "表格示例",
+        "children": [
+            {
+                "layer": "0301",
+                "icon": "",
+                "id": 11281,
+                "text": "global",
+                "children": [
+                    {
+                        "layer": "030101",
+                        "icon": "fa fa-bars/index",
+                        "id": 11282,
+                        "text": "自定义菜单",
+                        "children": [
+                            {
+                                "layer": "03010101",
+                                "icon": "",
+                                "url": "#",
+                                "id": 11283,
+                                "text": "menu",
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "layer": "030102",
+                        "icon": "fa fa-archive",
+                        "url": "/slider/index",
+                        "id": 11284,
+                        "text": "slider",
+                        "children": null
+                    }
+                ]
+            },
+            {
+                "layer": "0302",
+                "icon": "",
+                "id": 11285,
+                "text": "base",
+                "children": [
+                    {
+                        "layer": "030201",
+                        "icon": "fa fa-adjust",
+                        "url": "/taster/index",
+                        "id": 11286,
+                        "text": "taster",
+                        "children": null
+                    },
+                    {
+                        "layer": "030202",
+                        "icon": "fa fa-bars/index",
+                        "id": 11287,
+                        "text": "log",
+                        "children": [
+                            {
+                                "layer": "03020201",
+                                "icon": "",
+                                "url": "#",
+                                "id": 11288,
+                                "text": "display",
+                                "children": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "layer": "04",
+        "icon": "wb-book",
+        "id": 1,
+        "text": "系统管理",
+        "children": [
+            {
+                "layer": "0401",
+                "icon": "",
+                "id": 2,
+                "text": "系统信息",
+                "children": [
+                    {
+                        "layer": "040101",
+                        "icon": "fa fa-automobile",
+                        "url": "/system/menu/index",
+                        "id": 4,
+                        "text": "菜单管理",
+                        "children": null
+                    },
+                    {
+                        "layer": "040102",
+                        "icon": "fa fa-street-view",
+                        "url": "/system/user/index",
+                        "id": 5,
+                        "text": "用户管理",
+                        "children": null
+                    },
+                    {
+                        "layer": "040103",
+                        "icon": "fa fa-file-text-o",
+                        "url": "/system/log/index",
+                        "id": 6,
+                        "text": "日志信息",
+                        "children": null
+                    },
+                    {
+                        "layer": "040104",
+                        "icon": "fa fa-shield",
+                        "url": "/system/blacklist/index",
+                        "id": 7,
+                        "text": "黑名单",
+                        "children": null
+                    },
+                    {
+                        "layer": "040105",
+                        "icon": "fa fa-gear/index",
+                        "id": 8,
+                        "text": "系统设置",
+                        "children": [
+                            {
+                                "layer": "04010501",
+                                "icon": "",
+                                "url": "/system/settings-display/index",
+                                "id": 10,
+                                "text": "显示设置",
+                                "children": null
+                            },
+                            {
+                                "layer": "04010502",
+                                "icon": "",
+                                "url": "/system/settings-log/index",
+                                "id": 11,
+                                "text": "日志设置",
+                                "children": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "0402",
+                "icon": "",
+                "id": 3,
+                "text": "我的账户",
+                "children": [
+                    {
+                        "layer": "040201",
+                        "icon": "fa fa-key",
+                        "url": "/system/account/index",
+                        "id": 12,
+                        "text": "账户信息",
+                        "children": null
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "layer": "05",
+        "icon": "wb-cloud",
+        "id": 22,
+        "text": "UI示例",
+        "children": [
+            {
+                "layer": "0201",
+                "icon": "",
+                "id": 72,
+                "text": "基础示例",
+                "children": [
+                    {
+                        "layer": "020101",
+                        "icon": "fa fa-laptop",
+                        "url": "#",
+                        "id": 73,
+                        "text": "布局",
+                        "children": [
+                            {
+                                "layer": "02010101",
+                                "icon": "",
+                                "url": "#",
+                                "id": 74,
+                                "text": "栅格",
+                                "children": [
+                                    {
+                                        "layer": "0201010101",
+                                        "icon": null,
+                                        "url": "/ui/components/layouts/grids/index",
+                                        "id": 75,
+                                        "text": "基本栅格",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0201010102",
+                                        "icon": "",
+                                        "url": "/ui/components/layouts/layout-grid/index",
+                                        "id": 76,
+                                        "text": "布局栅格",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02010102",
+                                "icon": null,
+                                "id": 77,
+                                "text": "标题栏",
+                                "children": [
+                                    {
+                                        "layer": "0201010201",
+                                        "icon": null,
+                                        "url": "/ui/components_layouts/headers",
+                                        "id": 78,
+                                        "text": "普通",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0201010202",
+                                        "icon": null,
+                                        "url": "/ui/components/layouts/bordered-header/index",
+                                        "id": 79,
+                                        "text": "带边框",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02010103",
+                                "icon": null,
+                                "url": "/ui/components/layouts/panel-transition/index",
+                                "id": 80,
+                                "text": "面板动画",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010104",
+                                "icon": null,
+                                "url": "/ui/components/layouts/boxed/index",
+                                "id": 81,
+                                "text": "盒式布局",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010105",
+                                "icon": null,
+                                "url": "/ui/components/layouts/page-aside/index",
+                                "id": 82,
+                                "text": "侧边栏",
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "layer": "020102",
+                        "icon": "fa fa-cube/index",
+                        "id": 83,
+                        "text": "基本",
+                        "children": [
+                            {
+                                "layer": "02010201",
+                                "icon": null,
+                                "id": 84,
+                                "text": "面板",
+                                "children": [
+                                    {
+                                        "layer": "0201020101",
+                                        "icon": null,
+                                        "url": "/ui/components/basic/panel-structure/index",
+                                        "id": 85,
+                                        "text": "面板结构",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0201020102",
+                                        "icon": null,
+                                        "url": "/ui/components/basic/panel-actions/index",
+                                        "id": 86,
+                                        "text": "面板操作",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0201020103",
+                                        "icon": null,
+                                        "url": "/ui/components/basic/panel-portlets/index",
+                                        "id": 87,
+                                        "text": "面板组件",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02010202",
+                                "icon": null,
+                                "url": "/ui/components/basic/buttons/index",
+                                "id": 11112,
+                                "text": "按钮",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010203",
+                                "icon": null,
+                                "url": "/ui/components/basic/icons/index",
+                                "id": 11113,
+                                "text": "矢量图标",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010204",
+                                "icon": null,
+                                "url": "/ui/components/basic/dropdowns/index",
+                                "id": 11114,
+                                "text": "下拉菜单",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010205",
+                                "icon": null,
+                                "url": "/ui/components/basic/list/index",
+                                "id": 11115,
+                                "text": "列表组",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010206",
+                                "icon": null,
+                                "url": "/ui/components/basic/tooltip-popover/index",
+                                "id": 11116,
+                                "text": "气泡提示&弹出框",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010207",
+                                "icon": null,
+                                "url": "/ui/components/basic/modals/index",
+                                "id": 11117,
+                                "text": "模态框",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010208",
+                                "icon": null,
+                                "url": "/ui/components/basic/tabs-accordions/index",
+                                "id": 11118,
+                                "text": "选项卡&折叠面板",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010209",
+                                "icon": null,
+                                "url": "/ui/components/basic/images/index",
+                                "id": 11119,
+                                "text": "图片",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010210",
+                                "icon": null,
+                                "url": "/ui/components/basic/badges-labels/index.html/index",
+                                "id": 11120,
+                                "text": "徽章&标签",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010211",
+                                "icon": null,
+                                "url": "/ui/components/basic/progress-bars/index",
+                                "id": 11121,
+                                "text": "进度条",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010212",
+                                "icon": null,
+                                "url": "/ui/components/basic/carousel/index",
+                                "id": 11122,
+                                "text": "轮播组件",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010213",
+                                "icon": null,
+                                "url": "/ui/components/basic/typography/index",
+                                "id": 11123,
+                                "text": "排版",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010214",
+                                "icon": null,
+                                "url": "/ui/components/basic/colors/index",
+                                "id": 11124,
+                                "text": "配色方案",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010215",
+                                "icon": null,
+                                "url": "/ui/components/basic/utilities/index",
+                                "id": 11125,
+                                "text": "辅助类",
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "layer": "020103",
+                        "icon": "fa fa-cubes",
+                        "url": "#",
+                        "id": 11126,
+                        "text": "进阶",
+                        "children": [
+                            {
+                                "layer": "02010301",
+                                "icon": null,
+                                "url": "/ui/components/advanced/tour/index",
+                                "id": 11127,
+                                "text": "新手指引",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010302",
+                                "icon": null,
+                                "url": "/ui/components/advanced/animation/index",
+                                "id": 11128,
+                                "text": "动画",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010303",
+                                "icon": null,
+                                "url": "/ui/components/advanced/highlight/index",
+                                "id": 11129,
+                                "text": "代码高亮",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010304",
+                                "icon": null,
+                                "url": "/ui/components/advanced/lightbox/index",
+                                "id": 11130,
+                                "text": "灯箱",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010305",
+                                "icon": null,
+                                "url": "/ui/components/advanced/scrollbar/index",
+                                "id": 11131,
+                                "text": "滚动条美化",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010306",
+                                "icon": null,
+                                "url": "/ui/components/advanced/rating/index",
+                                "id": 11132,
+                                "text": "评分",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010307",
+                                "icon": null,
+                                "url": "/ui/components/advanced/context-menu/index",
+                                "id": 11133,
+                                "text": "右键菜单",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010308",
+                                "icon": null,
+                                "url": "/ui/components/advanced/alertify/index",
+                                "id": 11134,
+                                "text": "Alertify弹框",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010309",
+                                "icon": null,
+                                "url": "/ui/components/advanced/masonry/index",
+                                "id": 11135,
+                                "text": "瀑布流布局",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010310",
+                                "icon": null,
+                                "id": 11136,
+                                "text": "树形控件",
+                                "children": [
+                                    {
+                                        "layer": "0201031001",
+                                        "icon": null,
+                                        "url": "/ui/components/advanced/jstree/index",
+                                        "id": 11137,
+                                        "text": "JsTree",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0201031002",
+                                        "icon": null,
+                                        "url": "/ui/components/advanced/treeview/index",
+                                        "id": 11138,
+                                        "text": "Treeview",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02010311",
+                                "icon": null,
+                                "url": "/ui/components/advanced/toastr/index",
+                                "id": 11139,
+                                "text": "Toaster 通知",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010312",
+                                "icon": null,
+                                "id": 11140,
+                                "text": "地图",
+                                "children": [
+                                    {
+                                        "layer": "0201031201",
+                                        "icon": null,
+                                        "url": "/ui/components/advanced/maps/vector/index",
+                                        "id": 11141,
+                                        "text": "矢量地图",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0201031202",
+                                        "icon": null,
+                                        "url": "/ui/components/advanced/maps/baidu/index",
+                                        "id": 11142,
+                                        "text": "百度地图",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02010313",
+                                "icon": null,
+                                "url": "/ui/components/advanced/sortable-nestable/index",
+                                "id": 11143,
+                                "text": "拖动排序",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010314",
+                                "icon": null,
+                                "url": "/ui/components/advanced/bootbox-sweetalert/index",
+                                "id": 11144,
+                                "text": "弹层组件",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010315",
+                                "icon": null,
+                                "url": "/ui/components/advanced/layer/index",
+                                "id": 11145,
+                                "text": "Layer 弹层",
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "layer": "020104",
+                        "icon": "fa fa-plug/index",
+                        "id": 11145,
+                        "text": "组件",
+                        "children": [
+                            {
+                                "layer": "02010401",
+                                "icon": "",
+                                "url": "#",
+                                "id": 11146,
+                                "text": "警告框",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010402",
+                                "icon": "",
+                                "url": "#",
+                                "id": 11147,
+                                "text": "彩带",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010403",
+                                "icon": null,
+                                "url": "/ui/components/structure/pricing-tables/index",
+                                "id": 11148,
+                                "text": "价目表",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010404",
+                                "icon": null,
+                                "url": "/ui/components/structure/overlay/index",
+                                "id": 11149,
+                                "text": "遮罩",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010405",
+                                "icon": null,
+                                "url": "/ui/components/structure/cover/index",
+                                "id": 11150,
+                                "text": "覆盖层",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010406",
+                                "icon": null,
+                                "id": 11151,
+                                "text": "时间轴",
+                                "children": [
+                                    {
+                                        "layer": "0201040601",
+                                        "icon": null,
+                                        "url": "/ui/components/structure/timeline/index",
+                                        "id": 11152,
+                                        "text": "简单时间轴",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0201040602",
+                                        "icon": null,
+                                        "url": "/ui/components/structure/timeline/icons/index",
+                                        "id": 11153,
+                                        "text": "图标时间轴",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02010407",
+                                "icon": null,
+                                "url": "/ui/components/structure/step/index",
+                                "id": 11154,
+                                "text": "步骤条",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010408",
+                                "icon": null,
+                                "url": "/ui/components/structure/comments/index",
+                                "id": 11155,
+                                "text": "评论",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010409",
+                                "icon": null,
+                                "url": "/ui/components/structure/media/index",
+                                "id": 11156,
+                                "text": "媒体",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010410",
+                                "icon": null,
+                                "url": "/ui/components/structure/chat/index",
+                                "id": 11157,
+                                "text": "聊天窗口",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010411",
+                                "icon": null,
+                                "url": "/ui/components/structure/testimonials/index",
+                                "id": 11158,
+                                "text": "客户评价",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010412",
+                                "icon": null,
+                                "url": "/ui/components/structure/nav/index",
+                                "id": 11159,
+                                "text": "导航",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010413",
+                                "icon": null,
+                                "url": "/ui/components/structure/navbars/index",
+                                "id": 11160,
+                                "text": "导航条",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010414",
+                                "icon": null,
+                                "url": "/ui/components/structure/blockquotes/index",
+                                "id": 11161,
+                                "text": "引用",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010415",
+                                "icon": null,
+                                "url": "/ui/components/structure/pagination/index",
+                                "id": 11162,
+                                "text": "分页",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010416",
+                                "icon": null,
+                                "url": "/ui/components/structure/breadcrumbs/index",
+                                "id": 11163,
+                                "text": "包屑导航",
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "layer": "020105",
+                        "icon": "fa fa-puzzle-piece/index",
+                        "id": 11164,
+                        "text": "卡片",
+                        "children": [
+                            {
+                                "layer": "02010501",
+                                "icon": null,
+                                "url": "/ui/components/widgets/statistics/index",
+                                "id": 11165,
+                                "text": "统计",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010502",
+                                "icon": null,
+                                "url": "/ui/components/widgets/data/index",
+                                "id": 11166,
+                                "text": "数据",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010503",
+                                "icon": null,
+                                "url": "/ui/components/widgets/blog/index",
+                                "id": 11167,
+                                "text": "博客",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010504",
+                                "icon": null,
+                                "url": "/ui/components/widgets/chart/index",
+                                "id": 11168,
+                                "text": "图表",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010505",
+                                "icon": null,
+                                "url": "/ui/components/widgets/social/index",
+                                "id": 11169,
+                                "text": "社交",
+                                "children": null
+                            },
+                            {
+                                "layer": "02010506",
+                                "icon": null,
+                                "url": "/ui/components/widgets/weather/index",
+                                "id": 11170,
+                                "text": "天气",
+                                "children": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "layer": "0202",
+                "icon": null,
+                "id": 11171,
+                "text": "页面示例",
+                "children": [
+                    {
+                        "layer": "020201",
+                        "icon": "fa fa-home",
+                        "url": "#",
+                        "id": 11172,
+                        "text": "首页示例",
+                        "children": [
+                            {
+                                "layer": "02020101",
+                                "icon": null,
+                                "url": "/ui/pages/home/index-v1/index",
+                                "id": 11173,
+                                "text": "首页示例 01",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020102",
+                                "icon": null,
+                                "url": "/ui/pages/home/index-v2/index",
+                                "id": 11174,
+                                "text": "首页示例 02",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020103",
+                                "icon": null,
+                                "url": "/ui/pages/home/ecommerce/index",
+                                "id": 11175,
+                                "text": "电商网站型",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020104",
+                                "icon": null,
+                                "url": "/ui/pages/home/analytics/index",
+                                "id": 11176,
+                                "text": "数据统计型",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020105",
+                                "icon": null,
+                                "url": "/ui/pages/home/team/index",
+                                "id": 11177,
+                                "text": "团队协作型",
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "layer": "020202",
+                        "icon": "fa fa-files-o",
+                        "url": "#",
+                        "id": 11178,
+                        "text": "常用页面",
+                        "children": [
+                            {
+                                "layer": "02020201",
+                                "icon": "",
+                                "url": "/ui/pages/general/blank/index",
+                                "id": 11179,
+                                "text": "空白页面",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020202",
+                                "icon": "",
+                                "url": "/ui/pages/general/faq/index",
+                                "id": 11180,
+                                "text": "帮助文档",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020203",
+                                "icon": "/index",
+                                "id": 11181,
+                                "text": "相册",
+                                "children": [
+                                    {
+                                        "layer": "0202020301",
+                                        "icon": null,
+                                        "url": "/ui/pages/general/gallery/index",
+                                        "id": 11182,
+                                        "text": "Isotope",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0202020302",
+                                        "icon": null,
+                                        "url": "/ui/pages/general/gallery-grid/index",
+                                        "id": 11183,
+                                        "text": "栅格相册",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02020204",
+                                "icon": "",
+                                "url": "#",
+                                "id": 11184,
+                                "text": "地图",
+                                "children": [
+                                    {
+                                        "layer": "0202020401",
+                                        "icon": null,
+                                        "url": "/ui/pages/general/map-baidu/index",
+                                        "id": 11185,
+                                        "text": "百度地图",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0202020402",
+                                        "icon": null,
+                                        "url": "/ui/pages/general/map-vector/index",
+                                        "id": 11186,
+                                        "text": "矢量地图",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02020205",
+                                "icon": "",
+                                "url": "/ui/pages/general/search-result/index",
+                                "id": 11187,
+                                "text": "搜索",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020206",
+                                "icon": "",
+                                "url": "/ui/pages/general/user/index",
+                                "id": 11188,
+                                "text": "客户列表",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020207",
+                                "icon": "",
+                                "url": "/ui/pages/general/email/index",
+                                "id": 11189,
+                                "text": "邮件模板",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020208",
+                                "icon": "",
+                                "url": "/ui/pages/general/code-editor/index",
+                                "id": 11190,
+                                "text": "代码编辑器",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020209",
+                                "icon": "",
+                                "url": "/ui/pages/general/site-map/index",
+                                "id": 11191,
+                                "text": "网站地图",
+                                "children": null
+                            }
+                        ]
+                    },
+                    {
+                        "layer": "020203",
+                        "icon": "fa fa-group/index",
+                        "id": 11192,
+                        "text": "团队协作",
+                        "children": [
+                            {
+                                "layer": "02020301",
+                                "icon": null,
+                                "url": "/ui/pages/team/calendar/index",
+                                "id": 11193,
+                                "text": "日历",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020302",
+                                "icon": null,
+                                "url": "/ui/pages/team/notebook/index",
+                                "id": 11194,
+                                "text": "笔记",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020303",
+                                "icon": null,
+                                "url": "/ui/pages/team/taskboard/index",
+                                "id": 11195,
+                                "text": "任务看板",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020304",
+                                "icon": null,
+                                "id": 11196,
+                                "text": "知识库",
+                                "children": [
+                                    {
+                                        "layer": "0202030401",
+                                        "icon": null,
+                                        "url": "/ui/pages/team/documents/index",
+                                        "id": 11197,
+                                        "text": "列表",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0202030402",
+                                        "icon": null,
+                                        "url": "/ui/pages/team/documents/categories",
+                                        "id": 11198,
+                                        "text": "分类",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0202030403",
+                                        "icon": null,
+                                        "url": "/ui/pages/team/documents/show",
+                                        "id": 11199,
+                                        "text": "详情",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02020305",
+                                "icon": null,
+                                "url": "/ui/pages/team/forum/index",
+                                "id": 11200,
+                                "text": "论坛",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020306",
+                                "icon": null,
+                                "url": "/ui/pages/team/message/index",
+                                "id": 11201,
+                                "text": "即时通讯",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020307",
+                                "icon": null,
+                                "url": "/ui/pages/team/mailbox/index",
+                                "id": 11202,
+                                "text": "邮箱",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020308",
+                                "icon": null,
+                                "url": "/ui/pages/team/media/index",
+                                "id": 11203,
+                                "text": "文件管理",
+                                "children": null
+                            },
+                            {
+                                "layer": "02020309",
+                                "icon": null,
+                                "id": 11204,
+                                "text": "项目",
+                                "children": [
+                                    {
+                                        "layer": "0202030901",
+                                        "icon": null,
+                                        "url": "/ui/pages/team/projects/index",
+                                        "id": 11205,
+                                        "text": "项目列表 01",
+                                        "children": null
+                                    },
+                                    {
+                                        "layer": "0202030902",
+                                        "icon": null,
+                                        "url": "/ui/pages/team/work/index",
+                                        "id": 11206,
+                                        "text": "项目列表 02",
+                                        "children": null
+                                    }
+                                ]
+                            },
+                            {
+                                "layer": "02020310",
+                                "icon": null,
+                                "url": "/ui/pages/team/location/index",
+                                "id": 11207,
+                                "text": "地理位置",
+                                "children": null
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "layer": "06",
+        "icon": "fa fa-bars",
+        "id": 11289,
+        "text": "gewg",
+        "children": [
+            {
+                "layer": "0601",
+                "icon": "",
+                "url": "#",
+                "id": 11293,
+                "text": "自定义菜单一",
+                "children": null
+            },
+            {
+                "layer": "0602",
+                "icon": "",
+                "url": "#",
+                "id": 11294,
+                "text": "自定义菜单",
+                "children": null
+            }
+        ]
+    }
+]

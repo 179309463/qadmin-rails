@@ -1,0 +1,393 @@
+<title>JsTree - UI示例</title>
+
+<link rel="stylesheet" href="/lib/jstree/dist/themes/default/style.css">
+
+<div class="page animation-fade">
+    <div class="page-header">
+        <h1 class="page-title">JsTree</h1>
+        <div class="page-header-actions">
+            <a class="btn btn-inverse btn-round" href="http://jstree.com/" target="_blank">
+                <i class="icon wb-link" aria-hidden="true"></i> 官网</a>
+        </div>
+    </div>
+    <div class="page-content">
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">基础示例</h3>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">HTML</h4>
+                            <div class="example">
+                                <div data-plugin="jstree">
+                                    <ul>
+                                        <li data-jstree='{ "opened" : true }'>父节点
+                                            <ul>
+                                                <li data-jstree='{ "selected" : true }'>子节点 1</li>
+                                                <li>子节点 2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">内嵌数据</h4>
+                            <div class="example">
+                                <div id="data"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">数据格式化</h4>
+                            <div class="example">
+                                <div id="frmt"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">Ajax</h4>
+                            <div class="example">
+                                <div id="ajax"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-xl-4 col-md-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">懒加载</h4>
+                            <div class="example">
+                                <div id="lazy"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">从回调函数中获取数据</h4>
+                            <div class="example">
+                                <div id="clbk"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">交互和事件</h4>
+                            <div class="example">
+                                <div id="evts"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="panel-heading">
+                    <h3 class="panel-title">使用插件</h3>
+                </div>
+            </div>
+            <div class="panel-body container-fluid">
+                <div class="row row-lg">
+                    <div class="col-xl-4 col-md-6">
+                        <div class="example-warp">
+                            <h4 class="example-title">
+                                复选框
+                            </h4>
+                            <p>
+                                <code>"plugins":["checkbox"]</code>
+                            </p>
+                            <div class="example">
+                                <div id="checkbox"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6">
+                        <div class="example-warp">
+                            <h4 class="example-title">
+                                右键菜单
+                            </h4>
+                            <p>
+                                <code>"plugins":["contextmenu"]</code>
+                            </p>
+                            <div class="example">
+                                <div id="contextmenu"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">
+                                搜索
+                            </h4>
+                            <p>
+                                <code>"plugins":["search"]</code>
+                            </p>
+                            <div class="example">
+                                <form class="form-group" role="search">
+                                    <div class="input-search">
+                                        <input type="search" class="form-control form-control-sm" id="jstreeSearch"
+                                                placeholder="查找 ...">
+                                        <button type="submit" class="input-search-btn">
+                                            <i class="icon wb-search" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                                <div id="search"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6">
+                        <div class="example-wrap">
+                            <h4 class="example-title">
+                                拖动
+                            </h4>
+                            <p>
+                                <code>"plugins":["dnd"]</code>
+                            </p>
+                            <div class="example">
+                                <div id="dnd"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    
+<script src="/vendor/jstree/dist/jstree.min.js" data-name="jstree"></script>
+
+<script>
+var _0x1b9b = ['#clbk', '父节点', '子节点', '#evts', 'changed.jstree', 'selected', 'info', '您选择的节点是：', 'instance', 'get_node', 'text', '#checkbox', '父节点\x201', '父节点\x202', 'checkbox', '#contextmenu', 'contextmenu', 'search', 'isNull', '#jstreeSearch', 'val', '#dnd', 'dnd', 'Content', 'jstree', '子节点\x201', '子节点\x202', '#frmt', 'data', 'empty', '/views/examples/components_advanced/jstree.json', 'JSON']; (function(_0x55c31e, _0x43ec98) {
+    var _0x4e4d34 = function(_0x119415) {
+        while (--_0x119415) {
+            _0x55c31e['push'](_0x55c31e['shift']());
+        }
+    };
+    _0x4e4d34(++_0x43ec98);
+} (_0x1b9b, 0x137));
+var _0x3f95 = function(_0x5aadfe, _0x434c86) {
+    _0x5aadfe = _0x5aadfe - 0x0;
+    var _0x4d5cfe = _0x1b9b[_0x5aadfe];
+    return _0x4d5cfe;
+}; (function(_0x23fd4c, _0x52370a, _0x2d281) {
+    'use strict';
+    /* global _, toastr */
+    _0x52370a[_0x3f95('0x0')] = {
+        'run': function() {
+            'use strict';
+            var _0x524af5 = null;
+            _0x2d281('#data')[_0x3f95('0x1')]({
+                'core': {
+                    'data': [{
+                        'text': '父节点',
+                        'children': [{
+                            'text': _0x3f95('0x2')
+                        },
+                        {
+                            'text': _0x3f95('0x3')
+                        }]
+                    }]
+                }
+            });
+            _0x2d281(_0x3f95('0x4'))['jstree']({
+                'core': {
+                    'data': [{
+                        'text': '父节点',
+                        'state': {
+                            'opened': !![]
+                        },
+                        'children': [{
+                            'text': '子节点\x201',
+                            'state': {
+                                'selected': !![]
+                            }
+                        },
+                        {
+                            'text': _0x3f95('0x3'),
+                            'state': {
+                                'disabled': !![]
+                            }
+                        }]
+                    }]
+                }
+            });
+            _0x2d281('#ajax')[_0x3f95('0x5')]('jstree', ![])[_0x3f95('0x6')]()[_0x3f95('0x1')]({
+                'core': {
+                    'data': {
+                        'url': _0x3f95('0x7'),
+                        'dataType': _0x3f95('0x8')
+                    }
+                }
+            });
+            _0x2d281('#lazy')['jstree']({
+                'core': {
+                    'data': {
+                        'url': _0x3f95('0x7'),
+                        'dataType': _0x3f95('0x8'),
+                        'data': function(_0x14745c) {
+                            return {
+                                'id': _0x14745c['id']
+                            };
+                        }
+                    }
+                }
+            });
+            _0x2d281(_0x3f95('0x9'))[_0x3f95('0x1')]({
+                'core': {
+                    'data': function(_0x24ddae, _0x3c0806) {
+                        if (_0x24ddae['id'] === '#') {
+                            _0x3c0806([{
+                                'text': _0x3f95('0xa'),
+                                'id': '1',
+                                'children': !![]
+                            }]);
+                        } else {
+                            _0x3c0806([_0x3f95('0xb')]);
+                        }
+                    }
+                }
+            });
+            _0x2d281(_0x3f95('0xc'))['on'](_0x3f95('0xd'),
+            function(_0x21080c, _0x1926c4) {
+                if (_0x1926c4[_0x3f95('0xe')]['length']) {
+                    toastr[_0x3f95('0xf')](_0x3f95('0x10') + _0x1926c4[_0x3f95('0x11')][_0x3f95('0x12')](_0x1926c4[_0x3f95('0xe')][0x0])[_0x3f95('0x13')]);
+                }
+            })[_0x3f95('0x1')]({
+                'core': {
+                    'multiple': ![],
+                    'data': [{
+                        'text': _0x3f95('0xa'),
+                        'children': [{
+                            'text': '子节点\x201',
+                            'id': 0x1
+                        },
+                        {
+                            'text': _0x3f95('0x3')
+                        }]
+                    }]
+                }
+            });
+            _0x2d281(_0x3f95('0x14'))[_0x3f95('0x1')]({
+                'core': {
+                    'data': [{
+                        'text': _0x3f95('0x15')
+                    },
+                    {
+                        'text': _0x3f95('0x16'),
+                        'state': {
+                            'opened': !![],
+                            'selected': !![]
+                        },
+                        'children': [{
+                            'text': _0x3f95('0x2')
+                        },
+                        {
+                            'text': '子节点\x202'
+                        }]
+                    }]
+                },
+                'plugins': [_0x3f95('0x17')]
+            });
+            _0x2d281(_0x3f95('0x18'))[_0x3f95('0x1')]({
+                'core': {
+                    'check_callback': !![],
+                    'data': [{
+                        'text': '父节点\x201'
+                    },
+                    {
+                        'text': _0x3f95('0x16'),
+                        'state': {
+                            'opened': !![],
+                            'selected': !![]
+                        },
+                        'children': [{
+                            'text': _0x3f95('0x2')
+                        },
+                        {
+                            'text': '子节点\x202'
+                        }]
+                    }]
+                },
+                'plugins': [_0x3f95('0x19')]
+            });
+            _0x2d281('#search')[_0x3f95('0x1')]({
+                'core': {
+                    'data': [{
+                        'text': _0x3f95('0x15')
+                    },
+                    {
+                        'text': '父节点\x202',
+                        'state': {
+                            'opened': !![],
+                            'selected': !![]
+                        },
+                        'children': [{
+                            'text': _0x3f95('0x2')
+                        },
+                        {
+                            'text': '子节点\x202'
+                        }]
+                    }]
+                },
+                'plugins': [_0x3f95('0x1a')]
+            });
+            _0x2d281('#jstreeSearch')['keyup'](function() { ! _[_0x3f95('0x1b')](_0x524af5) && clearTimeout(_0x524af5);
+                _0x524af5 = setTimeout(function() {
+                    var _0x1350cc = _0x2d281(_0x3f95('0x1c'))[_0x3f95('0x1d')]();
+                    _0x2d281('#search')[_0x3f95('0x1')]( !! [])[_0x3f95('0x1a')](_0x1350cc);
+                },
+                0xfa);
+            });
+            _0x2d281(_0x3f95('0x1e'))[_0x3f95('0x1')]({
+                'core': {
+                    'check_callback': !![],
+                    'data': [{
+                        'text': _0x3f95('0x15')
+                    },
+                    {
+                        'text': _0x3f95('0x16'),
+                        'state': {
+                            'opened': !![],
+                            'selected': !![]
+                        },
+                        'children': [{
+                            'text': '子节点\x201'
+                        },
+                        {
+                            'text': _0x3f95('0x3')
+                        }]
+                    }]
+                },
+                'plugins': [_0x3f95('0x1f')]
+            });
+        }
+    };
+} (document, window, jQuery));
+</script>

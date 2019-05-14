@@ -1,0 +1,1167 @@
+<title>项目列表 02 - 页面示例</title>
+
+<link rel="stylesheet" href="/vendor/chartist/dist/chartist.min.css">
+<link rel="stylesheet" href="/vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="/lib/jquery-selective/jquery-selective.css">
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+.page-work .panel-heading {
+    padding: 20px;
+    overflow: auto;
+}
+.page-work .panel-title, .page-work .panel-search-form {
+    float: left;
+}
+.page-work .panel-title {
+    padding: 29px 10px;
+    font-size: 14px;
+    font-weight: 100;
+}
+.page-work .panel-search-form {
+    padding: 19px;
+    margin-left: 20px;
+}
+.page-work .panel-search-form .form-control {
+    width: 280px;
+    background-color: #f8fafb;
+    border: 0;
+    border-radius: 17px;
+    opacity: .6;
+}
+.page-work .panel-search-form .form-control:hover, .page-work .panel-search-form .form-control:focus {
+    background-color: #f3f7f9;
+}
+.page-work .panel-search-form .icon {
+    position: absolute;
+    top: 11px;
+    left: 107%;
+    font-size: 16px;
+    color: #aeb5b9;
+    -webkit-transition: all .4s;
+         -o-transition: all .4s;
+            transition: all .4s;
+}
+.page-work .panel-search-form .icon:hover {
+    color: #62a8ea;
+}
+.page-work .panel-info {
+    float: right;
+    padding: 11px 0;
+    margin: 0;
+}
+.page-work .panel-info li {
+    display: inline-block;
+    margin-right: 50px;
+    text-align: center;
+    list-style: none;
+}
+.page-work .panel-info li:last-child {
+    margin: 0;
+}
+.page-work .panel-info li .num {
+    font-size: 24px;
+    line-height: 1.2em;
+}
+.page-work .panel-info li p {
+    margin: 0;
+}
+.page-work .panel-body {
+    clear: both;
+}
+.page-work .panel-body .table td {
+    padding: 20px 8px;
+    vertical-align: middle;
+}
+.page-work .panel-body .table tr th:first-child {
+    padding-left: 0 !important;
+}
+.page-work .panel-body .table tr:last-of-type td {
+    border-bottom: 1px solid #e4eaec;
+}
+.page-work .work-status {
+    width: 15%;
+    padding-left: 0 !important;
+}
+.page-work .subject {
+    width: 34%;
+}
+.page-work .subject .table-content p {
+    margin: 0;
+}
+.page-work .subject .table-content span:first-of-type {
+    font-size: 13px;
+}
+.page-work .subject .table-content .label {
+    display: none;
+    margin-left: 10px;
+}
+.page-work .work-progress {
+    position: relative;
+    width: 26%;
+    background-color: transparent;
+}
+.page-work .work-progress .progress {
+    width: 60%;
+    margin: 0;
+}
+.page-work .work-progress > span {
+    position: absolute;
+    top: 50%;
+    left: 64%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+.page-work .members {
+    position: relative;
+    width: 20%;
+}
+.page-work .members img {
+    width: 30px;
+    margin-right: 6px;
+    border-radius: 50%;
+}
+.page-work .members img:last-child {
+    margin-right: 0;
+}
+.page-work .addMember-trigger {
+    position: absolute;
+    top: 50%;
+    right: -76px;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+.page-work .addMember-trigger-button {
+    background-color: transparent;
+}
+.page-work .addMember-trigger-button:hover {
+    background-color: transparent;
+}
+.page-work .addMember-trigger-button .wb-plus {
+    font-size: 16px;
+    color: #666;
+    -webkit-transition: all .3s;
+         -o-transition: all .3s;
+            transition: all .3s;
+}
+.page-work .addMember-trigger-button .wb-plus:hover {
+    opacity: .8;
+}
+.page-work .addMember-trigger-dropdown {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -100%);
+        -ms-transform: translate(-50%, -100%);
+         -o-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+}
+.page-work .addMember-trigger-dropdown::before {
+    display: none;
+}
+.page-work .addMember-list {
+    max-height: 150px;
+}
+.page-work .addMember-item {
+    margin-bottom: 5px;
+}
+.page-work .actions {
+    padding: 20px 0 !important;
+}
+.page-work .actions button {
+    position: relative;
+    z-index: 0;
+    display: none;
+    width: 102px;
+    height: 35px;
+    font-size: 12px;
+    background-color: #fff;
+}
+.page-work .actions button.finish {
+    display: block;
+}
+.page-work .actions button.finish + .table-content {
+    display: none;
+}
+.page-work .actions i {
+    font-size: 16px;
+    color: #666;
+    -webkit-transition: all .3s;
+         -o-transition: all .3s;
+            transition: all .3s;
+}
+.page-work .actions i:hover {
+    opacity: .8;
+}
+.page-work .actions i:first-of-type {
+    margin-right: 20px;
+}
+.page-work .actions i:first-of-type:hover {
+    cursor: pointer;
+}
+.page-work .actions .table-content {
+    margin-left: 10px;
+}
+@media (max-width: 988px) {
+    .page-work .panel-title {
+        float: none;
+    }
+    .page-work .panel-search-form {
+        padding: 19px 10px;
+        margin: 0;
+    }
+    .page-work .panel-body .table thead th:first-of-type {
+        display: none;
+    }
+    .page-work .panel-body .table .work-status {
+        display: none;
+    }
+    .page-work .panel-body .table .subject {
+        width: 45%;
+    }
+    .page-work .panel-body .table .subject .table-content .label {
+        display: inline;
+    }
+}
+@media (max-width: 898px) {
+    .page-work .panel-body .table thead th:nth-of-type(3) {
+        display: none;
+    }
+    .page-work .panel-body .table .work-progress {
+        display: none;
+    }
+    .page-work .panel-body .table .members {
+        width: 40%;
+    }
+}
+@media (max-width: 620px) {
+    .page-work .panel-body .table thead th:nth-of-type(4) {
+        display: none;
+    }
+    .page-work .panel-body .table .members {
+        display: none;
+    }
+    .page-work .panel-body .table .subject {
+        width: 88%;
+    }
+    .page-work .panel-body .table .actions .btn {
+        display: none;
+    }
+    .page-work .panel-body .table .actions .table-content {
+        display: block;
+        margin-left: 0;
+        text-align: center;
+    }
+    .page-work .panel-body .table .wb-plus {
+        display: none;
+    }
+    .page-work .panel-body .table .wb-menu {
+        margin-right: 0;
+    }
+}
+@media (max-width: 830px) {
+    .page-work .panel-search-form {
+        float: none;
+    }
+    .page-work .panel-search-form .form-control {
+        width: 94%;
+    }
+    .page-work .panel-search-form .icon {
+        left: 97%;
+    }
+    .page-work .panel-info {
+        float: none;
+        text-align: center;
+    }
+}
+@media (max-width: 991px) {
+    .page-work .step-info > div:nth-of-type(2) {
+        border: 0;
+    }
+}
+@media (max-width: 418px) {
+    .page-work .panel-info li {
+        margin-right: 20px;
+    }
+}
+@media (max-width: 380px) {
+    .page-work .step-numbers {
+        display: block;
+    }
+}
+@media (max-width: 355px) {
+    .page-work .panel-info li {
+        margin-right: 2px;
+    }
+}
+.slidePanel-actions {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+.slidePanel-inner {
+    padding: 0 15px;
+}
+.step-info {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.step-info > div {
+    margin-bottom: 15px;
+    border-right: 1px solid rgba(0, 0, 0, .078);
+}
+.step-info > div:last-of-type {
+    border: 0;
+}
+.step {
+    padding: 0;
+    text-align: center;
+    background-color: transparent;
+}
+.step-numbers {
+    font-size: 42px;
+    line-height: 42px;
+}
+.step-desc {
+    display: inline-block;
+}
+.step-title, .step-title + p {
+    font-size: 14px;
+    color: #76838f;
+}
+.line-chart, .bar-chart {
+    width: 100%;
+    overflow-x: auto;
+}
+.line-chart .chart-header, .bar-chart .chart-header {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+.line-chart h3, .bar-chart h3 {
+    float: left;
+    padding: 10px 0;
+    margin: 0;
+    font-size: 14px;
+}
+.line-chart .btn-group, .bar-chart .btn-group {
+    float: right;
+}
+.line-chart .btn-group button, .bar-chart .btn-group button {
+    padding: 5px 23px;
+    border-color: #e4eaec;
+    border-radius: 16px;
+}
+.line-chart .chart-color, .bar-chart .chart-color {
+    padding-top: 15px;
+    clear: both;
+    text-align: center;
+}
+.line-chart .chart-color span:first-child, .bar-chart .chart-color span:first-child {
+    margin-right: 40px;
+}
+.line-chart .chart-color i, .bar-chart .chart-color i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.line-chart .chart-color p, .bar-chart .chart-color p {
+    display: inline-block;
+}
+.line-chart {
+    margin-bottom: 30px;
+}
+.line-chart .trends-chart {
+    min-width: 480px;
+}
+.line-chart .ct-series-a .ct-line, .line-chart .ct-series-a .ct-point {
+    stroke: #46be8a;
+}
+.line-chart .ct-series-b .ct-line, .line-chart .ct-series-b .ct-point {
+    stroke: #57c7d4;
+}
+.line-chart .chartist-tooltip {
+    padding: 10px 25px;
+}
+.line-chart .chartist-tooltip::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: block;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 8px solid rgba(0, 0, 0, .701961);
+    border-right: 8px solid transparent;
+    border-bottom: 0;
+    border-left: 8px solid transparent;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+.bar-chart .member-chart {
+    min-width: 500px;
+}
+.bar-chart .ct-series-b .ct-bar {
+    stroke: #46be8a;
+}
+.ct-point-content {
+    pointer-events: none;
+
+    stroke: #fff;
+    stroke-width: 4px;
+    stroke-linecap: round;
+}
+.ct-series .ct-bar-fill {
+    stroke: #f3f7f9;
+    stroke-width: 20px;
+}
+.slidePanel-footer {
+    padding: 35px 0;
+    margin-bottom: 20px;
+}
+.slidePanel-footer button {
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+}
+.slidePanel-footer > span {
+    margin-left: 20px;
+}
+</style>
+
+<div class="page animation-fade page-work">
+    <div class="page-content">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">项目列表</h3>
+                <form class="panel-search-form" role="search">
+                    <div class="input-search">
+                        <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                        <input type="text" class="form-control" id="inputSearch" name="search" placeholder="查找项目">
+                        <i class="icon wb-loop"></i>
+                    </div>
+                </form>
+                <ul class="panel-info">
+                    <li>
+                        <div class="num blue-600">23</div>
+                        <p>招聘</p>
+                    </li>
+                    <li>
+                        <div class="num orange-600">8</div>
+                        <p>进行</p>
+                    </li>
+                    <li>
+                        <div class="num green-600">5</div>
+                        <p>完成</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>状态</th>
+                        <th>子项目</th>
+                        <th>进度</th>
+                        <th>成员</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-primary">招聘中</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">分岔理论及其在非线性时滞系统研究中的应用</p>
+                                <span class="blue-grey-400">11/08/2016</span>
+                                <span class="badge badge-sm label-primary">招聘中</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-primary progress-bar-indicating" style="width: 90%"
+                                        role="progressbar">
+                                    <span class="sr-only">90%</span>
+                                </div>
+                            </div>
+                            <span>90%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="/views/examples/pages/work/index.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="/views/examples/pages/work/index.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-primary">招聘中</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">液晶单体构筑高迁移率新型金属共轭聚合物太阳能材料的合成与性能研究</p>
+                                <span class="blue-grey-400">10/12/2016</span>
+                                <span class="badge badge-sm label-primary">招聘中</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-primary progress-bar-indicating" style="width: 77%"
+                                        role="progressbar">
+                                    <span class="sr-only">77%</span>
+                                </div>
+                            </div>
+                            <span>77%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-success">完成</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">无人驾驶车辆协同感知机制及关键技术研究</p>
+                                <span class="blue-grey-400">15/10/2016</span>
+                                <span class="badge badge-sm label-success">完成</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-success progress-bar-indicating" style="width: 100%"
+                                        role="progressbar">
+                                    <span class="sr-only">100%</span>
+                                </div>
+                            </div>
+                            <span>100%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success finish">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-warning">已盈利</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">复杂工程系统全寿命健康管理模型与软件研究</p>
+                                <span class="blue-grey-400">20/11/2016</span>
+                                <span class="badge badge-sm label-warning">已盈利</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-primary progress-bar-indicating" style="width: 48%"
+                                        role="progressbar">
+                                    <span class="sr-only">48%</span>
+                                </div>
+                            </div>
+                            <span>48%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-primary">招聘中</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">翻译质量模糊评估模式研究</p>
+                                <span class="blue-grey-400">16/08/2016</span>
+                                <span class="badge badge-sm label-primary">招聘中</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-primary progress-bar-indicating" style="width: 97%"
+                                        role="progressbar">
+                                    <span class="sr-only">97%</span>
+                                </div>
+                            </div>
+                            <span>97%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-primary">招聘中</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">金融制度竞争优势的空间依赖性与异质性研究</p>
+                                <span class="blue-grey-400">24/09/2016</span>
+                                <span class="badge badge-sm label-primary">招聘中</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-primary progress-bar-indicating" style="width: 80%"
+                                        role="progressbar">
+                                    <span class="sr-only">80%</span>
+                                </div>
+                            </div>
+                            <span>80%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-primary">招聘中</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">脉冲时滞反应扩散系统的鲁棒控制及在宽厚钢板热加工中的应用</p>
+                                <span class="blue-grey-400">12/11/2016</span>
+                                <span class="badge badge-sm label-primary">招聘中</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-primary progress-bar-indicating" style="width: 65%"
+                                        role="progressbar">
+                                    <span class="sr-only">65%</span>
+                                </div>
+                            </div>
+                            <span>65%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-primary">招聘中</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">β 辐射伏特电池材料基础研究</p>
+                                <span class="blue-grey-400">21/10/2016</span>
+                                <span class="badge badge-sm label-primary">招聘中</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-primary progress-bar-indicating" style="width: 70%"
+                                        role="progressbar">
+                                    <span class="sr-only">70%</span>
+                                </div>
+                            </div>
+                            <span>70%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-primary">招聘中</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">高热电优值硅纳米线的表面调控</p>
+                                <span class="blue-grey-400">23/10/2016</span>
+                                <span class="badge badge-sm label-primary">招聘中</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-primary progress-bar-indicating" style="width: 62%"
+                                        role="progressbar">
+                                    <span class="sr-only">62%</span>
+                                </div>
+                            </div>
+                            <span>62%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="work-status">
+                            <span class="badge badge-primary">招聘中</span>
+                        </td>
+                        <td class="subject">
+                            <div class="table-content">
+                                <p class="blue-grey-500">新型纳米多孔钯系双金属(Pd-M)电催化剂的制备与应用</p>
+                                <span class="blue-grey-400">11/11/2016</span>
+                                <span class="badge badge-sm label-primary">招聘中</span>
+                            </div>
+                        </td>
+                        <td class="work-progress">
+                            <div class="progress progress-xs table-content">
+                                <div class="progress-bar bg-primary progress-bar-indicating" style="width: 83%"
+                                        role="progressbar">
+                                    <span class="sr-only">83%</span>
+                                </div>
+                            </div>
+                            <span>83%</span>
+                        </td>
+                        <td class="members">
+                            <div class="table-content">
+                                <select multiple="multiple" data-plugin="jquery-selective"></select>
+                            </div>
+                        </td>
+                        <td class="actions">
+                            <button data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel" type="button"
+                                    class="btn btn-outline btn-success ">
+                                移除
+                            </button>
+                            <div class="table-content">
+                                <i class="icon wb-menu" data-url="http://cdn.admui.com/demo/pjax/2.0.0/data/examples/pages/work-panel.tpl" data-toggle="slidePanel"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <nav>
+                    <ul class="pagination pagination-no-border">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="javascript:;" aria-label="上一页">
+                                <span aria-hidden="true">上一页</span>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="javascript:;">1
+                                <span class="sr-only">(当前)</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="javascript:;" aria-label="下一页">
+                                <span aria-hidden="true">下一页</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/chartist/dist/chartist.min.js" data-name="chartist"></script>
+<script src="/vendor/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js" data-deps="chartist"></script>
+<script src="/vendor/jquery-selective/dist/jquery-selective.min.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    window.Content = App.extend({
+        handlePagination: function () {
+            var $allPage = $('.panel-footer .pagination li').not('.panel-footer .pagination li:first-child').not('.panel-footer .pagination li:last-child');
+            var $prev = $('.panel-footer .pagination li').first();
+            var $next = $('.panel-footer .pagination li').last();
+
+            function isEnd(obj) {
+                var $prevObj = obj.prev();
+                var $nextObj = obj.next();
+
+                if ($prevObj.find('a').attr('aria-label') === 'Previous') {
+                    $prevObj.addClass('disabled');
+                    $next.removeClass('disabled');
+                } else if ($nextObj.find('a').attr('aria-label') === 'Next') {
+                    $nextObj.addClass('disabled');
+                    $prev.removeClass('disabled');
+                } else {
+                    $next.removeClass('disabled');
+                    $prev.removeClass('disabled');
+                }
+            }
+
+            $allPage.on('click', function () {
+                $(this).siblings('li').removeClass('active');
+                $(this).addClass('active');
+                isEnd($(this));
+            });
+
+            $prev.on('click', function () {
+                var $prevPage = $allPage.filter('.active').prev();
+                if ($(this).attr("class") !== "disabled") {
+                    $prevPage.addClass('active');
+                    $prevPage.siblings('li').removeClass('active');
+                    isEnd($prevPage);
+                }
+            });
+
+            $next.on('click', function () {
+                var $nextPage = $allPage.filter('.active').next();
+                if ($(this).attr("class") !== "disabled") {
+                    $nextPage.addClass('active');
+                    $nextPage.siblings('li').removeClass('active');
+                    isEnd($nextPage);
+                }
+            });
+
+        },
+        handleChart: function () {
+
+            /* create line chart */
+
+            var scoreChart = function (data) {
+
+                var scoreChart = new Chartist.Line(data, {
+                    labels: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+                    series: [{
+                        name: "series-1",
+                        data: [0.8, 1.5, 0.8, 2.7, 2.4, 3.9, 1.1]
+                    }, {
+                        name: "series-2",
+                        data: [2.2, 3, 2.7, 3.6, 1.5, 1, 2.9]
+                    }]
+                }, {
+                    lineSmooth: Chartist.Interpolation.simple({
+                        divisor: 100
+                    }),
+                    fullWidth: true,
+                    chartPadding: {
+                        right: 25
+                    },
+                    series: {
+                        "series-1": {
+                            showArea: false
+                        },
+                        "series-2": {
+                            showArea: false
+                        }
+                    },
+                    axisX: {
+                        showGrid: false
+                    },
+                    axisY: {
+                        scaleMinSpace: 40
+                    },
+                    plugins: [
+                        Chartist.plugins.tooltip()
+                    ],
+                    low: 0,
+                    height: 250
+                });
+                scoreChart.on('draw', function (data) {
+                    if (data.type === 'point') {
+                        var parent = new Chartist.Svg(data.element._node.parentNode);
+                        parent.elem('line', {
+                            x1: data.x,
+                            y1: data.y,
+                            x2: data.x + 0.01,
+                            y2: data.y,
+                            "class": 'ct-point-content'
+                        });
+                    }
+                });
+
+            };
+
+            /*var WeekLabelList = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+             var WeekSeries1List = {
+             name: "series-1",
+             data: [0.8, 1.5, 0.8, 2.7, 2.4, 3.9, 1.1]
+             };
+             var WeekSeries2List = {
+             name: "series-2",
+             data: [2.2, 3, 2.7, 3.6, 1.5, 1, 2.9]
+             };*/
+
+            /* create bar chart */
+            var barChart = function (data) {
+                var barChart = new Chartist.Bar(data, {
+                    labels: ['梅小燕', '唐雪琴', '陈媚婉', '嵇慧莉', '刘文平', '孙玉珍', '柳映秋'],
+                    series: [
+                        [3.3, 3.5, 2.5, 2, 3.7, 2.7, 1.9],
+                        [2, 4, 3.5, 2.7, 3.3, 3.5, 2.5]
+                    ]
+                }, {
+                    axisX: {
+                        showGrid: false
+                    },
+                    axisY: {
+                        showGrid: false,
+                        scaleMinSpace: 30
+                    },
+                    height: 210,
+                    seriesBarDistance: 24
+                });
+
+                barChart.on('draw', function (data) {
+                    if (data.type === 'bar') {
+                        var parent = new Chartist.Svg(data.element._node.parentNode);
+                        parent.elem('line', {
+                            x1: data.x1,
+                            x2: data.x2,
+                            y1: data.y2,
+                            y2: 0,
+                            "class": 'ct-bar-fill'
+                        });
+
+                        data.element.attr({
+                            style: 'stroke-width: 20px'
+                        });
+                    }
+                });
+            };
+
+            /* run chart */
+            $(document).on('slidePanel::afterLoad', function () {
+                scoreChart('.trends-chart');
+                barChart('.member-chart');
+            });
+        },
+        handleSelective: function () {
+            var self = this,
+                member = [{
+                    id: 'uid_1',
+                    name: '梅小燕',
+                    avatar: '/static/images/portraits/1.jpg'
+                }, {
+                    id: 'uid_2',
+                    name: '赵桦',
+                    avatar: '/static/images/portraits/2.jpg'
+                }, {
+                    id: 'uid_3',
+                    name: '曹洁群',
+                    avatar: '/static/images/portraits/3.jpg'
+                }, {
+                    id: 'uid_4',
+                    name: '嵇慧莉',
+                    avatar: '/static/images/portraits/4.jpg'
+                }, {
+                    id: 'uid_5',
+                    name: '孙玉珍',
+                    avatar: '/static/images/portraits/5.jpg'
+                }, {
+                    id: 'uid_6',
+                    name: '柳映秋',
+                    avatar: '/static/images/portraits/6.jpg'
+                }, {
+                    id: 'uid_7',
+                    name: '周伊娅',
+                    avatar: '/static/images/portraits/7.jpg'
+                }];
+
+            function getNum(num) {
+                return Math.ceil(Math.random() * (num + 1));
+            }
+
+            function getMember() {
+                return member[getNum(member.length - 1) - 1];
+            }
+
+            function isSame(items) {
+                var _items = items;
+                var _member = getMember();
+
+                if (_items.indexOf(_member) === -1) {
+                    return _member;
+                } else {
+                    return isSame(_items);
+                }
+            }
+
+            function pushMember(num) {
+                var items = [];
+                for (var i = 0; i < num; i++) {
+                    items.push(isSame(items));
+                }
+                self.items = items;
+            }
+
+            function setItems(membersNum) {
+                var num = getNum(membersNum - 1);
+                pushMember(num);
+            }
+
+            $('[data-plugin="jquery-selective"]').each(function () {
+                setItems(member.length);
+
+                var items = self.items;
+
+                $(this).selective({
+                    namespace: 'addMember',
+                    local: member,
+                    selected: items,
+                    buildFromHtml: false,
+                    tpl: {
+                        optionValue: function (data) {
+                            return data.id;
+                        },
+                        frame: function () {
+                            return '<div class="' + this.namespace + '">' +
+                                this.options.tpl.items.call(this) +
+                                '<div class="' + this.namespace + '-trigger">' +
+                                this.options.tpl.triggerButton.call(this) +
+                                '<div class="' + this.namespace + '-trigger-dropdown">' +
+                                this.options.tpl.list.call(this) +
+                                '</div>' +
+                                '</div>' +
+                                '</div>';
+
+                        },
+                        triggerButton: function () {
+                            return '<div class="' + this.namespace + '-trigger-button"><i class="wb-plus"></i></div>';
+                        },
+                        listItem: function (data) {
+                            return '<li class="' + this.namespace + '-list-item"><img class="avatar" src="' + data.avatar + '"> ' + data.name + '</li>';
+                        },
+                        item: function (data) {
+                            return '<li class="' + this.namespace + '-item"><img class="avatar" src="' + data.avatar + '" title="' + data.name + '"> ' +
+                                this.options.tpl.itemRemove.call(this) +
+                                '</li>';
+                        },
+                        itemRemove: function () {
+                            return '<span class="' + this.namespace + '-remove"><i class="wb-minus-circle"></i></span>';
+                        },
+                        option: function (data) {
+                            return '<option value="' + this.options.tpl.optionValue.call(this, data) + '">' + data.name + '</option>';
+                        }
+                    }
+                });
+
+            });
+
+        },
+        run: function (next) {
+            this.items = [];
+
+            this.handlePagination();
+            this.handleChart();
+            this.handleSelective();
+
+            next();
+        }
+    });
+
+})(document, window, jQuery);
+</script>

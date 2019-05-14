@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>QAdmin 通用管理系统快速开发框架 - 在线演示系统</title>
+    
+
+
+
+
+
+
+<meta charset="utf-8">
+<meta name="keywords" content="QAdmin框架,后台管理系统框架,后台框架,ui框架,后台bootstrap框架,响应式后台,后台主题" />
+<meta name="description" content="QAdmin在线演示系统，QAdmin是一个基于Java及jQuery等最新Web技术的企业级通用管理系统快速开发框架，可以帮助企业极大的提高工作效率，节省开发成本，提升品牌形象" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 移动设备 viewport -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+<meta name="author" content="qadmin.com">
+<!-- 360浏览器默认使用Webkit内核 -->
+<meta name="renderer" content="webkit">
+<!-- 禁止百度SiteAPP转码 -->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- Chrome浏览器添加桌面快捷方式（安卓） -->
+<link rel="icon" type="image/png" href="/static/images/favicon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<!-- Safari浏览器添加到主屏幕（IOS） -->
+<link rel="icon" sizes="192x192" href="/static/images/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="QAdmin">
+<!-- Win8标题栏及ICON图标 -->
+<link rel="apple-touch-icon-precomposed" href="/static/images/apple-touch-icon.png">
+<meta name="msapplication-TileImage" content="//images/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#62a8ea">
+<!-- 样式 -->
+<link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="/static/css/site.css" id="siteStyle">
+<!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0; url='/portal/browser.html/'" />
+<![endif]-->
+<!--[if lt IE 10]>
+<script src="/vendor/media-match/media.match.min.js"></script>
+<script src="/vendor/respond/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+    <!-- 自定义 -->
+    <style>
+    .page-login,.page-login-main {
+        min-height: 540px;
+        height: 100%
+    }
+
+    .page-login,.page-login .page-brand-info,.page-login-main,html {
+        height: 100%
+    }
+
+    .bootbox .modal-dialog {
+        width: 360px
+    }
+
+    .page-login {
+        overflow: hidden;
+        padding-top: 0
+    }
+
+    .page-login:before {
+        background-image: url(/static/images/login.jpg)
+    }
+
+    .page-login .page {
+        background: 0 0
+    }
+
+    .page-login .page-content {
+        padding-right: 500px
+    }
+
+    .page-login.page-dark.layout-full:after {
+        background-color: fade(#263238,60%)
+    }
+
+    .page-login .page-brand-info .page-brand {
+        padding: 0 60px 60px
+    }
+
+    .page-login .page-brand-info .page-brand .brand-img {
+        vertical-align: middle
+    }
+
+    .page-login .page-brand-info .page-brand h2 {
+        color: #fff;
+        max-width: 650px
+    }
+
+    .page-login .page-brand-info .page-brand .list-icons {
+        padding-left: 0;
+        margin: 30px 0
+    }
+
+    .page-login-main {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0 60px;
+        color: #76838f;
+        background: #fff
+    }
+
+    .page-login-main>.alert {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        text-align: center;
+        opacity: .8;
+        padding-right: 10px
+    }
+
+    .page-login-main .vertical-align {
+        height: 100%;
+        box-sizing: border-box;
+        padding-bottom: 65px
+    }
+
+    .page-login-main>.alert+.vertical-align {
+        padding-top: 65px
+    }
+
+    .page-login-main .brand-img {
+        visibility: hidden
+    }
+
+    .page-login .login-form {
+        width: 350px;
+        margin: 45px 0 20px
+    }
+
+    .page-login .login-form .form-control {
+        height: 42px
+    }
+
+    .page-login .login-form .form-control .btn {
+        height: 100%
+    }
+
+    .page-login .login-form .form-control[name=validCode] {
+        z-index: 3
+    }
+
+    .page-login .login-form input.form-control {
+        padding: 0 12px
+    }
+
+    .page-login .login-form .reload-vify {
+        height: 42px;
+        overflow: hidden
+    }
+
+    .page-login .login-form.fv-form-bootstrap .form-control-feedback {
+        margin: 6px;
+        background-color: transparent
+    }
+
+    .page-login .login-form .input-group+.form-control-feedback {
+        display: none!important
+    }
+
+    .page-login .login-form>button {
+        padding: 8px 0
+    }
+
+    .page-login .page-copyright {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        text-align: center
+    }
+
+    @media (max-height:540px) {
+        .page-login .page-copyright {
+            display: none
+        }
+    }
+
+    @media (max-width:1199.98px) {
+        .page-brand {
+            padding: 0!important;
+            width: 100%
+        }
+
+        .page-brand .brand {
+            width: 100%
+        }
+    }
+
+    @media (max-width:991.98px) {
+        .page-login {
+            overflow: auto;
+            background: #fff;
+            text-align: center
+        }
+
+        .page-login .page-login-main .brand-img {
+            visibility: visible
+        }
+
+        .page-login .description,.page-login .title {
+            display: none
+        }
+
+        .page-login .vertical-align-middle {
+            width: 100%
+        }
+
+        .page-login .login-form {
+            width: auto
+        }
+    }
+
+    @media (max-width:767.98px) {
+        .page-login .page-content {
+            padding-right: 0
+        }
+
+        .page-login-main {
+            width: 100%
+        }
+
+        .page-login .login-form {
+            width: auto
+        }
+    }
+    </style>
+    <!-- 插件 -->
+    <link rel="stylesheet" href="/vendor/animsition/dist/css/animsition.min.css">
+    <!-- 图标 -->
+    <link rel="stylesheet" href="/vendor/web-icons/css/web-icons.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <!-- 插件 -->
+    <link rel="stylesheet" href="/lib/bootstrap-select/dist/css/bootstrap-select.css">
+    <link rel="stylesheet" href="/lib/formvalidation.io/dist/css//formValidation.min.css">
+
+</head>
+
+<body class="page-login layout-full page-dark">
+
+    <div class="page h-full">
+        <div class="page-content h-full">
+            <div class="page-brand-info vertical-align animation-slide-left d-none d-sm-block">
+                <div class="page-brand vertical-align-middle">
+                    <div class="brand">
+                        <img class="brand-img" src="/static/images/logo-white.svg" height="50" alt="QAdmin">
+                    </div>
+                    <h2 class="title">QAdmin 通用管理系统快速开发框架</h2>
+                    <ul class="list-icons description">
+                        <li>
+                            <i class="wb-check" aria-hidden="true"></i> QAdmin 是一个基于最新 Web
+                            技术的企业级通用管理系统快速开发框架，可以帮助企业极大的提高工作效率，节省开发成本，提升品牌形象。
+                        </li>
+                        <li>
+                            <i class="wb-check" aria-hidden="true"></i> 您可以 QAdmin 为基础，快速开发各种MIS系统，如CMS、OA、CRM、ERP、POS等。</li>
+                        <li>
+                            <i class="wb-check" aria-hidden="true"></i> QAdmin 紧贴业务特性，涵盖了大量的常用组件和基础功能，最大程度上帮助企业节省时间成本和费用开支。
+                        </li>
+                    </ul>
+                    <div class="description">
+                        <a href="#" class="btn btn-primary mr-5" target="_blank"><i class="icon wb-home"></i> 返回官网</a>
+                        <div class="btn-group margin-right-5">
+                            <button type="button" class="btn btn-success dropdown-toggle" id="demoApp" data-toggle="dropdown" aria-expanded="false">
+                                <i class="icon wb-download"></i> 下载桌面版 <span class="caret"></span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-success bullet" aria-labelledby="demoApp" role="menu">
+                                <a class="dropdown-item" href="#" role="menuitem">
+                                    <i class="icon fa fa-windows"></i> Windows 版
+                                </a>
+                                <a class="dropdown-item" href="#" role="menuitem">
+                                    <i class="icon fa fa-apple"></i> MacOS 版
+                                </a>
+                            </div>
+                        </div>
+                        <a href="javascript:;" class="btn btn-info open-kf"><i class="icon wb-user"></i> 联系客服</a>
+                    </div>
+                </div>
+            </div>
+            <div class="page-login-main animation-fade">
+                
+                <div class="vertical-align">
+                    <div class="vertical-align-middle">
+                        <div class="brand text-center">
+                            <img class="brand-img" src="/static/images/logo_2.svg" height="50" alt="QAdmin">
+                        </div>
+                        <h3 class="d-none d-sm-block">
+                            登录 QAdmin
+                            <div class="btn-group version-toggle">
+                                <a href="http://basic.demo.qadmin.com/" class="btn btn-default btn-outline btn-sm">basic版</a>
+                                <a href="http://iframe.demo.qadmin.com/" class="btn btn-default btn-outline btn-sm">iframe版</a>
+                                <a href="javascript:;" class="btn btn-default btn-outline btn-sm active">pjax版</a>
+                            </div>
+                        </h3>
+                        <p class="description">QAdmin 在线演示系统</p>
+                        <form class="login-form" action="/" method="get" id="loginForm">
+                            <div class="form-group">
+                                <label class="sr-only"  for="userName">选择身份</label>
+                                <select class="form-control" id="identity">
+                                    <option value="">我自己</option>
+                                    <option data-divider="true"></option>
+                                    <option value="xiaxuan@qadmin_demo" data-password="123456">夏瑄</option>
+                                    <option value="zhangzhiyuan@qadmin_demo" data-password="123456">张致远</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="username">用户名</label>
+                                <input type="text" class="form-control" id="userName" name="userName" placeholder="请输入用户名">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="password">密码</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="password">验证码</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control"  id="verifyCode" name="verifyCode" placeholder="请输入验证码">
+                                    <div class="input-group-append">
+                                        <a href="javascript:;" class="btn btn-default btn-outline p-0 m-0 reload-vify">
+                                            <img src="/static/images/captcha.png"  height="40">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <div class="checkbox-custom checkbox-inline checkbox-primary float-left">
+                                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                                    <label for="remember">自动登录</label>
+                                </div>
+                                <a class="float-right collapsed" data-toggle="collapse" href="#forgetPassword"
+                                    aria-expanded="false" aria-controls="forgetPassword">
+                                    忘记密码了？
+                                </a>
+                            </div>
+                            <div class="collapse" id="forgetPassword" aria-expanded="true">
+                                <div class="alert alert-warning alert-dismissible" role="alert">
+                                    请联系管理员重置密码。
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">立即登录</button>
+                        </form>
+                    </div>
+                </div>
+                <footer class="page-copyright">
+                    <p>QAdmin &copy;
+                        <a href="http://www.qadmin.com" target="_blank">qadmin.com</a>
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="/vendor/formvalidation.io/dist/js/formValidation.min.js" data-name="formValidation"></script>
+    <script src="/vendor/formvalidation.io/dist/js/framework/bootstrap4.min.js" data-deps="formValidation"></script>
+    <script>
+    /**
+     * QAdmin v1.2.0 (http://www.qadmin.com/)
+     * Copyright 2015-2017 QAdmin Team
+     * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+     */
+    (function (window, document, $) {
+        'use strict';
+
+        $("#loginForm").formValidation({
+            locale: 'zh_CN',
+            framework: 'bootstrap',
+            excluded: ':disabled',
+            icon: {
+                valid: 'icon wb-check',
+                invalid: 'icon wb-close',
+                validating: 'icon wb-refresh'
+            },
+            fields: {
+                loginName: {
+                    validators: {
+                        notEmpty: {
+                            message: '用户名不能为空'
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: '密码必须大于6且小于30个字符'
+                        }
+                    }
+                },
+                validCode: {
+                    validators: {
+                        notEmpty: {
+                            enabled: true,
+                            message: '验证码不能为空'
+                        }
+                    }
+                }
+            }
+        });
+
+        $('.reload-vify').on('click', function () { // 验证码刷新
+            var $img = $(this).children('img'),
+                URL = $img.prop('src');
+            $img.prop('src', URL + '?tm=' + Math.random());
+        });
+    })(window, document, jQuery);
+
+    </script>
+</body>
+
+</html>

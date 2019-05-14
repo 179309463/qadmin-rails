@@ -1,0 +1,267 @@
+<title>黑名单</title>
+
+<link rel="stylesheet" href="/vendor/webui-popover/dist/jquery.webui-popover.min.css">
+<link rel="stylesheet" href="/vendor/alertifyjs/dist/css/alertify.css">
+<link rel="stylesheet" href="/vendor/glyphicons/styles/glyphicons.css">
+<link rel="stylesheet" href="/vendor/datatables-bootstrap/3/dataTables.bootstrap.css">
+<link rel="stylesheet" href="/lib/datatables-responsive/css/responsive.dataTables.css">
+<link rel="stylesheet" href="/lib/formvalidation.io/dist/css//formValidation.min.css">
+
+<div class="page page-full animation-fade page-backlist">
+    <div class="page-content">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">黑名单</h3>
+                <div class="panel-actions">
+                    <a class="panel-action icon wb-plus" data-target="#add" data-toggle="modal" aria-hidden="true" role="button">
+                        新增
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered dataTable table-striped table-hover text-nowrap margin-vertical-10" data-column-defs='[{ "orderable": false, "targets": 3},{ "orderable": false, "targets": 4}]'>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>IP</th>
+                        <th>加入时间</th>
+                        <th>备注</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="0">
+                            <td>1</td>
+                            <td>
+                                <a href="javascript:;" class="ip-msg" data-url="/views/examples/tables/blacklist.json?ip=124.152.200.63">124.152.200.62</a>
+                            </td>
+                            <td>2016-01-01 12:30</td>
+                            <td>--</td>
+                            <td>
+                                <a class="btn btn-pure btn-xs btn-default icon wb-close delete-tr" href="#"></a>
+                            </td>
+                        </tr>
+                        <tr id="1">
+                            <td>2</td>
+                            <td>
+                                <a href="javascript:;" class="ip-msg" data-url="http://api.ip138.com/query/?datatype=text&token=ed2bdaf593e2a96632ccd7bde7c0158f&ip=124.152.200.62">
+                                    124.152.200.62
+                                </a>
+                            </td>
+                            <td>2016-01-01 12:30</td>
+                            <td>--</td>
+                            <td>
+                                <a class="btn btn-pure btn-xs btn-default icon wb-close delete-tr" href="#"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <a href="javascript:;" class="ip-msg" data-url="http://api.ip138.com/query/?datatype=text&token=ed2bdaf593e2a96632ccd7bde7c0158f&ip=124.152.200.65">
+                                    124.152.200.62
+                                </a>
+                            </td>
+                            <td>2016-01-01 12:30</td>
+                            <td>--</td>
+                            <td>
+                                <a class="btn btn-pure btn-xs btn-default icon wb-close" href="#"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="add" aria-hidden="true" aria-labelledby="add" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-center">
+        <form class="modal-content" id="blackList" method="post">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="关闭">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">添加到黑名单</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <i class="icon wb-bell" aria-hidden="true"></i> 加入黑名单的IP用户将无法访问本系统
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="ip" placeholder="请填写要加入黑名单的IP">
+                </div>
+                <div class="form-group margin-bottom-0">
+                    <textarea class="form-control" rows="3" name="comment" placeholder="备注信息"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/vendor/webui-popover/dist/jquery.webui-popover.min.js"></script>
+<script src="/vendor/alertifyjs/dist/js/alertify.js"></script>
+<script src="/vendor/datatables/media/js/jquery.dataTables.min.js" data-name="dataTables"></script>
+<script src="/vendor/datatables-bootstrap/3/dataTables.bootstrap.min.js" data-deps="dataTables"></script>
+<script src="/vendor/datatables-responsive/js/dataTables.responsive.js" data-deps="dataTables"></script>
+<script src="/vendor/formvalidation.io/dist/js/formValidation.min.js" data-name="formValidation"></script>
+<script src="/vendor/formvalidation.io/dist/js/framework/bootstrap4.min.js" data-deps="formValidation"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ (function (window, document, $) {
+    "use strict";
+
+    window.Content = {
+        queryIp: function () {
+            var opts = $.extend(true, {},$.po('webuiPopover'), $('.ip-msg', '#qadmin-pageContent').data(),{
+                trigger: 'click',
+                title: '详细信息',
+                type: 'async',
+                content: function (data) {
+                    var message = '出错了，请重试！';
+                    if (data.success) {
+                        message = data.message;
+                    }
+                    return message;
+                }
+            });
+            $('.ip-msg', '#qadmin-pageContent').webuiPopover(opts);
+        },
+        run: function () {
+            var oTable, self = this,
+                $blackList = $("#blackList"),
+                $pageContent = $("#qadmin-pageContent");
+
+            oTable = $('.dataTable').DataTable($.po('dataTable',{
+                rowId: 'blId',
+                autoWidth: false,
+                columns: [
+                    {
+                        "render": function (data, type, row, meta) {
+                            return ( meta.row + 1);
+                        }
+                    },
+                    {
+                        "render": function (data, type, row) {
+                            var html,
+                                loginIp = row.loginIp;
+
+                            if (loginIp === undefined) {
+                                html = row[1];
+                            } else {
+                                html = '<a href="javascript:;" class="ip-msg" data-url="/query/ip?' + loginIp + '">' + loginIp + '</a>';
+                            }
+                            return html;
+                        }
+                    },
+                    {"data": "createTime"},
+                    {"data": "comment"},
+                    {
+                        "render": function () {
+                            var html = '<a class="btn btn-pure btn-xs btn-default icon wb-close' +
+                                ' delete-tr" href="#"></a>';
+                            return html;
+                        }
+                    }
+                ],
+                drawCallback: function () {
+                    this.api().column(0).nodes().each(function (cell, i) {
+                        cell.innerHTML = i + 1;
+                    });
+
+                    self.queryIp();
+                }
+            }));
+
+            $blackList.formValidation($.po('formValidation', {
+                fields: {
+                    ip: {
+                        validators: {
+                            notEmpty: {
+                                message: "请填写IP地址"
+                            }
+                        }
+                    }
+                }
+            }))
+                .on('success.form.fv', function (e) {
+                    e.preventDefault();
+                    var validator = $(e.target).data('formValidation'),
+                        blacklist = {
+                            loginIp: validator.getFieldElements('ip').val(),
+                            comment: validator.getFieldElements('comment').val()
+                        };
+
+                    $.ajax({
+                        url: $.ctx + '/blacklist/save',
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        dataType: 'JSON',
+                        success: function (data) {
+                            if (data.success) {
+                                blacklist.blId = data.blacklist.blId;
+                                blacklist.createTime = data.blacklist.createTime;
+
+                                $('#add').one('hidden.bs.modal', function () {
+                                    oTable.row.add(blacklist).draw(false);
+
+                                    toastr.success('添加成功！');
+                                }).modal('hide');
+                            } else {
+                                toastr.error(data.msg);
+                            }
+                        },
+                        error: function () {
+                            toastr.error('服务器异常，请稍后再试！');
+                        }
+                    });
+                });
+
+            $pageContent.one('hide.bs.modal', '#add', function () { // 模态窗隐藏后
+                $blackList.formValidation('resetForm', true);
+                $blackList.find('textarea').val('');
+            });
+
+            $pageContent.on('click', '.delete-tr', function (e) { // 删除当前行
+                e.preventDefault();
+                var $item = $(this).closest('tr'),ID,
+                    $tr = $item.prev();
+
+                if($item.hasClass('child') && $tr.hasClass('parent')){
+                    $item = $tr;
+                }
+                ID = oTable.row($item).id();
+
+                alertify.theme('bootstrap')
+                    .confirm('你确定要删除吗？', function(){
+                        $.ajax({
+                            url: $.ctx + '/blacklist/delete?blId=' + ID,
+                            type: 'POST',
+                            dataType: 'JSON',
+                            success: function (data) {
+                                if (data.success) {
+                                    oTable.row($item).remove().draw(false);
+                                    toastr.success('删除成功！');
+                                } else {
+                                    toastr.error('出错了，请重试！');
+                                }
+                            },
+                            error: function () {
+                                toastr.error('服务器异常，请稍后再试！');
+                            }
+                        });
+                    });
+            });
+        }
+    };
+
+})(window, document, jQuery);
+</script>

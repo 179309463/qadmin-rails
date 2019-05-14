@@ -1,0 +1,623 @@
+<title>显示设置</title>
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ .page-display .color-radio .radio-custom.radio-primary label::before {
+	border-color: #62a8ea;
+}
+.page-display .color-radio .radio-custom.radio-primary label::after {
+	border-color: #62a8ea;
+}
+.page-display .color-radio .radio-custom.radio-primary input[type=radio]:checked + label::before {
+	border-color: #62a8ea;
+}
+.page-display .color-radio .radio-custom.radio-brown label::before {
+	border-color: #8d6658;
+}
+.page-display .color-radio .radio-custom.radio-brown label::after {
+	border-color: #8d6658;
+}
+.page-display .color-radio .radio-custom.radio-brown input[type=radio]:checked + label::before {
+	border-color: #8d6658;
+}
+.page-display .color-radio .radio-custom.radio-cyan label::before {
+	border-color: #57c7d4;
+}
+.page-display .color-radio .radio-custom.radio-cyan label::after {
+	border-color: #57c7d4;
+}
+.page-display .color-radio .radio-custom.radio-cyan input[type=radio]:checked + label::before {
+	border-color: #57c7d4;
+}
+.page-display .color-radio .radio-custom.radio-green label::before {
+	border-color: #46be8a;
+}
+.page-display .color-radio .radio-custom.radio-green label::after {
+	border-color: #46be8a;
+}
+.page-display .color-radio .radio-custom.radio-green input[type=radio]:checked + label::before {
+	border-color: #46be8a;
+}
+.page-display .color-radio .radio-custom.radio-grey label::before {
+	border-color: #757575;
+}
+.page-display .color-radio .radio-custom.radio-grey label::after {
+	border-color: #757575;
+}
+.page-display .color-radio .radio-custom.radio-grey input[type=radio]:checked + label::before {
+	border-color: #757575;
+}
+.page-display .color-radio .radio-custom.radio-indigo label::before {
+	border-color: #677ae4;
+}
+.page-display .color-radio .radio-custom.radio-indigo label::after {
+	border-color: #677ae4;
+}
+.page-display .color-radio .radio-custom.radio-indigo input[type=radio]:checked + label::before {
+	border-color: #677ae4;
+}
+.page-display .color-radio .radio-custom.radio-orange label::before {
+	border-color: #f2a654;
+}
+.page-display .color-radio .radio-custom.radio-orange label::after {
+	border-color: #f2a654;
+}
+.page-display .color-radio .radio-custom.radio-orange input[type=radio]:checked + label::before {
+	border-color: #f2a654;
+}
+.page-display .color-radio .radio-custom.radio-pink label::before {
+	border-color: #f96197;
+}
+.page-display .color-radio .radio-custom.radio-pink label::after {
+	border-color: #f96197;
+}
+.page-display .color-radio .radio-custom.radio-pink input[type=radio]:checked + label::before {
+	border-color: #f96197;
+}
+.page-display .color-radio .radio-custom.radio-purple label::before {
+	border-color: #926dde;
+}
+.page-display .color-radio .radio-custom.radio-purple label::after {
+	border-color: #926dde;
+}
+.page-display .color-radio .radio-custom.radio-purple input[type=radio]:checked + label::before {
+	border-color: #926dde;
+}
+.page-display .color-radio .radio-custom.radio-red label::before {
+	border-color: #f96868;
+}
+.page-display .color-radio .radio-custom.radio-red label::after {
+	border-color: #f96868;
+}
+.page-display .color-radio .radio-custom.radio-red input[type=radio]:checked + label::before {
+	border-color: #f96868;
+}
+.page-display .color-radio .radio-custom.radio-teal label::before {
+	border-color: #3aa99e;
+}
+.page-display .color-radio .radio-custom.radio-teal label::after {
+	border-color: #3aa99e;
+}
+.page-display .color-radio .radio-custom.radio-teal input[type=radio]:checked + label::before {
+	border-color: #3aa99e;
+}
+.page-display .color-radio .radio-custom.radio-yellow label::before {
+	border-color: #f7da64;
+}
+.page-display .color-radio .radio-custom.radio-yellow label::after {
+	border-color: #f7da64;
+}
+.page-display .color-radio .radio-custom.radio-yellow input[type=radio]:checked + label::before {
+	border-color: #f7da64;
+}
+</style>
+
+<link rel="stylesheet" href="/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="/lib/bootstrap-select/dist/css/bootstrap-select.css">
+<link rel="stylesheet" href="/vendor/switchery/dist/switchery.min.css">
+
+<div class="page animation-fade page-display">
+    <div class="page-content">
+        <form id="displayForm" class="form-horizontal py-30">
+            <div class="form-group row border-bottom pb-20">
+                <label class="col-md-2 col-form-label">导航条颜色：</label>
+                <div class="col-md-10" id="skintoolsNavbar">
+                    <ul class="list-unstyled list-inline color-radio">
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-primary">
+                                    <input type="radio"  name="navigationColor"  value="bg-blue-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-brown">
+                                    <input type="radio" name="navigationColor" value="bg-brown-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-cyan">
+                                    <input type="radio" name="navigationColor" value="bg-cyan-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-green">
+                                    <input type="radio" name="navigationColor" value="bg-green-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-grey">
+                                    <input type="radio" name="navigationColor" value="bg-grey-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-indigo">
+                                    <input type="radio" name="navigationColor" value="bg-indigo-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-orange">
+                                    <input type="radio" name="navigationColor" value="bg-orange-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-pink">
+                                    <input type="radio" name="navigationColor" value="bg-pink-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-purple">
+                                    <input type="radio"  name="navigationColor" value="bg-purple-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-red">
+                                    <input type="radio"  name="navigationColor" value="bg-red-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-teal">
+                                    <input type="radio"  name="navigationColor" value="bg-teal-600">
+                                    <label></label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="radio-custom radio-yellow">
+                                    <input type="radio"  name="navigationColor" value="bg-yellow-700">
+                                    <label></label>
+                                </div>
+                            </li>
+                        </ul>
+                    <div class="checkbox-custom checkbox-primary m-top-10">
+                        <input type="checkbox"  id="navbarDisplay" name="acrossFlag"  value="navbar-inverse" checked="checked">
+                        <label for="navbarDisplay">通栏显示</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row border-bottom pb-20">
+                <label class="col-md-2 col-form-label">菜单主题：</label>
+                <div class="col-md-10">
+                    <select id="skintoolsSidebar" name="menuTheme" data-plugin="selectpicker">
+                        <option value="site-menubar-dark" selected="selected">深色主题</option>
+                        <option value="site-menubar-light">浅色主题</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row border-bottom pb-20">
+                <label class="col-md-2 col-form-label">菜单显示：</label>
+                <div class="col-md-10">
+                    <div class="radio-inline radio-custom radio-primary">
+                        <input type="radio" id="menuUnfold"  name="menuDisplay"  value="site-menubar-unfold" checked="checked">
+                        <label for="menuUnfold">默认展开</label>
+                    </div>
+                    <div class="radio-inline radio-custom radio-primary">
+                        <input type="radio" id="menuFold"  name="menuDisplay"  value="site-menubar-fold">
+                        <label for="menuFold">默认收起</label>
+                    </div>
+                    <div class="mt-10 hidden" id="menuFoldSetting">
+                        <span>鼠标经过菜单时显示：</span>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-xs btn-outline btn-dark active"  for="textIconKeep">
+                                <input type="radio" id="textIconKeep" autocomplete="off" hidden="hidden"   name="menuTxtIcon" value="site-menubar-keep" checked="checked">文字
+                            </label>
+                            <label class="btn btn-xs btn-outline btn-dark "  for="textIconAlt">
+                                <input type="radio" id="textIconAlt" autocomplete="off" hidden="hidden"  name="menuTxtIcon" value="site-menubar-fold-alt">图标
+                            </label>
+                        </div>
+                    </div>
+                    <span class="form-text">仅在可视区域宽度大于768px生效</span>
+                </div>
+            </div>
+            <div class="form-group row border-bottom pb-15">
+                <label class="col-md-2 col-form-label">主题颜色：</label>
+                <div class="col-md-10" id="skintoolsPrimary">
+                    <ul class="list-unstyled list-inline color-radio">
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-primary">
+                                <input type="radio"  name="themeColor"  value="primary" checked="checked">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-brown">
+                                <input type="radio" name="themeColor"  value="brown">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-cyan">
+                                <input type="radio" name="themeColor"  value="cyan">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-green">
+                                <input type="radio" name="themeColor"  value="green">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-grey">
+                                <input type="radio" name="themeColor"  value="grey">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-indigo">
+                                <input type="radio" name="themeColor"  value="indigo">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-orange">
+                                <input type="radio" name="themeColor"  value="orange">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-pink">
+                                <input type="radio" name="themeColor"  value="pink">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-purple">
+                                <input type="radio" name="themeColor"  value="purple">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-red">
+                                <input type="radio" name="themeColor"  value="red">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-teal">
+                                <input type="radio" name="themeColor"  value="teal">
+                                <label></label>
+                            </div>
+                        </li>
+                        <li class="list-inline-item">
+                            <div class="radio-custom radio-yellow">
+                                <input type="radio" name="themeColor"  value="yellow">
+                                <label></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-group row border-bottom pb-15">
+                <label class="col-md-2 col-form-label">Tab 页签：</label>
+                <div class="col-md-10">
+                    <div class="radio-inline radio-custom radio-primary">
+                        <input type="radio" id="tabDisplayShow" checked name="tabFlag" value="site-contabs-open">
+                        <label for="tabDisplayShow">开启</label>
+                    </div>
+                    <div class="radio-inline radio-custom radio-primary">
+                        <input type="radio" id="tabDisplayHide" name="tabFlag" value="">
+                        <label for="tabDisplayHide">关闭</label>
+                    </div>
+                    <span class="form-text">Tab 页签必须保存以后才能看到效果</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-10 offset-md-2 mt-20">
+                    <button type="submit" class="btn btn-primary mr-10" name="save" value="true"><span>保存</span></button>
+                    <button type="button" class="btn btn-outline btn-default" name="reset" value="reset" id="skintoolsReset"><span>恢复默认</span></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/vendor/switchery/dist/switchery.min.js"></script>
+<script src="/vendor/bootstrap-select/dist/js/bootstrap-select.min.js" data-name="select"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ (function (window, document) {
+    'use strict';
+
+    if ($('#qadmin-pageContent').find('#accountContent').length > 0) {
+        $('#displayForm').prepend('<input type="hidden" name="userId" value="' + $('#qadmin-signOut')
+                .attr("data-user") + '">');
+    }
+
+    if (!window.localStorage) {
+        return;
+    }
+
+    if (document.addEventListener) {
+        var Storage = {
+            set: function (key, value) {
+                if (!window.localStorage) {
+                    return null;
+                }
+
+                if (!key || !value) {
+                    return null;
+                }
+
+                if (typeof value === "object") {
+                    value = JSON.stringify(value);
+                }
+
+                localStorage.setItem(key, value);
+            },
+            get: function (key) {
+                if (!window.localStorage) {
+                    return null;
+                }
+
+                var value = localStorage.getItem(key);
+
+                if (!value) {
+                    return null;
+                }
+
+                if (typeof value === 'string') {
+                    value = JSON.parse(value);
+                }
+
+                return value;
+            }
+        };
+
+        var Skintools = {
+            storageKey: 'qadmin.base.skinTools',
+            path: $.ctx + '/static',
+            $siteSidebar: $.parentFrame.find('.site-menubar'),
+            $siteNavbar: $.parentFrame.find('.site-navbar'),
+            navbarSkins: 'bg-primary-600 bg-blue-600 bg-brown-600 bg-cyan-600 bg-green-600 bg-grey-600 bg-indigo-600 bg-orange-600 bg-pink-600 bg-purple-600 bg-red-600 bg-teal-600 bg-yellow-700',
+            defaultSettings: {
+                sidebar: 'site-menubar-dark',
+                navbar: 'bg-primary-600',
+                navbarInverse: 'navbar-inverse',
+                themeColor: 'primary',
+                menuDisplay: 'site-menubar-unfold',
+                menuTxtIcon: 'site-menubar-keep',
+                tabFlag: 'site-contabs-open'
+            },
+            init: function () {
+                var self = this,
+                    $pageContent = $('#qadmin-pageContent');
+
+                $pageContent.on('change', '#skintoolsSidebar', function () { // 菜单主题
+                    self.sidebarEvents($(this));
+                });
+                $pageContent.on('click', '#skintoolsNavbar input', function () { // 导航条颜色
+                    self.navbarEvents($(this));
+                });
+                $pageContent.on('click', '#skintoolsPrimary input', function () { // 主题颜色
+                    self.primaryEvents($(this));
+                });
+
+                $pageContent.on("change", 'input[name="menuDisplay"]', function () { // 菜单显示
+                    var $menuFold = $("#menuFoldSetting"),
+                        value = $(this).val();
+                    if (value === 'site-menubar-unfold') {
+                        $menuFold.addClass("hidden");
+                        window.top.$.site.menubar.unfold();
+                    } else {
+                        $menuFold.removeClass("hidden");
+                        window.top.$.site.menubar.fold();
+                    }
+                    self.updateSetting('menuDisplay', value);
+                });
+
+                // 鼠标经过左侧菜单时显示文字 | 图标
+                $pageContent.on("change", 'input[name="menuTxtIcon"]', function () {
+                    var value = $(this).val();
+                    if (value === 'site-menubar-keep') { // 显示文字
+                        $.parentFrame.find("body").removeClass("site-menubar-fold-alt").addClass("site-menubar-keep");
+                    } else {
+                        $.parentFrame.find("body").removeClass("site-menubar-keep").addClass("site-menubar-fold-alt");
+                    }
+                    self.updateSetting('menuTxtIcon', value);
+                });
+
+                $pageContent.on('change', 'input[name="tabFlag"]', function () { // Tab页签
+                    var value = $(this).val();
+                    if (value === 'site-contabs-open') {
+                        $('#qadmin-siteConTabs ul.con-tabs', $.parentFrame).removeAttr('style');
+                        $.parentFrame.find("body").addClass("site-contabs-open");
+
+                        if (typeof $.site.contentTabs !== 'undefined') {
+                            $.site.contentTabs.containerSize();
+                        }
+                    } else {
+                        $.parentFrame.find("body").removeClass("site-contabs-open");
+                    }
+                    self.updateSetting('tabFlag', value);
+                });
+
+                $pageContent.on("click", "button[name='save']", function (e) {
+                    e.preventDefault();
+                    var settings = Storage.get(self.storageKey);
+
+                    if (settings === null) {
+                        settings = self.defaultSettings;
+                    }
+
+                    // console.info(settings); //可以保存数据到后台
+                });
+
+                $pageContent.on('click', '#skintoolsReset', function () { // 恢复默认
+                    self.reset();
+                });
+
+                $('#skintoolsSidebar').selectpicker($.po('selectpicker'));
+
+                this.initLocalStorage();
+            },
+            initLocalStorage: function () {
+                this.settings = Storage.get(this.storageKey);
+
+                if (this.settings === null) {
+                    this.settings = $.extend(true, {}, this.defaultSettings);
+
+                    Storage.set(this.storageKey, this.settings);
+                }
+
+                if (this.settings && $.isPlainObject(this.settings)) {
+                    $.each(this.settings, function (n, v) {
+                        switch (n) {
+                            case 'boxLayout':
+                                $('#boxLayout', '#qadmin-pageContent').prop('checked', v !== "");
+                                break;
+                            case 'sidebar':
+                                $('#skintoolsSidebar').selectpicker('val', [v]);
+                                break;
+                            case 'navbar':
+                                $('input[value="' + v + '"]', $("#skintoolsNavbar>ul")).prop('checked', true);
+                                break;
+                            case 'navbarInverse':
+                                $('#navbarDisplay', '#qadmin-pageContent').prop('checked', v !== '');
+                                break;
+                            case 'menuDisplay':
+                                $('input[value="' + v + '"]', '#displayForm').prop('checked', true);
+                                break;
+                            case 'menuTxtIcon':
+                                if ($('#menuFold').is(':checked')) {
+                                    $('#menuFoldSetting').removeClass('hidden ');
+                                    $('input[name="menuTxtIcon"]', '#displayForm').parent('label')
+                                        .removeClass('active');
+                                    $('input[value="' + v + '"]', '#displayForm').prop('checked', true)
+                                        .parent('label').addClass('active');
+                                }
+                                break;
+                            case 'themeColor':
+                                $('input[value="' + v + '"]', "#skintoolsPrimary").prop('checked', true);
+                                break;
+                            case 'tabFlag':
+                                $('input[value="' + v + '"]', '#displayForm').prop('checked', true);
+                        }
+                    });
+                }
+            },
+
+            updateSetting: function (item, value) {
+                this.settings[item] = value;
+
+                Storage.set(this.storageKey, this.settings);
+            },
+            sidebarEvents: function ($item) {
+                var val = $item.val();
+
+                this.sidebarImprove(val);
+                this.updateSetting('sidebar', val);
+            },
+            navbarEvents: function ($item) {
+                var val = $item.val(),
+                    checked = $item.prop('checked');
+
+                this.navbarImprove(val, checked);
+
+                if (val === 'navbar-inverse') {
+                    this.updateSetting('navbarInverse', checked ? val : '');
+                } else {
+                    this.updateSetting('navbar', val);
+                }
+            },
+            primaryEvents: function ($item) {
+                var val = $item.val();
+
+                this.primaryImprove(val);
+
+                this.updateSetting('themeColor', val);
+            },
+            sidebarImprove: function (val) {
+                if (val === 'site-menubar-light') {
+                    this.$siteSidebar.removeClass('site-menubar-dark').addClass(val);
+                }
+                else {
+                    this.$siteSidebar.removeClass('site-menubar-light').addClass(val);
+                }
+            },
+            navbarImprove: function (val, checked) {
+                if (val === 'navbar-inverse') {
+                    checked ? this.$siteNavbar.addClass(val) : this.$siteNavbar.removeClass(val);
+                }
+                else {
+                    this.$siteNavbar.removeClass(this.navbarSkins).addClass(val);
+                }
+            },
+            primaryImprove: function (val) {
+                var $link = $('#qadmin-siteStyle', $.parentFrame), href,
+                    etx = $link.prop('href').indexOf('?v=') === -1 ? '' : '.min' ;
+
+                var type = $link.data("type");
+                if (val === 'primary') {
+                    href = this.path + '/skins/' + $("body").data("theme") + "/" + type + '/default.css';
+                }
+                else {
+                    href = this.path + '/skins/' + $("body").data("theme") + "/" + type + "/" + val + etx + '.css';
+                }
+
+                $link.attr('href', href);
+
+                var self = this;
+                var frames = $.parentFrame.find('#qadmin-pageContent>iframe');
+                frames.each(function() {
+                    var name = $(this).attr('name');
+                    $link = $('#qadmin-siteStyle', parent.frames[name].document);
+                    if ($link.length) {
+                        var type = $link.data('type');
+                        etx = $link.prop('href').indexOf('?v=') === -0x1 ? '': '.min';
+                        if (val === 'primary') {
+                            href = self.path + '/skins/' + $("body").data("theme") + "/" + type + '/default.css';
+                        } else {
+                            href = self.path + '/skins/' + $("body").data("theme") + "/" + type + '/' + val + etx + '.css';
+                        }
+                        $link.attr('href', href);
+                    }
+                });
+            },
+            reset: function () {
+                localStorage.clear();
+                window.top.location.reload(true);
+            }
+        };
+
+        Skintools.init();
+    }
+
+})(window, document);
+</script>

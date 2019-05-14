@@ -1,0 +1,547 @@
+<title>项目列表 01 - 页面示例</title>
+
+<link rel="stylesheet" href="/lib/jquery-selective/jquery-selective.css">
+
+<style>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+.page-projects .projects-sort-label {
+    margin-right: 3px;
+    cursor: default;
+}
+.page-projects .dropdown-toggle {
+    cursor: pointer;
+}
+.page-projects .projects-wrap {
+    padding-top: 30px;
+}
+.page-projects .panel {
+    padding: 10px;
+    margin-bottom: 0;
+}
+.page-projects .blocks > li {
+    margin-bottom: 30px;
+}
+.page-projects .overlay {
+    margin-bottom: 12px;
+    overflow: visible;
+    border-radius: 4px;
+}
+.page-projects .overlay .btn-group {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.page-projects .overlay .btn-icon {
+    color: #bdbdbd;
+}
+.page-projects .overlay .btn-icon:hover {
+    color: white;
+}
+.page-projects .overlay .project-button {
+    color: #fff;
+}
+.page-projects .overlay .project-button:hover {
+    color: #526069;
+    background-color: white;
+}
+.page-projects .overlay .dropdown .dropdown-menu > li > a {
+    padding: 6px 8px;
+}
+.page-projects .overlay .dropdown:hover .dropdown-toggle {
+    color: #fff;
+}
+.page-projects .overlay .dropdown:hover .dropdown-menu {
+    display: block;
+}
+.page-projects .overlay .dropdown-menu {
+    min-width: 110px;
+    margin-top: 0;
+    color: #76838f;
+}
+.page-projects .overlay .dropdown-menu a {
+    text-decoration: none;
+}
+.page-projects .overlay-panel {
+    background: rgba(38, 50, 56, .8);
+}
+</style>
+
+<div class="page animation-fade page-projects">
+    <div class="page-header">
+        <h1 class="page-title">项目列表 01</h1>
+        <div class="page-header-actions">
+            <form>
+                <div class="input-search">
+                    <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                    <input type="text" class="form-control" name="" placeholder="搜索...">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="projects-sort">
+            <span class="projects-sort-label">排序： </span>
+            <div class="inline-block dropdown">
+                <span id="projects-menu" data-toggle="dropdown" aria-expanded="false" role="button">
+                    默认
+                    <i class="icon wb-chevron-down-mini" aria-hidden="true"></i>
+                </span>
+                <dvi class="dropdown-menu animation-scale-up animation-top-left animation-duration-250" aria-labelledby="projects-menu"
+                        role="menu">
+                    <a class="dropdown-item" href="javascript:;" role="menuitem" tabindex="-1">按进度</a>
+                    <a class="dropdown-item active" href="javascript:;" role="menuitem" tabindex="-1">按开始日期</a>
+                    <a class="dropdown-item" href="javascript:;" role="menuitem" tabindex="-1">按结束日期</a>
+                </dvi>
+            </div>
+        </div>
+        <div class="projects-wrap">
+            <ul class="blocks blocks-100 blocks-xlg-5 blocks-md-4 blocks-sm-3 blocks-xs-2" data-plugin="animateList"
+                data-child=">li">
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-1.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 01</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-2.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 02</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-3.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 03</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-4.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 04</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-5.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 05</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-6.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 06</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-7.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 07</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-8.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 08</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-9.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 09</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="panel">
+                        <figure class="overlay overlay-hover animation-hover">
+                            <img class="caption-figure overlay-figure" src="/static/images/photos/city-1.jpg">
+                            <figcaption class="overlay-panel overlay-background overlay-fade text-center vertical-align">
+                                <div class="btn-group">
+                                    <div class="dropdown float-left">
+                                        <button type="button" class="btn btn-icon btn-pure btn-default" title="Setting">
+                                            <i class="icon wb-settings" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="javascript:;">复制</a>
+                                            <a class="dropdown-item" href="javascript:;">重命名</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-icon btn-pure btn-default" title="删除" data-tag="project-delete">
+                                        <i class="icon wb-trash" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <button type="button" class="btn btn-outline btn-default project-button">查看项目</button>
+                            </figcaption>
+                        </figure>
+                        <div class="time float-right">2016.9.2</div>
+                        <div class="text-truncate">项目 10</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <nav>
+            <ul class="pagination pagination-no-border">
+                <li class="page-item disabled">
+                    <a class="page-link" href="javascript:;" aria-label="上一页">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item active">
+                    <a class="page-link" href="javascript:;">1
+                        <span class="sr-only">(当前)</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript:;">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript:;">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript:;">4</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript:;">5</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="javascript:;" aria-label="下一页">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <button class="site-action btn-raised btn btn-success btn-floating" data-target="#addProjectForm" data-toggle="modal"
+            type="button">
+        <i class="icon wb-plus" aria-hidden="true"></i>
+    </button>
+
+</div>
+
+<div class="modal fade" id="addProjectForm" aria-hidden="true" aria-labelledby="addProjectForm" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-hidden="true" data-dismiss="modal">×</button>
+                <h4 class="modal-title">创建新项目</h4>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post" role="form">
+                    <div class="form-group">
+                        <label class="col-form-label mb-15" for="name">项目名称：</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="项目名称">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label mb-15" for="name">项目简介：</label>
+                        <textarea class="maxlength-textarea form-control mb-sm" placeholder="项目简介" rows="4" maxlength="225"
+                                    data-plugin="maxlength"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label mb-15" for="name">选择参与人员：</label>
+                        <select multiple="multiple" id="jquery-selective"></select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer text-right">
+                <button class="btn btn-primary" data-dismiss="modal" type="button">创建</button>
+                <a class="btn btn-sm btn-white" data-dismiss="modal" href="javascript:;">取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/vendor/jquery-selective/dist/jquery-selective.min.js"></script>
+<script src="/vendor/bootbox.js/dist/bootbox.all.min.js"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+(function (document, window, $) {
+    'use strict';
+
+    window.Content = App.extend({
+        handleSelective: function () {
+            var members = [{
+                    id: 'uid_1',
+                    name: '孙继红',
+                    img: '/static/images/portraits/1.jpg'
+                }, {
+                    id: 'uid_2',
+                    name: '张倩',
+                    img: '/static/images/portraits/2.jpg'
+                }, {
+                    id: 'uid_3',
+                    name: '孙咏梅',
+                    img: '/static/images/portraits/3.jpg'
+                }, {
+                    id: 'uid_4',
+                    name: '冉佩利',
+                    img: '/static/images/portraits/4.jpg'
+                }],
+                selected = [{
+                    id: 'uid_1',
+                    name: '柳映秋',
+                    img: '/static/images/portraits/1.jpg'
+                }, {
+                    id: 'uid_2',
+                    name: '周伊娅',
+                    img: '/static/images/portraits/2.jpg'
+                }];
+
+            $('#jquery-selective').selective({
+                namespace: 'addMember',
+                local: members,
+                selected: selected,
+                buildFromHtml: false,
+                tpl: {
+                    optionValue: function (data) {
+                        return data.id;
+                    },
+                    frame: function () {
+                        return '<div class="' + this.namespace + '">' +
+                            this.options.tpl.items.call(this) +
+                            '<div class="' + this.namespace + '-trigger">' +
+                            this.options.tpl.triggerButton.call(this) +
+                            '<div class="' + this.namespace + '-trigger-dropdown">' +
+                            this.options.tpl.list.call(this) +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    },
+                    triggerButton: function () {
+                        return '<div class="' + this.namespace + '-trigger-button"><i class="wb-plus"></i></div>';
+                    },
+                    listItem: function (data) {
+                        return '<li class="' + this.namespace + '-list-item"><img class="avatar" src="' + data.img + '">' + data.name + '</li>';
+                    },
+                    item: function (data) {
+                        return '<li class="' + this.namespace + '-item"><img class="avatar" src="' + data.img + '">' +
+                            this.options.tpl.itemRemove.call(this) +
+                            '</li>';
+                    },
+                    itemRemove: function () {
+                        return '<span class="' + this.namespace + '-remove"><i class="wb-minus-circle"></i></span>';
+                    },
+                    option: function (data) {
+                        return '<option value="' + this.options.tpl.optionValue.call(this, data) + '">' + data.name + '</option>';
+                    }
+                }
+            });
+        },
+
+        handleProject: function () {
+            $('#qadmin-pageContent').on('click', '[data-tag=project-delete]', function () {
+                bootbox.setDefaults($.po('bootbox'));
+                bootbox.dialog({
+                    message: "您确定要删除这个项目吗？",
+                    buttons: {
+                        success: {
+                            label: "删除",
+                            className: "btn-danger",
+                            callback: function () {
+                                // $(e.target).closest('.list-group-item').remove();
+                            }
+                        }
+                    }
+                });
+            });
+        },
+
+        run: function (next) {
+            this.handleSelective();
+            this.handleProject();
+
+            next();
+        }
+    });
+    
+})(document, window, jQuery);
+</script>

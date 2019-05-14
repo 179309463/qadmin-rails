@@ -1,0 +1,261 @@
+<title>Gauges</title>
+
+<style>
+.gauge {
+	position: relative;
+	text-align: center;
+}
+.gauge canvas {
+	display: inline-block;
+	width: 200px;
+	max-width: 100%;
+}
+.gauge-label {
+	position: absolute;
+	bottom: 15%;
+	width: 100%;
+	font-size: 24px;
+	font-weight: 700;
+	color: #37474f;
+}
+.gauge-sm canvas {
+	width: 150px;
+}
+.gauge-sm .gauge-label {
+	font-size: 18px;
+}
+.gauge-lg canvas {
+	width: 300px;
+}
+.gauge-lg .gauge-label {
+	font-size: 36px;
+}
+.donut {
+	position: relative;
+	text-align: center;
+}
+.donut canvas {
+	display: inline-block;
+	width: 200px;
+	max-width: 100%;
+}
+.donut-label {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	font-size: 24px;
+	font-weight: 700;
+	color: #37474f;
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	     -o-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+.donut-sm canvas {
+	width: 150px;
+}
+.donut-sm .donut-label {
+	font-size: 18px;
+}
+.donut-lg canvas {
+	width: 300px;
+}
+.donut-lg .donut-label {
+	font-size: 36px;
+}
+</style>
+
+<div class="page page-full animation-fade">
+    <div class="page-header">
+        <h1 class="page-title">Gauges 图表</h1>
+        <div class="page-header-actions">
+            <a class="btn btn-default btn-outline btn-round" href="http://bernii.github.io/gauge.js/" target="_blank">
+                <i class="icon fa fa-home" aria-hidden="true"></i> <span class="hidden-xs">官网</span></a>
+        </div>
+    </div>
+    <div class="page-content container-fluid">
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">仪表盘</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row row-lg">
+                    <div class="col-sm-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">基本示例</h4>
+                            <div class="example">
+                                <div class="gauge" data-plugin="gauge" data-value="2190" data-max-value="3000">
+                                    <canvas width="200" height="150"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">动态变化</h4>
+                            <div class="example">
+                                <div class="gauge">
+                                    <div class="gauge-label"></div>
+                                    <canvas width="200" height="150" id="exampleDynamicGauge"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="example-wrap">
+                    <h4 class="example-title">不同大小</h4>
+                    <div class="row row-lg">
+                        <div class="col-sm-4">
+                            <div class="gauge gauge-lg" data-plugin="gauge" data-value="2190" data-max-value="3000">
+                                <div class="gauge-label"></div>
+                                <canvas width="300" height="220"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="gauge" data-plugin="gauge" data-value="2190" data-max-value="3000">
+                                <div class="gauge-label"></div>
+                                <canvas width="200" height="150"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="gauge gauge-sm" data-plugin="gauge" data-value="2190" data-max-value="3000">
+                                <div class="gauge-label"></div>
+                                <canvas width="150" height="110"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">环形图</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row row-lg">
+                    <div class="col-sm-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">基本示例</h4>
+                            <div class="example">
+                                <div class="donut" data-plugin="donut" data-value="1280" data-max-value="2000">
+                                    <canvas width="200" height="150"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div class="example-wrap">
+                            <h4 class="example-title">动态变化</h4>
+                            <div class="example">
+                                <div class="donut">
+                                    <div class="donut-label"></div>
+                                    <canvas width="200" height="150" id="exampleDynamicDonut"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="example-wrap">
+                    <h4 class="example-title">不同尺寸</h4>
+                    <div class="row row-lg">
+                        <div class="col-sm-4">
+                            <div class="donut donut-lg" data-plugin="donut" data-value="1280" data-max-value="2000">
+                                <div class="donut-label"></div>
+                                <canvas width="300" height="220"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="donut" data-plugin="donut" data-value="1280" data-max-value="2000">
+                                <div class="donut-label"></div>
+                                <canvas width="200" height="150"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="donut donut-sm" data-plugin="donut" data-value="1280" data-max-value="2000">
+                                <div class="donut-label"></div>
+                                <canvas width="150" height="110"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/lib/gauge.js/dist/gauge.js" data-name="gauge"></script>
+
+<script>
+/**
+ * QAdmin v1.2.0 (http://www.qadmin.com/)
+ * Copyright 2015-2017 QAdmin Team
+ * Licensed under the QAdmin License 1.0 (http://www.qadmin.com/about/#license)
+ */
+ (function (document, window, $) {
+    'use strict';
+
+    window.Content = {
+        gaugeLine: function () { // 仪表盘--动态变化
+            var dynamicGauge = document.getElementById("exampleDynamicGauge"), random;
+
+            var options = {
+                strokeColor: $.colors("purple", 500)
+            };
+
+            setInterval(function () {
+                random = Math.round(Math.random() * 1000);
+                if (random > 700) {
+                    options.strokeColor = $.colors("pink", 500);
+                } else if (random < 300) {
+                    options.strokeColor = $.colors("green", 500);
+                }
+
+                var gauge = new Gauge(dynamicGauge).setOptions($.po('gauge', options));
+                gauge.maxValue = 1000;
+                gauge.set(random);
+            }, 1500);
+        },
+        gagueDonut: function () { // 环形图--动态变化
+            var dynamicDonut = document.getElementById("exampleDynamicDonut"), random;
+
+            var options = {
+                strokeColor: $.colors("purple", 500)
+            };
+            setInterval(function () {
+                random = Math.round(Math.random() * 1000);
+                if (random > 700) {
+                    options.strokeColor = $.colors("pink", 500);
+                } else if (random < 300) {
+                    options.strokeColor = $.colors("green", 500);
+                }
+
+                var donut = new Donut(dynamicDonut).setOptions($.po('donut', options));
+                donut.animationSpeed = 50;
+                donut.maxValue = 2000;
+                donut.set(random);
+            }, 1500);
+        },
+        run: function () {
+            this.gagueDonut();
+            this.gaugeLine();
+        }
+    };
+
+})(document, window, jQuery);
+</script>
